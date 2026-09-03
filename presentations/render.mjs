@@ -42,26 +42,33 @@ const eur = (n) => `${n.toLocaleString('fr-FR').replace(/ /g, NBSP)}${NBSP}€
 const nb = (n) => n.toLocaleString('fr-FR').replace(/ /g, NBSP);
 
 /* -------------------------------------------------------------------------
-   Le calcul du manque à gagner
+   Le calcul de la dépense de visibilité
    ------------------------------------------------------------------------- */
 
 /**
- * Une occasion perdue par tranche de `oneIn` appels manqués, sur l'année.
- * Les hypothèses sont dans content.mjs et s'affichent sur la planche : le
- * client doit pouvoir remplacer chaque nombre par le sien devant vous.
+ * Trois hypothèses fournies par le commerçant, aucune statistique de marché :
+ * ce qu'il dépense déjà chaque mois pour se faire voir, le nombre de créatifs
+ * réellement testés dans l'année, et ce que vaut un nouveau client.
+ *
+ * L'argument n'est jamais « dépensez plus » : c'est que cet argent sort déjà
+ * et que personne ne sait ce qu'il rapporte.
  */
-export function computeCost({ missed, oneIn, value }) {
-  const opportunities = Math.round((missed * HYPOTHESES.weeksPerYear) / oneIn);
-  return { opportunities, lost: opportunities * value };
+export function computeCost({ monthlySpend, creatives, value }) {
+  const annual = monthlySpend * HYPOTHESES.monthsPerYear;
+  return {
+    annual,
+    perCreative: creatives > 0 ? Math.round(annual / creatives) : null,
+    clientsNeeded: Math.round(annual / value),
+  };
 }
 
-/** Le cumul des quatre commerces, pour la planche d'addition du deck de groupe. */
+/** Le cumul des quatre commerces, pour la planche d'addition du document de groupe. */
 export function computeGroupCost(sectors) {
   const rows = sectors.map((s) => {
-    const { opportunities, lost } = computeCost(s.cost);
-    return { label: s.label, trade: s.trade, opportunities, lost, value: s.cost.value };
+    const { annual, clientsNeeded } = computeCost(s.cost);
+    return { label: s.label, trade: s.trade, annual, clientsNeeded, monthlySpend: s.cost.monthlySpend };
   });
-  return { rows, total: rows.reduce((sum, r) => sum + r.lost, 0) };
+  return { rows, total: rows.reduce((sum, r) => sum + r.annual, 0) };
 }
 
 /* -------------------------------------------------------------------------
@@ -138,26 +145,30 @@ function pain(doc) {
   );
 }
 
-/** 3. Le chiffre. Le calcul est visible, les hypothèses sont basses. */
+/** 3. Le chiffre. Le calcul est visible, les hypothèses sont celles du client. */
 function cost(doc) {
-  const { missed, oneIn, value, valueLabel, outcome } = doc.cost;
-  const { opportunities, lost } = computeCost(doc.cost);
+  const { monthlySpend, creatives, value, valueLabel } = doc.cost;
+  const { annual, perCreative, clientsNeeded } = computeCost(doc.cost);
 
   return slide(
     'cost',
     `
-    <span class="eyebrow">${fr('Ce que le problème coûte déjà')}</span>
+    <span class="eyebrow">${fr('Ce que la visibilité vous coûte déjà')}</span>
     <h2 style="margin:18px 0 6px">${fr(doc.cost.title)}</h2>
     <div class="calc">
       <div class="calc__cell">
-        <p class="calc__label">${fr('Appels manqués par semaine')}</p>
-        <p class="calc__value">${missed}</p>
-        <p class="calc__note">${fr('Votre estimation basse, pas une moyenne de marché.')}</p>
+        <p class="calc__label">${fr('Dépensé chaque mois pour être vu')}</p>
+        <p class="calc__value">${eur(monthlySpend)}</p>
+        <p class="calc__note">${fr(doc.cost.spendNote)}</p>
       </div>
       <div class="calc__cell">
-        <p class="calc__label">${fr('Dont un client qui serait venu')}</p>
-        <p class="calc__value">1<span class="calc__unit"> sur ${oneIn}</span></p>
-        <p class="calc__note">${fr('Les neuf autres rappellent, se trompent de numéro ou démarchent.')}</p>
+        <p class="calc__label">${fr("Créatifs testés dans l'année")}</p>
+        <p class="calc__value">${creatives}</p>
+        <p class="calc__note">${fr(
+          creatives > 0
+            ? `Soit ${eur(perCreative)} par contenu diffusé, sans comparaison possible.`
+            : "Aucun contenu publicitaire produit, donc rien à comparer."
+        )}</p>
       </div>
       <div class="calc__cell">
         <p class="calc__label">${fr(valueLabel)}</p>
@@ -166,16 +177,16 @@ function cost(doc) {
       </div>
     </div>
     <div class="result">
-      <span class="result__value">${eur(lost)}</span>
+      <span class="result__value">${eur(annual)}</span>
       <p class="result__text">${fr(
-        `${missed} appels manqués par semaine, sur ${HYPOTHESES.weeksPerYear} semaines d'activité, ` +
-          `soit ${opportunities} occasions perdues dans l'année à ${eur(value)} pièce. ` +
-          `Ce montant ne figure sur aucune ligne de votre comptabilité, et c'est bien le problème.`
+        `C'est ce qui sort déjà de votre trésorerie chaque année pour être vu. ` +
+          `Il faudrait ${clientsNeeded} nouveaux clients dans l'année pour que cette dépense se justifie. ` +
+          `Personne ne peut vous dire aujourd'hui combien elle en a ramenés.`
       )}</p>
     </div>
     <p class="hypothesis">${fr(
-      `Aucune de ces trois valeurs ne vient d'une étude. Remplacez-les par les vôtres : ` +
-        `le total se recalcule, et il ${outcome} toujours plus que ce que coûte une réceptionniste.`
+      `Ces trois valeurs sont les vôtres, pas une moyenne de marché : remplacez-les et le total se recalcule. ` +
+        `La question n'est pas de dépenser plus, c'est de savoir ce que cette dépense produit.`
     )}</p>`
   );
 }
@@ -197,41 +208,45 @@ function product() {
   );
 }
 
-/** 5. La démonstration : un appel joué, avec les mécaniques annotées. */
-function call(doc) {
-  const lines = doc.call.lines
-    .map((l) => {
-      const note = l.note
-        ? `<span class="line__note"><span class="note__tag">${fr('Ce qui se passe')}</span>${fr(l.note)}</span>`
-        : '';
-      return `
-      <div class="line line--${l.who}">
-        <span class="line__who">${l.who === 'agent' ? 'Fovea' : fr('Appelant')}</span>
-        <span class="line__text">${fr(l.text)}</span>
-        ${note}
-      </div>`;
-    })
+/** 5. La démonstration : une campagne jouée de bout en bout, mécaniques annotées. */
+function campaign(doc) {
+  const steps = doc.campaign.steps
+    .map(
+      (st) => `
+      <div class="step${st.note ? ' step--marked' : ''}">
+        <span class="step__mark">${fr(st.mark)}</span>
+        <span class="step__text">${fr(st.text)}</span>
+        ${
+          st.note
+            ? `<span class="line__note"><span class="note__tag">${fr('La mécanique')}</span>${fr(st.note)}</span>`
+            : ''
+        }
+      </div>`
+    )
     .join('');
 
-  const notes = doc.call.lines
-    .filter((l) => l.note)
-    .map((l) => `<div><span class="note__tag">${fr('Ce qui se passe')}</span><p class="note__text">${fr(l.note)}</p></div>`)
+  const notes = doc.campaign.steps
+    .filter((st) => st.note)
+    .map(
+      (st) =>
+        `<div><span class="note__tag">${fr(st.mark)}</span><p class="note__text">${fr(st.note)}</p></div>`
+    )
     .join('');
 
   return slide(
-    'call',
+    'campaign',
     `
-    <span class="eyebrow">${fr(doc.call.eyebrow)}</span>
-    <h2 style="margin:16px 0 22px">${fr(doc.call.title)}</h2>
+    <span class="eyebrow">${fr(doc.campaign.eyebrow)}</span>
+    <h2 style="margin:16px 0 20px">${fr(doc.campaign.title)}</h2>
     <div class="call__grid">
-      <div class="dialogue">${lines}</div>
+      <div class="dialogue">${steps}</div>
       <div class="notes">${notes}</div>
     </div>`,
     { alt: true, glow: 'corner' }
   );
 }
 
-/** 6. Quatre choses qu'un répondeur ne fait pas. Quadrant séparé par des filets. */
+/** 6. Ce qui ne se fait pas seul. Quadrant séparé par des filets. */
 function during(doc) {
   const cells = doc.during.items
     .map(
@@ -386,9 +401,9 @@ function close(doc) {
  * document de groupe rendu visible plutôt qu'écrit.
  */
 function contrast(doc) {
-  const { from, to } = HYPOTHESES.dayAxis;
+  const { from, to } = HYPOTHESES.monthAxis;
   const span = to - from;
-  const pct = (h) => ((h - from) / span) * 100;
+  const pct = (m) => ((m - from) / span) * 100;
 
   const lanes = doc.contrast.lanes
     .map(
@@ -407,14 +422,14 @@ function contrast(doc) {
     )
     .join('');
 
-  const ticks = HYPOTHESES.dayTicks.map((t) => `<span>${fr(t)}</span>`).join('');
+  const ticks = HYPOTHESES.monthTicks.map((t) => `<span>${fr(t)}</span>`).join('');
 
   return slide(
     'contrast',
     `
     <span class="eyebrow">${fr(doc.contrast.eyebrow)}</span>
     <h2 style="margin:16px 0 8px">${fr(doc.contrast.title)}</h2>
-    <p class="lead" style="margin-bottom:18px">${fr(doc.contrast.lead)}</p>
+    <p class="lead" style="margin-bottom:12px">${fr(doc.contrast.lead)}</p>
     <div class="lanes">${lanes}</div>
     <div class="lanes__scale"><span></span><div class="lanes__ticks">${ticks}</div></div>
     <p class="hypothesis">${fr(doc.contrast.note)}</p>`,
@@ -432,9 +447,9 @@ function groupCost(doc, sectors) {
       <li class="sum__row">
         <div>
           <h3>${fr(r.label)}</h3>
-          <p>${fr(`${r.opportunities} occasions perdues sur l'année, à ${eur(r.value)} pièce.`)}</p>
+          <p>${fr(`${eur(r.monthlySpend)} par mois, soit ${r.clientsNeeded} clients à ramener dans l'année.`)}</p>
         </div>
-        <span class="sum__amount">${eur(r.lost)}</span>
+        <span class="sum__amount">${eur(r.annual)}</span>
       </li>`
     )
     .join('');
@@ -474,7 +489,7 @@ export function renderDeck(doc, { cssHref, sectors }) {
         contrast(doc),
         groupCost(doc, sectors),
         product(),
-        call(doc),
+        campaign(doc),
         during(doc),
         natural(),
         gains(doc),
@@ -488,7 +503,7 @@ export function renderDeck(doc, { cssHref, sectors }) {
         pain(doc),
         cost(doc),
         product(),
-        call(doc),
+        campaign(doc),
         during(doc),
         natural(),
         gains(doc),

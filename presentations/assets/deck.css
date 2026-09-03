@@ -516,11 +516,37 @@ strong {
   gap: 11px;
 }
 
-.line {
+.line,
+.step {
   display: grid;
   grid-template-columns: 74px 1fr;
   gap: 14px;
   align-items: baseline;
+}
+
+/* Étape datée d'une campagne jouée : le repère en rouge, le texte posé. */
+.step__mark {
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--red);
+  padding-top: 6px;
+}
+
+.step__text {
+  border-radius: var(--r-card);
+  border: 1px solid var(--rule);
+  background: var(--ink-3);
+  padding: 10px 15px;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--cream-dim);
+}
+
+.step--marked .step__text {
+  background: linear-gradient(150deg, var(--ink-3) 0%, #2a1f21 100%);
+  border-color: rgba(229, 82, 74, 0.28);
+  color: var(--cream);
 }
 
 .line__who {
@@ -824,8 +850,12 @@ strong {
   grid-template-columns: 190px 1fr;
   gap: 24px;
   align-items: center;
-  padding: 8px 0;
+  padding: 6px 0;
   border-top: 1px solid var(--rule);
+}
+
+.lane__trade {
+  line-height: 1.4;
 }
 
 .lane:first-child {

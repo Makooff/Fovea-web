@@ -52,158 +52,157 @@ export const CLIENT = {
    ------------------------------------------------------------------------- */
 
 export const HYPOTHESES = {
-  /**
-   * 48 et non 52 : congés, jours fériés et fermetures annuelles. Une hypothèse
-   * basse se défend en rendez-vous, une hypothèse haute se conteste.
-   */
-  weeksPerYear: 48,
+  /** Le calcul de la planche « le chiffre » raisonne en mois pleins. */
+  monthsPerYear: 12,
 
-  /** L'axe de la frise horaire du document de groupe. */
-  dayAxis: { from: 7, to: 24 },
-  dayTicks: ['7 h', '10 h', '13 h', '16 h', '19 h', '22 h'],
+  /**
+   * L'axe de la frise du document de groupe. Pour une agence de
+   * communication, ce qui distingue quatre commerces n'est pas l'heure de la
+   * journée mais le mois de l'année : c'est là que se décide le calendrier de
+   * tournage.
+   */
+  monthAxis: { from: 1, to: 13 },
+  monthTicks: ['Janv.', 'Mars', 'Mai', 'Juil.', 'Sept.', 'Nov.'],
 };
 
 /* -------------------------------------------------------------------------
    Ce qui ne change pas d'un commerce à l'autre
    ------------------------------------------------------------------------- *
- * Cinq planches sur douze portent ce contenu commun : le produit, ce qui le
- * rend crédible au téléphone, ce qui reste après l'appel, la mise en route et
- * les limites. Les sept autres sont écrites commerce par commerce, et c'est là
- * que se joue la différence entre une plaquette et une proposition.
+ * Cinq planches sur douze portent ce contenu commun : ce que fait Fovea, ce
+ * qui fait la différence, ce qui vous reste, la mise en route et les limites.
+ * Les sept autres sont écrites commerce par commerce, et c'est là que se joue
+ * la différence entre une plaquette et une proposition.
+ *
+ * Tout ce qui est affirmé ici est adossé au site (app/services, app/process,
+ * app/campagne-ads, components/sections/ServicesBlock). Aucun chiffre de
+ * performance n'y figure : ceux du site se contredisent d'un fichier à
+ * l'autre, donc ils ne sont pas imprimables dans une proposition signée.
  */
 
 export const COMMON = {
   product: {
-    eyebrow: 'Ce que nous installons',
-    title: 'Une voix qui décroche à la <i>première</i> sonnerie.',
+    eyebrow: 'Ce que nous faisons',
+    title: 'Nous filmons, nous diffusons, nous <i>ajustons</i>.',
     lead:
-      "Une réceptionniste qui répond à votre place, jour et nuit, sur votre numéro actuel. Nous l'installons, nous la réglons sur votre métier, et nous la suivons.",
+      "Fovea est une agence de communication. Nous produisons vos vidéos publicitaires et nous gérons vos campagnes. Les deux au même endroit, parce que séparés, ils se ratent.",
     columns: [
       {
-        title: 'Elle décroche',
+        title: 'Nous produisons',
         text:
-          "Sept jours sur sept, y compris pendant le service, pendant un essai, pendant une vente. L'appelant ne tombe jamais sur un répondeur.",
+          "Tournage chez vous ou en studio, direction artistique, montage, étalonnage, sound design, motion design. Deux rounds de retours inclus.",
       },
       {
-        title: 'Elle agit',
+        title: 'Nous diffusons',
         text:
-          "Elle pose le rendez-vous dans votre agenda, note la demande, qualifie l'appelant, et passe la ligne à un humain quand la situation le demande.",
+          "Meta, Google, TikTok, LinkedIn. Audiences, budgets et enchères paramétrés, et chaque vidéo déclinée au format de sa plateforme.",
       },
       {
-        title: 'Elle vous rend compte',
+        title: 'Nous ajustons',
         text:
-          "Chaque appel laisse un résumé écrit, une fiche client et une trace de ce qui a été promis. Rien ne dépend de la mémoire de qui a décroché.",
+          "Tests A/B des créatifs, arbitrage des budgets, reporting mensuel. Ce qui ne marche pas est coupé sans attendre la fin du mois.",
       },
     ],
   },
 
   natural: {
-    eyebrow: 'Au téléphone',
-    title: 'Ce qui fait qu\'on ne raccroche <i>pas</i>.',
+    eyebrow: 'Ce qui nous distingue',
+    title: 'Le créatif et la diffusion, sous le même <i>toit</i>.',
     blocks: [
       {
-        title: "Elle se laisse couper",
+        title: 'Celui qui monte lit les chiffres',
         text:
-          "Un appelant qui l'interrompt reprend la main tout de suite. Une toux ou un « mhm » ne coupe pas la phrase en cours, et une hésitation n'est jamais prise pour un accord.",
+          "Un monteur qui ne voit jamais les résultats refait les mêmes erreurs. Ici, la personne qui coupe la vidéo sait ce que la version précédente a donné.",
       },
       {
-        title: 'Elle connaît votre maison',
+        title: 'Un format par plateforme',
         text:
-          "Vos horaires, vos tarifs, vos règles et vos réponses habituelles sont dans sa fiche. Une question posée autrement trouve quand même sa réponse.",
+          "Un Reel n'est pas un YouTube raccourci. Chaque plateforme reçoit un montage fait pour elle, pas un recadrage de dernière minute.",
       },
       {
-        title: 'Elle reconnaît un habitué',
+        title: 'Des versions faites pour être comparées',
         text:
-          "Un numéro déjà venu est salué par son prénom, avec le motif du dernier appel. On ne lui redemande pas ce qu'elle a déjà dit.",
+          "Un tournage sort plusieurs accroches. On ne devine pas laquelle fonctionne, on les met en concurrence sur votre audience.",
       },
       {
-        title: 'Elle sait passer la main',
+        title: 'Une équipe qui se déplace',
         text:
-          "Quand il faut un humain, elle résume la situation à voix haute à celui qui prend la ligne, puis transfère. Personne ne reprend l'appel à zéro.",
+          "Nous tournons chez vous, en Belgique comme en France. Votre commerce est le décor, et c'est ce qui rend la vidéo crédible.",
       },
     ],
   },
 
   record: {
-    eyebrow: 'Après l\'appel',
-    title: 'Ce que vous <i>récupérez</i>, appel par appel.',
-    caption: 'Tout est consultable depuis un navigateur, sans rien installer.',
+    eyebrow: 'Ce qui vous reste',
+    title: 'Tout ce que nous produisons vous <i>appartient</i>.',
+    caption: "Le jour où vous arrêtez, vous partez avec l'ensemble.",
     items: [
-      "Le résumé écrit de l'échange, en trois lignes",
-      "Le nom, le numéro et le motif de l'appelant",
-      "Le rendez-vous posé dans votre agenda, avec sa confirmation",
-      "Ce qui a été promis, et par qui",
-      "L'humeur de l'appelant, quand elle change la suite à donner",
-      "L'enregistrement, annoncé au décroché comme la loi l'exige",
+      'Les vidéos montées, déclinées dans tous les formats',
+      "Les fichiers sources, à vous, sans limite d'usage",
+      'Votre compte publicitaire, ouvert à votre nom',
+      'Les audiences constituées pendant la campagne',
+      'Le reporting mensuel, chiffre par chiffre',
+      'Ce qui a été testé, et ce qui a été coupé',
     ],
   },
 
   setup: {
     eyebrow: 'La mise en route',
-    title: 'Trois étapes, et vous n\'en faites <i>qu\'une</i>.',
+    title: 'Trois étapes, une seule journée chez <i>vous</i>.',
     steps: [
       {
-        title: 'Vous nous racontez la maison',
+        title: 'Brief et audit',
         text:
-          "Une heure au téléphone ou sur place : vos horaires, vos prestations, ce que vous refusez, ce qui doit remonter tout de suite. C'est votre seule vraie tâche.",
+          "Un rendez-vous pour cerner votre cible, votre angle et vos objectifs. Nous auditons ce qui a déjà été diffusé, s'il y en a.",
       },
       {
-        title: 'Nous la configurons',
+        title: 'Tournage et montage',
         text:
-          "Nous écrivons sa fiche, branchons votre agenda, réglons sa voix et ses formules, puis nous l'appelons nous-mêmes jusqu'à ce que ce soit juste.",
+          "Notre équipe se déplace. Direction artistique, tournage, montage et déclinaisons de format. Deux rounds de retours.",
       },
       {
-        title: 'Vous écoutez, puis vous ouvrez',
+        title: 'Lancement et arbitrage',
         text:
-          "Vous relisez les appels de test et vous corrigez ce qui vous gêne. Le renvoi de ligne se fait le jour où vous le décidez, et se retire aussi vite.",
+          "Mise en ligne, paramétrage des audiences, tests A/B des accroches. À partir de là, ce qui ne marche pas est coupé chaque semaine.",
       },
     ],
-    delay: 'Comptez dix jours entre le premier rendez-vous et le premier appel réel, dont un pour vous.',
+    delay:
+      "Comptez trois semaines entre le brief et la première diffusion, dont une journée de tournage dans votre commerce.",
   },
 
   limits: {
     eyebrow: 'Ce que nous ne promettons pas',
-    title: 'Les quatre choses qu\'elle ne fait <i>pas</i>.',
+    title: 'Les quatre choses que nous ne ferons <i>pas</i>.',
     lead:
-      "Une proposition qui ne dit que le bien se retourne au premier mois. Voici ce que nous savons de ses limites, vérifié dans le produit, pas dans une plaquette.",
+      "Une proposition qui ne dit que le bien se retourne au premier mois. Voici ce sur quoi nous ne nous engageons pas, dit avant de signer.",
     items: [
       {
-        title: "L'hébergement n'est pas européen",
+        title: 'Aucun chiffre garanti',
         text:
-          "Les serveurs sont aux États-Unis, en Oregon. Si vos données doivent rester en Europe, ce n'est pas le bon outil aujourd'hui, et nous vous le disons avant de signer.",
+          "Personne ne peut promettre un retour avant d'avoir testé vos créatifs sur votre audience. Nous nous engageons sur la production, la diffusion et la mesure, pas sur un multiple.",
       },
       {
-        title: "Elle ne pose un rendez-vous que si l'agenda est branché",
+        title: 'Le budget de diffusion est plafonné',
         text:
-          "Sans agenda connecté, elle prend la demande, le nom et le créneau souhaité, mais c'est vous qui posez le rendez-vous. La différence est réelle, elle se règle en dix minutes.",
+          "Chaque formule inclut une enveloppe publicitaire jusqu'à un plafond. Au-delà, la dépense média est la vôtre, et elle se décide avec vous, pas à votre place.",
       },
       {
-        title: 'Les rappels de la veille ne sont pas sur toutes les formules',
+        title: 'Deux rounds de retours, pas davantage',
         text:
-          "Le message qui rappelle son rendez-vous au client la veille existe sur les deux formules hautes seulement. Sur les deux premières, il n'y a pas de rappel automatique.",
+          "Un montage se corrige deux fois. Au-delà, c'est une nouvelle prestation. C'est ce qui fait sortir la vidéo au lieu de la faire tourner en rond.",
       },
       {
-        title: 'Elle ne remplace pas votre meilleur vendeur',
+        title: 'Nous ne réécrivons pas votre offre',
         text:
-          "Elle décroche, elle qualifie, elle note et elle transfère. Elle ne négocie pas un prix, ne conclut pas une vente et ne prend pas de décision à votre place.",
+          "Nous filmons et nous diffusons ce que vous vendez. Si le prix ou le produit ne convainc pas en boutique, une campagne ne le corrigera pas : elle le fera savoir plus vite.",
       },
     ],
   },
 
   close: {
     eyebrow: 'La suite',
-    cta: 'Un appel de démonstration, sur votre métier',
+    cta: 'Un audit de votre visibilité, sans engagement',
   },
 };
-
-/* -------------------------------------------------------------------------
-   Les quatre commerces
-   ------------------------------------------------------------------------- *
- * Champs obligatoires : slug, label, trade, coverLabel, cover, pain, cost,
- * call, during, gains, recordLead, closeTitle, closeLine.
- * Pour ajouter un cinquième commerce, copiez l'objet du bar, qui est le plus
- * court, et ajoutez sa voie dans GROUP.contrast.lanes.
- */
 
 export const SECTORS = [
   /* ---------------------------------------------------------------------- */
@@ -215,490 +214,390 @@ export const SECTORS = [
     kind: 'sector',
 
     cover: {
-      title: 'Vente, atelier, pièces.<br>Un seul <i>téléphone</i>.',
+      title: 'Vos occasions se vendent en photo.<br>Les leurs se <i>filment</i>.',
       lead:
-        "Tous vos appels arrivent sur la même ligne, aux heures où votre équipe est en showroom ou sous un capot. Voici ce qu'une réceptionniste qui décroche vraiment change à votre semaine.",
+        "Un acheteur compare six annonces avant de se déplacer. Celles qui bougent retiennent son attention, les autres défilent sans qu'il s'arrête.",
     },
 
     pain: {
       eyebrow: 'Le problème',
-      title: "Le samedi à 11 h, personne n'est libre pour <i>répondre</i>.",
+      title: 'Vos véhicules sont photographiés entre deux <i>clients</i>.',
       lead:
-        "Ce n'est pas un défaut d'organisation. C'est le moment où vos clients sont disponibles, donc celui où ils appellent, donc celui où vous êtes tous en clientèle.",
+        "Ce n'est pas un défaut de sérieux. C'est qu'un véhicule rentre le matin et doit être en ligne l'après-midi, et que personne n'a une demi-journée à y consacrer.",
       steps: [
-        {
-          mark: '0 s',
-          text: "Le téléphone sonne à l'accueil. Deux clients attendent au comptoir, un troisième part en essai.",
-        },
-        {
-          mark: '25 s',
-          text: "L'appelant tombe sur la messagerie. Il ne laisse pas de message : il a trois autres annonces ouvertes.",
-        },
-        {
-          mark: '2 min',
-          text: 'Le même modèle est en vente à trente kilomètres. Là-bas, quelqu\'un décroche.',
-        },
-        {
-          mark: 'Lundi',
-          text: "Vous rappelez. L'essai est déjà réservé ailleurs, et rien dans votre semaine ne dira que cet appel valait une vente.",
-        },
+        { mark: '8 h 30', text: "Un véhicule rentre en stock. Photos rapides sur le parc, avec la lumière qu'il y a." },
+        { mark: '10 h 00', text: "L'annonce part en ligne. Douze photos plates, aucun plan de l'habitacle, aucun son." },
+        { mark: 'Samedi', text: "L'acheteur compare six annonces depuis son canapé. La vôtre ne se distingue d'aucune autre." },
+        { mark: 'Fin de mois', text: "Le véhicule est toujours au parc. Il coûte, et personne ne sait ce qui a manqué pour le vendre." },
       ],
     },
 
     cost: {
-      title: 'Ce que le samedi matin vous coûte, <i>calculé</i> devant vous.',
-      missed: 5,
-      oneIn: 10,
+      title: 'Ce que votre visibilité vous coûte, <i>calculé</i> devant vous.',
+      monthlySpend: 600,
+      creatives: 1,
       value: 900,
       valueLabel: 'Marge sur une vente',
-      valueNote: 'Votre marge moyenne sur un véhicule d\'occasion, à corriger avec la vôtre.',
-      outcome: 'ressort',
+      valueNote: "Votre marge moyenne sur une occasion, à corriger avec la vôtre.",
+      spendNote: "Portails d'annonces, posts boostés, presse locale, sponsoring du club.",
     },
 
-    call: {
-      eyebrow: 'Un appel, samedi 11 h 04',
-      title: 'Elle ne note pas la demande.<br>Elle la <i>traite</i>.',
-      lines: [
+    campaign: {
+      eyebrow: 'Une campagne jouée, de bout en bout',
+      title: 'Trois véhicules filmés, une accroche qui <i>gagne</i>.',
+      steps: [
         {
-          who: 'caller',
-          text: 'Bonjour, la Golf grise annoncée à 18 900 €, elle est toujours disponible ?',
-          note: "Vos annonces et votre stock sont dans sa fiche. Ce qui part le matin, elle le sait à l'appel suivant.",
+          mark: 'J+0',
+          text: "Brief sur votre stock : quels modèles tournent, lesquels dorment, quel acheteur vous manque.",
+          note: "On choisit trois véhicules, pas le parc entier. Une campagne ne se juge que sur des cas comparables.",
         },
+        { mark: 'J+4', text: "Repérage et scripts. Trois accroches différentes pour le même véhicule." },
         {
-          who: 'agent',
-          text: "Oui, elle est encore là. Vous voulez l'essayer ? J'ai samedi 11 h ou lundi 17 h.",
+          mark: 'J+8',
+          text: "Tournage sur le parc, une demi-journée. Extérieur, habitacle, démarrage, départ en essai.",
+          note: "Le son du moteur et la fermeture de portière font plus pour la crédibilité que douze photos.",
         },
-        { who: 'caller', text: "Samedi. Et j'ai une Clio à reprendre." },
+        { mark: 'J+14', text: "Montage et déclinaisons : vertical pour les Reels, carré pour le feed, large pour YouTube." },
+        { mark: 'J+18', text: "Mise en ligne sur Meta et Google, ciblage sur votre zone de chalandise." },
         {
-          who: 'agent',
-          text: 'Je note la reprise. Année, kilométrage, état général ? Le vendeur aura tout avant votre venue.',
-          note: 'Reprise, budget, financement : la qualification est faite avant que le vendeur ouvre le dossier.',
-        },
-        { who: 'caller', text: '2016, 94 000 km, rien à signaler.' },
-        {
-          who: 'agent',
-          text: "C'est réservé samedi à 11 h. Vous recevez la confirmation par message.",
-          note: "Le rendez-vous existe dans l'agenda avant qu'elle raccroche, et le vendeur reçoit le résumé.",
+          mark: 'J+32',
+          text: "Premier arbitrage. L'accroche qui ne retient pas est coupée, son budget passe sur celle qui amène au parc.",
+          note: "On ne rallonge jamais le budget d'un créatif faible, on le déplace sur celui qui travaille.",
         },
       ],
     },
 
     during: {
-      eyebrow: 'Pendant l\'appel',
-      title: 'Quatre choses qu\'un répondeur ne fait <i>pas</i>.',
+      eyebrow: 'Ce qui ne se fait pas seul',
+      title: 'Quatre choses hors de portée d\'une application de <i>montage</i>.',
       items: [
         {
-          title: 'Elle oriente vers le bon service',
-          text:
-            "Une révision ne va pas au vendeur, une demande de pièce ne va pas à l'atelier. Elle sait qui traite quoi, et à quelle heure chacun est joignable.",
+          title: 'Faire tenir un véhicule en neuf secondes',
+          text: "Un trois quarts, un habitacle, un démarrage. L'ordre et le rythme se décident au montage, pas au tournage.",
         },
         {
-          title: 'Elle qualifie la reprise',
-          text:
-            "Année, kilométrage, état, immatriculation : le vendeur ouvre le dossier en sachant déjà s'il y a une affaire à faire.",
+          title: 'Décliner un tournage en quatre formats',
+          text: "Vertical, carré, large, et la version qui se comprend sans le son. Chaque plateforme refuse le format des autres.",
         },
         {
-          title: 'Elle protège votre samedi',
-          text:
-            "Le démarchage et les appels hors sujet ne remontent pas. Ce qui arrive sur votre téléphone est ce qui vaut un déplacement.",
+          title: 'Faire concourir deux accroches',
+          text: "Deux versions diffusées sur la même audience, et un verdict chiffré au bout de dix jours au lieu d'une intuition.",
         },
         {
-          title: "Elle tient la ligne à l'heure de fermeture",
-          text:
-            "Le client qui appelle à 19 h 30 après son travail trouve quelqu'un. C'est souvent celui qui a le budget et pas le temps.",
+          title: 'Cibler ceux qui cherchent vraiment',
+          text: "Une zone, un budget, une intention d'achat. Un post boosté parle à vos clients actuels, pas à vos futurs acheteurs.",
         },
       ],
     },
 
     gains: {
       eyebrow: 'Pour une concession',
-      title: 'Quatre choses qui changent dès le <i>premier</i> samedi.',
+      title: 'Quatre choses qui changent dès le premier <i>tournage</i>.',
       items: [
-        {
-          title: 'Aucun essai perdu faute de réponse',
-          text: "Le créneau se pose pendant l'appel, pas au rappel du lundi, quand la voiture est vendue ailleurs.",
-        },
-        {
-          title: 'Le vendeur arrive préparé',
-          text: "Reprise, budget, modèle visé : tout est écrit avant la poignée de main. L'entretien commence là où il finissait avant.",
-        },
-        {
-          title: "L'atelier se remplit tout seul",
-          text: 'Révisions et contrôles se prennent par téléphone à toute heure, sans mobiliser un poste à l\'accueil.',
-        },
-        {
-          title: 'Vous savez enfin ce que vous manquiez',
-          text: 'Chaque appel laisse une trace. Le volume réel du samedi matin cesse d\'être une impression.',
-        },
+        { title: 'Vos annonces cessent de se ressembler', text: "Une vidéo au milieu de douze séries de photos, c'est le seul écart qui se voit sur un écran de téléphone." },
+        { title: 'Le parc tourne plus vite', text: "Un véhicule qui se montre en mouvement se décide plus vite. Le coût de portage baisse avec le délai." },
+        { title: "L'atelier profite du même déplacement", text: "La même journée de tournage sert la révision, le contrôle et la carrosserie, sans repayer une équipe." },
+        { title: 'Vous savez ce qui fait venir', text: "Chaque accroche a son chiffre. Le samedi matin cesse d'être une impression et devient une ligne." },
       ],
     },
 
     recordLead:
-      "Le lundi matin, vous ouvrez la liste du week-end : qui a appelé, pour quel véhicule, ce qui a été promis, et les essais déjà posés dans l'agenda.",
+      "Vous gardez les rushes, les montages dans tous les formats et le compte publicitaire ouvert à votre nom, avec les audiences constituées pendant la campagne.",
 
-    closeTitle: 'Écoutez-la répondre sur <i>votre</i> stock.',
+    closeTitle: 'Filmons <i>trois</i> véhicules.',
     closeLine:
-      "Nous la configurons sur trois de vos annonces et vous l'appelez vous-même. Vous jugez sur la voix, pas sur une promesse.",
+      "Une demi-journée sur votre parc, trois accroches, deux semaines de diffusion. Vous jugez sur les chiffres de votre propre stock, pas sur un exemple.",
   },
 
   /* ---------------------------------------------------------------------- */
   {
     slug: 'patisserie-trompe-loeil',
-    label: 'Pâtisserie en trompe-l\'œil',
-    trade: 'Commandes sur mesure',
-    coverLabel: 'Pâtisserie en trompe-l\'œil',
+    label: "Pâtisserie en trompe-l'œil",
+    trade: 'Pièces sur mesure',
+    coverLabel: "Pâtisserie en trompe-l'œil",
     kind: 'sector',
 
     cover: {
-      title: 'Vos mains sont dans la <i>ganache</i>.<br>Le téléphone sonne.',
+      title: 'Vous fabriquez du spectacle.<br>Personne ne le <i>voit</i>.',
       lead:
-        "Une commande en trompe-l'œil se discute, se dessine et se date. Elle ne se prend pas entre deux fournées, et elle ne se rattrape pas par un rappel deux jours plus tard.",
+        "Une pièce en trompe-l'œil demande dix jours de travail, part en une heure et ne laisse qu'une photo floue prise au comptoir.",
     },
 
     pain: {
       eyebrow: 'Le problème',
-      title: 'La commande la plus rentable arrive au pire <i>moment</i>.',
+      title: 'Votre plus belle pièce quitte la boutique sans être <i>filmée</i>.',
       lead:
-        "Les demandes sur mesure tombent le matin, pendant la production, et le samedi, pendant le coup de feu de la boutique. Jamais quand vous êtes disponible.",
+        "Le trompe-l'œil ne se raconte pas, il se montre. Et il se montre au moment de la découpe, quand vous êtes déjà sur la commande suivante.",
       steps: [
-        {
-          mark: '7 h 40',
-          text: 'Vous êtes au tour, les mains prises. Le téléphone sonne trois fois, puis s\'arrête.',
-        },
-        {
-          mark: '9 h 15',
-          text: "Une cliente veut un gâteau anniversaire en trompe-l'œil pour dans quinze jours. Elle laisse un message inaudible, sans numéro clair.",
-        },
-        {
-          mark: '11 h 00',
-          text: 'Vous rappelez trois fois dans la journée. Elle est au travail, vous êtes en production.',
-        },
-        {
-          mark: 'J+2',
-          text: "Vous vous parlez enfin. Le délai ne tient plus : un trompe-l'œil demande dix jours, et il en reste huit.",
-        },
+        { mark: '6 h 00', text: "Vous montez la pièce. Moulage, aérographe, finitions : dix jours de travail arrivent à leur terme." },
+        { mark: '11 h 00', text: "La cliente découvre son sac à main en gâteau. Elle filme, verticalement, en trois secondes." },
+        { mark: '14 h 00', text: "La vidéo part sur son compte à elle. Trente vues, aucun lien vers vous." },
+        { mark: 'Décembre', text: "Vous refusez des commandes faute de temps, et vous n'avez rien à montrer pour vendre les créneaux qui restent." },
       ],
     },
 
     cost: {
-      title: 'Ce que les commandes non prises <i>pèsent</i> sur une année.',
-      missed: 8,
-      oneIn: 6,
+      title: 'Ce que votre visibilité vous coûte, <i>calculé</i> devant vous.',
+      monthlySpend: 250,
+      creatives: 0,
       value: 120,
-      valueLabel: 'Panier moyen sur commande',
+      valueLabel: 'Panier sur commande',
       valueNote: 'Une pièce sur mesure de taille moyenne, hors pièce montée.',
-      outcome: 'ressort',
+      spendNote: 'Posts boostés, flyers, présence dans la presse locale, salons.',
     },
 
-    call: {
-      eyebrow: 'Un appel, mardi 9 h 12',
-      title: 'Elle prend la commande <i>entièrement</i>.',
-      lines: [
+    campaign: {
+      eyebrow: 'Une campagne jouée, de bout en bout',
+      title: 'Dix jours de travail, une vidéo qui remplit le <i>carnet</i>.',
+      steps: [
         {
-          who: 'caller',
-          text: "Bonjour, je voudrais un gâteau qui ressemble à un sac à main, pour le 22.",
-          note: "Le 22 est dans onze jours : le délai de dix jours tient. Elle le sait avant de répondre.",
+          mark: 'J+0',
+          text: "Brief sur vos commandes : ce qui se vend, ce qui impressionne, ce que vous voudriez vendre davantage.",
+          note: "Le sujet du tournage n'est pas la plus belle pièce, c'est celle que vous voulez reproduire vingt fois.",
         },
+        { mark: 'J+5', text: "Script du montage : le geste, le doute, la découpe. C'est la découpe qui vend." },
         {
-          who: 'agent',
-          text: "Le 22, c'est jouable. Combien de parts, et une préférence de parfum ?",
+          mark: 'J+9',
+          text: "Tournage au laboratoire, sur une pièce réelle en cours de fabrication. Une demi-journée, sans arrêter la production.",
+          note: "On filme votre calendrier, pas une mise en scène : une pièce commandée qui part vraiment le lendemain.",
         },
-        { who: 'caller', text: 'Douze parts. Chocolat, et il y a une allergie aux fruits à coque.' },
+        { mark: 'J+15', text: "Montage et déclinaisons : Reel vertical, TikTok, et une version longue pour votre page." },
+        { mark: 'J+19', text: "Mise en ligne sur Meta et TikTok, ciblage local, avec un formulaire de demande de devis." },
         {
-          who: 'agent',
-          text: "Noté, sans fruits à coque, c'est signalé en production. Je vous mets au retrait le 22 avant midi ?",
-          note: "L'allergène part dans la fiche de commande, pas dans un post-it sur le plan de travail.",
-        },
-        { who: 'caller', text: 'Parfait. Et je peux envoyer une photo du modèle ?' },
-        {
-          who: 'agent',
-          text: "Oui, au numéro de la boutique. Le pâtissier vous rappelle demain pour valider le dessin et l'acompte.",
-          note: 'Ce qui demande un avis de métier est transmis, pas décidé à votre place.',
+          mark: 'J+33',
+          text: "Premier arbitrage. On garde l'accroche qui déclenche des demandes, pas celle qui fait le plus de vues.",
+          note: "Les vues ne remplissent pas un carnet de commandes. On optimise sur la demande de devis.",
         },
       ],
     },
 
     during: {
-      eyebrow: 'Pendant l\'appel',
-      title: 'Quatre choses qu\'un répondeur ne fait <i>pas</i>.',
+      eyebrow: 'Ce qui ne se fait pas seul',
+      title: 'Quatre choses hors de portée d\'un tournage au <i>comptoir</i>.',
       items: [
         {
-          title: 'Elle tient le calendrier de production',
-          text:
-            "Elle connaît le délai d'un trompe-l'œil et refuse une date intenable plutôt que de vous mettre dans l'embarras la veille.",
+          title: 'Filmer sans arrêter la production',
+          text: "Une équipe qui sait se placer dans un laboratoire, à la bonne heure, sans vous faire perdre une fournée.",
         },
         {
-          title: 'Elle demande les allergènes',
-          text:
-            "La question est posée à chaque commande, systématiquement, et la réponse arrive écrite dans la fiche. Ce n'est plus une chose dont on se souvient.",
+          title: 'Tenir la lumière sur un glaçage',
+          text: "Un trompe-l'œil se joue sur la matière. Mal éclairé, votre sac à main ressemble à un gâteau, et l'effet tombe.",
         },
         {
-          title: 'Elle sépare la boutique du sur-mesure',
-          text:
-            "Un renseignement sur les horaires ne vous dérange pas. Une commande à 300 € arrive sur votre téléphone dans la minute.",
+          title: 'Garder le suspense jusqu\'à la découpe',
+          text: "Le montage décide du moment où l'on comprend que c'est un gâteau. Trois secondes trop tôt, il n'y a plus de surprise.",
         },
         {
-          title: 'Elle répond le dimanche',
-          text:
-            "C'est le jour où l'on organise un anniversaire, et le jour où votre laboratoire est fermé. La demande est prise, vous la traitez lundi.",
+          title: 'Transformer une vue en devis',
+          text: "Une vidéo sans formulaire ni ciblage fait des vues. Avec les deux, elle fait des demandes datées et chiffrées.",
         },
       ],
     },
 
     gains: {
-      eyebrow: 'Pour une pâtisserie sur mesure',
-      title: 'Quatre choses qui changent dès la <i>première</i> semaine.',
+      eyebrow: 'Pour une pâtisserie de création',
+      title: 'Quatre choses qui changent avant la prochaine <i>saison</i>.',
       items: [
-        {
-          title: 'Plus de commande perdue au message vocal',
-          text: 'La demande est prise en entier au premier appel, avec la date, les parts et les allergènes.',
-        },
-        {
-          title: 'Des délais qui tiennent',
-          text: "Une date impossible est refusée pendant l'appel, pas découverte trois jours avant le retrait.",
-        },
-        {
-          title: 'Vos mains restent dans la production',
-          text: 'Vous ne vous arrêtez plus pour décrocher, et vous ne passez plus vos après-midi à rappeler.',
-        },
-        {
-          title: 'La saison se prépare au lieu de se subir',
-          text: 'Fêtes, communions, Noël : les demandes arrivent classées et datées, avec un mois de visibilité.',
-        },
+        { title: 'Votre savoir-faire devient visible', text: "Ce que vous fabriquez est spectaculaire par nature. Filmé correctement, il se vend sans argumentaire." },
+        { title: 'Les créneaux creux se remplissent', text: "Une campagne se lance sur les semaines vides, pas sur celles où vous refusez déjà du monde." },
+        { title: 'Vous vendez le sur-mesure, pas la vitrine', text: "Le panier d'une commande n'a rien à voir avec celui d'un passage. C'est lui que la vidéo va chercher." },
+        { title: 'La fin d\'année se prépare en septembre', text: "Les demandes arrivent avec deux mois d'avance, et le calendrier de production se tient." },
       ],
     },
 
     recordLead:
-      "Chaque commande arrive écrite : la date de retrait, le nombre de parts, le parfum, les allergènes et la photo du modèle attendu.",
+      "Vous gardez les rushes de vos pièces, les montages dans tous les formats et une bibliothèque qui grossit à chaque tournage, réutilisable saison après saison.",
 
-    closeTitle: 'Faites-lui prendre une <i>commande</i>.',
+    closeTitle: 'Filmons votre prochaine <i>pièce</i>.',
     closeLine:
-      "Nous la réglons sur vos délais et vos parfums, et vous l'appelez comme une cliente. Vous verrez tout de suite si elle sait dire non à une date trop courte.",
+      "Dites-nous quelle commande part la semaine prochaine. Une demi-journée au laboratoire, et vous voyez ce que la découpe donne en vidéo.",
   },
 
   /* ---------------------------------------------------------------------- */
   {
     slug: 'bar',
     label: 'Bar',
-    trade: 'Service et réservations',
+    trade: 'Soirées et privatisations',
     coverLabel: 'Bar',
     kind: 'sector',
 
     cover: {
-      title: 'À 19 h, personne <i>n\'entend</i> le téléphone.',
+      title: 'On choisit son bar sur un <i>écran</i>,<br>vingt minutes avant d\'y aller.',
       lead:
-        "C'est l'heure où l'on réserve pour ce soir, et l'heure où votre équipe est au comptoir. Les deux ne peuvent pas tenir ensemble.",
+        "La décision se prend sur un téléphone, dans la rue, entre deux adresses. Ce qui se voit à ce moment-là décide de votre soirée.",
     },
 
     pain: {
       eyebrow: 'Le problème',
-      title: 'Le téléphone sonne au moment du coup de <i>feu</i>.',
+      title: 'Votre meilleure soirée n\'existe sur aucun <i>écran</i>.',
       lead:
-        "Le bruit couvre la sonnerie, les mains sont prises, et la table de douze qui cherchait la salle du fond appelle le bar d'à côté.",
+        "Le samedi où la salle est pleine, personne n'a le temps de filmer. Et le mardi où vous auriez le temps, il n'y a rien à montrer.",
       steps: [
-        { mark: '18 h 45', text: 'La salle se remplit, le comptoir ne désemplit pas. Le téléphone sonne derrière la caisse.' },
-        {
-          mark: '18 h 47',
-          text: 'Un groupe de douze cherche une table pour 20 h. Personne ne décroche, personne ne l\'a entendu.',
-        },
-        { mark: '19 h 10', text: "Ils rappellent une fois, puis essaient l'adresse suivante." },
-        {
-          mark: '20 h 00',
-          text: 'La salle du fond reste vide, et rien nulle part ne dira qu\'elle aurait pu être pleine.',
-        },
+        { mark: '21 h 30', text: "La salle est pleine, le service tourne, l'ambiance est exactement celle que vous vendez." },
+        { mark: '21 h 32', text: "Personne ne filme. Tout le monde travaille, et c'est bien normal." },
+        { mark: 'Mardi', text: "Vous postez une photo de cocktail sur une salle vide. Quarante vues, aucune réservation." },
+        { mark: 'Juin', text: "La terrasse ouvre. Douze semaines pour faire l'année, et rien de prêt pour l'annoncer." },
       ],
     },
 
     cost: {
-      title: 'Ce qu\'une salle vide un soir sur deux <i>représente</i>.',
-      missed: 10,
-      oneIn: 8,
+      title: 'Ce que votre visibilité vous coûte, <i>calculé</i> devant vous.',
+      monthlySpend: 400,
+      creatives: 1,
       value: 180,
-      valueLabel: 'Addition moyenne, table de groupe',
+      valueLabel: 'Addition de groupe',
       valueNote: 'Une tablée de six à douze, boissons et planches. À corriger avec votre ticket.',
-      outcome: 'ressort',
+      spendNote: 'Posts boostés, affiches, partenariats de soirées, plateformes de sortie.',
     },
 
-    call: {
-      eyebrow: 'Un appel, vendredi 18 h 47',
-      title: 'Elle prend la <i>table</i>, pas un message.',
-      lines: [
+    campaign: {
+      eyebrow: 'Une campagne jouée, de bout en bout',
+      title: 'Une soirée filmée, douze semaines de <i>terrasse</i>.',
+      steps: [
         {
-          who: 'caller',
-          text: 'Bonsoir, vous auriez de la place pour douze ce soir vers 20 h ?',
-          note: 'Votre plan de salle et vos capacités sont dans sa fiche : elle sait ce que douze veut dire chez vous.',
+          mark: 'J+0',
+          text: "Brief sur vos soirées : ce qui remplit, ce qui reste vide, quel public vous voudriez faire venir en semaine.",
+          note: "On ne filme pas le bar, on filme une soirée précise : celle que vous voulez rejouer douze fois.",
         },
+        { mark: 'J+3', text: "Repérage à l'heure du service, pour savoir où se met la caméra sans gêner la salle." },
         {
-          who: 'agent',
-          text: "Pour douze, c'est la salle du fond. Elle est libre à 20 h, je vous la réserve ?",
+          mark: 'J+7',
+          text: "Tournage un soir de service, avec l'équipe et les clients en place. Deux heures, sans couper le service.",
+          note: "L'ambiance ne se reconstitue pas à vide. On tourne quand la salle est pleine, c'est le seul moment crédible.",
         },
-        { who: 'caller', text: 'Oui. Et on peut manger un morceau ?' },
+        { mark: 'J+13', text: "Montage et déclinaisons : Reel vertical, TikTok, story de rappel le jour même." },
+        { mark: 'J+17', text: "Mise en ligne sur Meta et TikTok, ciblage dans un rayon serré autour de l'adresse." },
         {
-          who: 'agent',
-          text: "Planches et petite restauration jusqu'à 22 h 30. Je note douze couverts.",
-          note: 'La cuisine est prévenue par le même canal, avant le coup de feu, pas pendant.',
-        },
-        { who: 'caller', text: 'Nickel. Au nom de Lemaire.' },
-        {
-          who: 'agent',
-          text: 'Réservé, salle du fond, 20 h, douze personnes. Confirmation par message.',
-          note: "La réservation existe avant qu'elle raccroche, et personne au bar n'a lâché son service.",
+          mark: 'J+31',
+          text: "Premier arbitrage. On garde l'accroche qui fait pousser la porte, et on programme la diffusion aux heures de décision.",
+          note: "La diffusion se concentre en fin d'après-midi et en début de soirée : c'est là que le choix se fait.",
         },
       ],
     },
 
     during: {
-      eyebrow: 'Pendant l\'appel',
-      title: 'Quatre choses qu\'un répondeur ne fait <i>pas</i>.',
+      eyebrow: 'Ce qui ne se fait pas seul',
+      title: 'Quatre choses impossibles pendant le <i>service</i>.',
       items: [
         {
-          title: 'Elle connaît votre plan de salle',
-          text:
-            "Douze en terrasse ou douze au fond, ce n'est pas la même soirée. Elle place le groupe là où il tient, et le dit à l'appelant.",
+          title: 'Filmer une salle pleine sans la gêner',
+          text: "Une équipe qui se place, cadre et repart, sans ralentir un service ni braquer un projecteur sur vos clients.",
         },
         {
-          title: 'Elle ne quitte jamais le comptoir',
-          text:
-            "Votre équipe reste en service. Le téléphone cesse d'être une interruption à chaque tournée.",
+          title: 'Rendre le bruit et la lumière',
+          text: "Un bar se filme dans une lumière difficile. Sans étalonnage ni son travaillé, l'ambiance devient une salle sombre.",
         },
         {
-          title: 'Elle prend les demandes de privatisation',
-          text:
-            "Anniversaire, afterwork, départ en retraite : la demande arrive avec la date, le nombre et le budget, pas avec un rappel à passer.",
+          title: 'Diffuser au bon moment',
+          text: "Une vidéo publiée à 11 h du matin ne rencontre personne. La programmation horaire fait autant que le montage.",
         },
         {
-          title: 'Elle répond après la fermeture',
-          text:
-            "Celui qui organise sa soirée le fait souvent la veille à 23 h. Il trouve une réponse au lieu d'un répondeur.",
+          title: 'Séparer les groupes du passage',
+          text: "Une privatisation et un afterwork ne se vendent pas au même public. Deux ciblages, deux accroches, deux budgets.",
         },
       ],
     },
 
     gains: {
       eyebrow: 'Pour un bar',
-      title: 'Quatre choses qui changent dès le <i>premier</i> vendredi.',
+      title: 'Quatre choses qui changent dès le premier <i>vendredi</i>.',
       items: [
-        {
-          title: 'La salle du fond se remplit',
-          text: 'Les groupes qui appelaient pendant le service trouvent quelqu\'un, et réservent au lieu d\'essayer ailleurs.',
-        },
-        {
-          title: 'Votre équipe reste au bar',
-          text: 'Plus personne ne traverse la salle pour décrocher pendant le rush.',
-        },
-        {
-          title: 'Les privatisations arrivent qualifiées',
-          text: 'Date, nombre, budget et occasion sont écrits avant que vous rappeliez.',
-        },
-        {
-          title: 'La soirée se prépare avant 19 h',
-          text: 'La cuisine et la salle savent ce qui les attend, au lieu de découvrir douze couverts à 20 h.',
-        },
+        { title: 'La salle du fond se remplit', text: "Les groupes voient à quoi elle ressemble avant de choisir. Une table de douze ne se réserve pas à l'aveugle." },
+        { title: 'Les soirées creuses trouvent un public', text: "Le mardi et le mercredi se travaillent à part, avec leur propre accroche et leur propre budget." },
+        { title: 'Votre équipe reste au comptoir', text: "Plus personne ne s'improvise vidéaste entre deux tournées, et il y a quand même du contenu." },
+        { title: 'La saison de terrasse se lance à l\'heure', text: "Le tournage se fait en mai pour diffuser en juin, pas l'inverse." },
       ],
     },
 
     recordLead:
-      "Avant le service, vous ouvrez la liste du soir : les tables prises, les groupes, les couverts annoncés et les demandes de privatisation en attente.",
+      "Vous gardez les rushes de vos soirées, les montages dans tous les formats et une réserve de contenu qui tient jusqu'à la saison suivante.",
 
-    closeTitle: 'Appelez-la un <i>vendredi</i> soir.',
+    closeTitle: 'Filmons un <i>vendredi</i>.',
     closeLine:
-      "Nous la réglons sur votre plan de salle et vos horaires de cuisine, et vous l'appelez à l'heure du rush. C'est le seul test qui compte.",
+      "Deux heures un soir de service, sans rien changer à votre organisation. Vous voyez ensuite ce que la salle pleine donne à l'écran.",
   },
 
   /* ---------------------------------------------------------------------- */
   {
     slug: 'parfumerie',
     label: 'Parfumerie',
-    trade: 'Conseil et réassort',
+    trade: 'Conseil et marques de niche',
     coverLabel: 'Parfumerie',
     kind: 'sector',
 
     cover: {
-      title: 'Un conseil au <i>comptoir</i>.<br>Un appel sans réponse.',
+      title: 'Un parfum ne se voit pas.<br>Il se <i>raconte</i>.',
       lead:
-        "Vendre un parfum demande d'être avec la cliente, pas au téléphone. Mais celle qui appelle veut savoir si vous avez encore son flacon, et elle n'attendra pas.",
+        "Votre métier est le conseil, et le conseil ne passe pas dans une photo de flacon. Il passe dans une voix, un geste, un sillage décrit.",
     },
 
     pain: {
       eyebrow: 'Le problème',
-      title: 'Vous ne pouvez pas <i>quitter</i> une cliente au comptoir.',
+      title: 'Vous vendez du conseil, et vous montrez des <i>flacons</i>.',
       lead:
-        "Un conseil se donne en dix minutes, sur des touches et une peau. Pendant ce temps, la ligne sonne dans le vide, et personne ne peut décemment y aller.",
+        "Les visuels de marque arrivent tout faits et se ressemblent tous. Rien n'y distingue votre boutique de la chaîne d'à côté.",
       steps: [
-        { mark: '16 h 20', text: "Vous faites essayer trois sillages. La cliente hésite, c'est le bon moment." },
-        {
-          mark: '16 h 22',
-          text: 'Le téléphone sonne. Une personne cherche un coffret précis avant de se déplacer.',
-        },
-        { mark: '16 h 25', text: "Elle raccroche. Elle ne sait pas si vous l'avez, donc elle ne vient pas." },
-        {
-          mark: 'Décembre',
-          text: 'Le même scénario dix fois par jour pendant six semaines, au moment où chaque visite compte double.',
-        },
+        { mark: '10 h 00', text: "Vous recevez les visuels de la marque. Les mêmes que toutes les parfumeries du pays." },
+        { mark: '15 h 00', text: "Vous conseillez une cliente pendant dix minutes. C'est ce moment-là qui fait la vente, et il n'est filmé nulle part." },
+        { mark: 'Samedi', text: "Une passante hésite devant la vitrine. Rien ne lui dit qu'ici, on prend le temps d'expliquer." },
+        { mark: 'Décembre', text: "Vous faites une part énorme de l'année en six semaines, avec les visuels que tout le monde a." },
       ],
     },
 
     cost: {
-      title: 'Ce que les appels sans réponse <i>coûtent</i> à l\'année.',
-      missed: 6,
-      oneIn: 7,
+      title: 'Ce que votre visibilité vous coûte, <i>calculé</i> devant vous.',
+      monthlySpend: 350,
+      creatives: 2,
       value: 85,
       valueLabel: 'Panier moyen',
       valueNote: 'Un flacon de taille courante, hors coffret et hors fêtes.',
-      outcome: 'ressort',
+      spendNote: 'Posts boostés, vitrines, presse locale, opérations de marque.',
     },
 
-    call: {
-      eyebrow: 'Un appel, jeudi 16 h 22',
-      title: 'Elle fait <i>venir</i> la cliente en boutique.',
-      lines: [
+    campaign: {
+      eyebrow: 'Une campagne jouée, de bout en bout',
+      title: 'Votre conseil filmé, six semaines avant <i>décembre</i>.',
+      steps: [
         {
-          who: 'caller',
-          text: 'Bonjour, est-ce que vous avez encore le coffret de Noël de la maison italienne, en 100 ml ?',
-          note: 'Vos marques, vos formats et vos règles de réservation sont dans sa fiche.',
+          mark: 'J+0',
+          text: "Brief sur vos marques : ce que vous défendez, ce qui ne se trouve pas ailleurs, quelle cliente vous voulez faire entrer.",
+          note: "L'angle n'est jamais le flacon, c'est vous. Ce qui ne se copie pas, c'est votre façon de conseiller.",
         },
+        { mark: 'J+4', text: "Scripts : trois conseils courts, une famille olfactive par vidéo, une cliente et une question." },
         {
-          who: 'agent',
-          text: "Je vous mets une conseillère sur la référence exacte. Vous passez aujourd'hui ou demain ?",
+          mark: 'J+8',
+          text: "Tournage en boutique, une demi-journée. Le geste, les touches, le sillage expliqué à voix haute.",
+          note: "On filme un vrai conseil, pas un texte récité. C'est ce qui fait la différence avec un visuel de marque.",
         },
-        { who: 'caller', text: 'Demain en fin de journée, si vous le gardez.' },
+        { mark: 'J+14', text: "Montage et déclinaisons : Reel vertical, TikTok, et une série courte pour vos coffrets." },
+        { mark: 'J+18', text: "Mise en ligne sur Meta, ciblage local, avec une montée en budget avant les fêtes." },
         {
-          who: 'agent',
-          text: "Je note une mise de côté à votre nom pour demain 18 h. Votre nom et un numéro ?",
-          note: 'La mise de côté est écrite, datée et nominative : elle ne dépend plus de qui était là.',
-        },
-        { who: 'caller', text: 'Sanchez, et le numéro de ce téléphone.' },
-        {
-          who: 'agent',
-          text: "C'est noté. Si le format n'est plus en rayon, on vous prévient avant votre venue.",
-          note: 'Ce qui demande une vérification en rayon vous revient, au lieu de faire déplacer la cliente pour rien.',
+          mark: 'J+32',
+          text: "Premier arbitrage avant le pic. On garde le conseil qui fait entrer en boutique, et on charge le budget en décembre.",
+          note: "Le calendrier compte autant que le créatif : la campagne se règle pour être au maximum le premier week-end de décembre.",
         },
       ],
     },
 
     during: {
-      eyebrow: 'Pendant l\'appel',
-      title: 'Quatre choses qu\'un répondeur ne fait <i>pas</i>.',
+      eyebrow: 'Ce qui ne se fait pas seul',
+      title: 'Quatre choses hors de portée des visuels de <i>marque</i>.',
       items: [
         {
-          title: 'Elle vous laisse au comptoir',
-          text:
-            "La vente en cours ne s'interrompt plus. Le conseil qui allait conclure va au bout, et l'appel est traité quand même.",
+          title: 'Filmer un sillage',
+          text: "Un parfum ne se photographie pas. Il se rend par un geste, un regard, une hésitation et un mot juste.",
         },
         {
-          title: 'Elle note les mises de côté',
-          text:
-            "Nom, référence, format et heure de passage. Une réservation cesse de vivre sur un bout de papier près de la caisse.",
+          title: 'Tenir la lumière sur un verre',
+          text: "Un flacon est un objet réfléchissant. Sans éclairage maîtrisé, il devient une tache blanche au milieu de l'image.",
         },
         {
-          title: 'Elle tient les six semaines de décembre',
-          text:
-            "Le volume d'appels triple, et elle décroche pareil au dixième comme au premier. Votre équipe ne fait que vendre.",
+          title: 'Sortir du visuel de la marque',
+          text: "Les images fournies sont les mêmes partout. Ce qui vous appartient, c'est votre boutique et votre conseil.",
         },
         {
-          title: 'Elle oriente vers une conseillère',
-          text:
-            "Une question de peau, de tenue ou d'allergie ne se traite pas au téléphone : elle passe la main plutôt que d'improviser.",
+          title: 'Charger le budget au bon moment',
+          text: "Décembre pèse une part énorme de votre année. La montée en budget se prépare six semaines avant, pas le 1er du mois.",
         },
       ],
     },
@@ -707,40 +606,21 @@ export const SECTORS = [
       eyebrow: 'Pour une parfumerie',
       title: 'Quatre choses qui changent avant les <i>fêtes</i>.',
       items: [
-        {
-          title: 'Les appels deviennent des visites',
-          text: 'Celle qui appelle pour savoir si vous avez le flacon repart avec une heure de passage, pas avec un doute.',
-        },
-        {
-          title: 'Le conseil au comptoir va au bout',
-          text: "Plus d'interruption au moment où la cliente se décide, donc moins de ventes perdues sur le fil.",
-        },
-        {
-          title: 'Les mises de côté sont écrites',
-          text: 'Une réservation ne dépend plus de la personne qui l\'a prise, ni de sa mémoire le lendemain.',
-        },
-        {
-          title: 'Décembre devient tenable',
-          text: 'Le pic saisonnier ne se traduit plus par des appels perdus, au moment où ils valent le plus cher.',
-        },
+        { title: 'Votre conseil devient votre publicité', text: "Ce que vous faites déjà toute la journée devient le contenu qui vous distingue de la chaîne." },
+        { title: 'Les coffrets se vendent avant la vitrine', text: "La cliente sait ce qu'elle vient chercher, et elle entre décidée au lieu d'hésiter dehors." },
+        { title: 'Vous existez à côté des marques', text: "Les visuels de marque continuent d'arriver, mais ils ne sont plus votre seule voix." },
+        { title: 'Décembre se pilote au lieu de se subir', text: "Le budget monte quand la demande monte, et vous voyez ce que chaque semaine rapporte." },
       ],
     },
 
     recordLead:
-      "Chaque soir, vous relisez les demandes du jour : les références cherchées, les mises de côté à préparer et les clientes annoncées pour le lendemain.",
+      "Vous gardez les rushes tournés en boutique, les montages dans tous les formats et une bibliothèque de conseils réutilisable d'une saison à l'autre.",
 
-    closeTitle: 'Testez-la sur vos <i>marques</i>.',
+    closeTitle: 'Filmons <i>trois</i> conseils.',
     closeLine:
-      "Nous la configurons sur vos maisons et vos formats, et vous l'appelez comme une cliente pressée. Vous jugez sur ce qu'elle répond, pas sur ce que nous écrivons.",
+      "Une demi-journée en boutique, trois familles olfactives, deux semaines de diffusion. Vous jugez sur ce qui entre, pas sur ce que nous écrivons.",
   },
 ];
-
-/* -------------------------------------------------------------------------
-   Le document de groupe
-   ------------------------------------------------------------------------- *
- * L'argument central : aucun de ces quatre commerces ne justifie une
- * standardiste à lui seul, et chacun en mérite une quand même.
- */
 
 export const GROUP = {
   slug: 'groupe',
@@ -750,119 +630,77 @@ export const GROUP = {
   kind: 'group',
 
   cover: {
-    title: 'Quatre commerces.<br>Quatre lignes qui <i>sonnent</i> dans le vide.',
+    title: 'Quatre commerces.<br>Quatre publics qui ne se <i>croisent</i> jamais.',
     lead:
-      "Aucun de vos quatre commerces ne justifie d'embaucher quelqu'un à l'accueil. Chacun perd pourtant des clients faute de décrocher, et ce n'est jamais aux mêmes heures.",
+      "Aucun de vos quatre commerces ne justifie d'embaucher une équipe créative à lui seul. Chacun en mérite une, et aucun ne peut se contenter des vidéos d'un autre.",
   },
 
   pain: {
     eyebrow: 'Le problème',
-    title: 'Le même problème, quatre fois, à quatre <i>heures</i> différentes.',
+    title: "Le même manque, quatre fois, à quatre <i>saisons</i> différentes.",
     lead:
-      "Un standard mutualisé ne marcherait pas : vos quatre commerces n'ont ni les mêmes horaires, ni la même clientèle, ni les mêmes questions. C'est précisément ce qui rend le poste impossible à créer.",
+      "Mutualiser un contenu ne marcherait pas : vos quatre commerces ne parlent ni au même public, ni au même moment de l'année. C'est précisément ce qui rend le poste impossible à créer en interne.",
     steps: [
-      { mark: '7 h 40', text: 'La pâtisserie est en production. Le laboratoire ne peut pas décrocher.' },
-      { mark: '11 h 00', text: 'La concession est en essai et en showroom. Le samedi, tout le monde est en clientèle.' },
-      { mark: '16 h 20', text: 'La parfumerie conseille au comptoir. Quitter une cliente coûte la vente.' },
-      { mark: '18 h 45', text: 'Le bar entre en service. Personne n\'entend la sonnerie derrière le comptoir.' },
+      { mark: 'Mars', text: "La concession sort ses occasions de printemps. Personne ne filme les véhicules, les annonces partent avec des photos de téléphone." },
+      { mark: 'Juin', text: "Le bar ouvre sa terrasse. La saison se joue en douze semaines, et rien n'est prêt pour l'annoncer." },
+      { mark: 'Septembre', text: "La pâtisserie prépare les commandes de fin d'année. Les pièces les plus spectaculaires ne seront jamais filmées." },
+      { mark: 'Décembre', text: "La parfumerie fait son année. Trois de vos quatre commerces jouent gros le même mois, et vous ne pouvez pas les tourner la même semaine." },
     ],
   },
 
   contrast: {
-    eyebrow: 'Pourquoi un seul standard ne suffirait pas',
-    title: 'Vos quatre téléphones ne sonnent pas aux mêmes <i>heures</i>.',
+    eyebrow: 'Pourquoi un seul contenu ne suffirait pas',
+    title: 'Vos quatre commerces ne jouent pas leur année aux mêmes <i>mois</i>.',
     lead:
-      "Chaque barre marque la plage où la ligne sonne le plus, d'après vos propres observations. Les quatre ne se recouvrent presque jamais.",
+      "Chaque barre marque la période où le commerce fait son chiffre. C'est elle qui commande la date de tournage, et elle ne se déplace pas.",
     lanes: [
-      {
-        name: 'Concession',
-        trade: 'Le samedi surtout',
-        peakFrom: 9,
-        peakTo: 12.5,
-        peakLabel: 'Samedi matin',
-      },
-      {
-        name: 'Pâtisserie',
-        trade: 'Avant et pendant la production',
-        peakFrom: 7,
-        peakTo: 10.5,
-        peakLabel: 'Tôt le matin',
-      },
-      {
-        name: 'Parfumerie',
-        trade: 'Fin de journée, et décembre',
-        peakFrom: 15,
-        peakTo: 19,
-        peakLabel: 'Fin d\'après-midi',
-      },
-      {
-        name: 'Bar',
-        trade: 'Le soir, du jeudi au samedi',
-        peakFrom: 18,
-        peakTo: 23,
-        peakLabel: 'Service du soir',
-      },
+      { name: 'Concession', trade: 'Rentrée et printemps', peakFrom: 3, peakTo: 6, peakLabel: 'Mars à mai' },
+      { name: 'Bar', trade: 'La terrasse, puis les fêtes', peakFrom: 6, peakTo: 9, peakLabel: 'Juin à août' },
+      { name: 'Pâtisserie', trade: 'Communions, puis fin d\'année', peakFrom: 5, peakTo: 7, peakLabel: 'Mai et juin' },
+      { name: 'Parfumerie', trade: "Décembre pèse l'année", peakFrom: 11, peakTo: 13, peakLabel: 'Novembre et décembre' },
     ],
     note:
-      "Ces plages sont à confirmer avec vous : elles viennent de la logique du métier, pas d'une mesure. Une configuration par commerce est de toute façon nécessaire, quelles que soient les heures exactes.",
+      "Ces périodes sont à confirmer avec vous : elles viennent de la logique de chaque métier, pas d'une mesure.",
   },
 
   groupCost: {
-    title: 'Quatre manques à gagner, un seul <i>total</i>.',
+    title: 'Quatre budgets de visibilité, un seul <i>total</i>.',
     text:
-      "Pris séparément, aucun de ces montants ne justifie de créer un poste. Additionnés, ils paient largement quatre lignes qui décrochent, et il reste de la marge.",
+      "Pris séparément, aucun de ces montants ne justifie de créer un poste. Additionnés, ils financent largement une production suivie pour les quatre, et il reste de la marge.",
   },
 
-  call: {
-    eyebrow: 'Un appel, samedi 11 h 04, à la concession',
-    title: 'Une seule mécanique, <i>quatre</i> configurations.',
-    lines: [
-      {
-        who: 'caller',
-        text: 'Bonjour, la Golf grise annoncée à 18 900 €, elle est toujours disponible ?',
-        note: "La même réceptionniste, sur la ligne de la pâtisserie, aurait parlé de parts et d'allergènes.",
-      },
-      {
-        who: 'agent',
-        text: "Oui, elle est encore là. Vous voulez l'essayer ? J'ai samedi 11 h ou lundi 17 h.",
-      },
-      { who: 'caller', text: "Samedi. Et j'ai une Clio à reprendre." },
-      {
-        who: 'agent',
-        text: 'Je note la reprise. Année, kilométrage, état général ?',
-        note: 'Ce sont vos règles à vous qui décident des questions posées, commerce par commerce.',
-      },
-      {
-        who: 'agent',
-        text: "C'est réservé samedi à 11 h. Vous recevez la confirmation par message.",
-        note: "Chaque commerce garde son agenda, son numéro et ses réponses. Rien n'est mutualisé côté client.",
-      },
+  campaign: {
+    eyebrow: 'Une journée de tournage, quatre commerces',
+    title: 'Un déplacement, <i>quatre</i> bibliothèques de contenu.',
+    steps: [
+      { mark: 'J+0', text: "Un seul brief pour les quatre : cibles, angles, calendrier de saison commerce par commerce.", note: "C'est là que se décide l'ordre des tournages, en fonction du mois où chacun joue son chiffre." },
+      { mark: 'J+7', text: "Repérage et scripts. Chaque commerce reçoit ses propres accroches, écrites pour son public." },
+      { mark: 'J+12', text: "Tournage groupé sur deux journées, une équipe qui se déplace d'une adresse à l'autre.", note: "Le déplacement est mutualisé, la direction artistique ne l'est pas : chaque enseigne garde son registre." },
+      { mark: 'J+18', text: "Montage et déclinaisons. Chaque vidéo sort au format de la plateforme qui la portera." },
+      { mark: 'J+21', text: "Mise en ligne des quatre campagnes, avec un compte publicitaire par commerce." },
+      { mark: 'J+35', text: "Premier arbitrage. Les accroches qui ne prennent pas sont coupées, les autres reçoivent le budget.", note: "Les quatre comptes se lisent au même endroit, mais chacun garde son budget et ses audiences." },
     ],
   },
 
   during: {
     eyebrow: 'Ce que le groupe y gagne',
-    title: 'Quatre lignes, une seule <i>lecture</i>.',
+    title: 'Quatre enseignes, une seule <i>lecture</i>.',
     items: [
       {
         title: 'Chaque commerce garde son identité',
-        text:
-          "Son numéro, sa voix, ses horaires et ses réponses. Un appelant ne saura jamais que les quatre partagent un outil.",
+        text: "Son registre, ses couleurs, son public. Rien n'indique au client final que les quatre partagent une agence.",
+      },
+      {
+        title: 'Un seul déplacement pour plusieurs tournages',
+        text: "L'équipe enchaîne les adresses sur une même venue. Ce qui coûte cher dans un tournage, c'est de le monter quatre fois.",
       },
       {
         title: 'Vous lisez les quatre au même endroit',
-        text:
-          "Les appels, les rendez-vous et les demandes remontent dans la même interface, filtrables par commerce.",
+        text: "Un reporting par commerce, et une vue d'ensemble. Vous voyez enfin lequel de vos quatre budgets travaille le mieux.",
       },
       {
-        title: 'Une configuration sert de modèle aux suivantes',
-        text:
-          "Le premier commerce demande une heure de votre temps. Les trois autres démarrent plus vite, parce que la méthode est déjà rodée.",
-      },
-      {
-        title: 'Un cinquième commerce se branche pareil',
-        text:
-          "Si vous ouvrez ailleurs, la ligne se configure sur le même modèle, sans repartir de zéro.",
+        title: 'Un cinquième commerce entre sans repartir de zéro',
+        text: "La méthode, les formats et les audiences existent déjà. Une nouvelle enseigne démarre sur ce qui a été appris ailleurs.",
       },
     ],
   },
@@ -872,30 +710,30 @@ export const GROUP = {
     title: 'Quatre décisions que ça vous <i>évite</i>.',
     items: [
       {
-        title: "Ne pas créer un poste d'accueil",
-        text: "Un standard salarié coûterait plus que les quatre lignes réunies, et ne couvrirait pas le soir ni le dimanche.",
+        title: "Ne pas recruter un poste créatif",
+        text: "Un vidéaste salarié coûterait plus que les quatre accompagnements réunis, et ne saurait pas gérer la diffusion.",
       },
       {
-        title: 'Ne pas arbitrer entre vos commerces',
-        text: 'Aucun n\'a besoin d\'attendre son tour : les quatre démarrent dans le même mois.',
+        title: 'Ne pas arbitrer entre vos enseignes',
+        text: "Aucune n'attend son tour : le calendrier de tournage suit les saisons, pas les priorités du mois.",
       },
       {
-        title: "Ne pas mutualiser ce qui ne se mutualise pas",
-        text: 'Les horaires, les clientèles et les questions restent propres à chaque enseigne.',
+        title: 'Ne pas mutualiser ce qui ne se mutualise pas',
+        text: "Le public, le ton et la saison restent propres à chaque commerce. Seule la logistique se partage.",
       },
       {
-        title: 'Ne pas piloter à l\'aveugle',
-        text: "Le volume d'appels de chaque commerce devient un chiffre, comparable d'un mois à l'autre.",
+        title: "Ne pas piloter à l'aveugle",
+        text: "La dépense de visibilité de chaque commerce devient un chiffre lisible, comparable d'un mois à l'autre.",
       },
     ],
   },
 
   recordLead:
-    "Chaque lundi, vous ouvrez une seule page : les appels des quatre commerces, ce qui a été pris, ce qui a été promis, et ce qui attend une réponse de votre part.",
+    "Chaque mois, vous ouvrez une seule page : ce qui a été tourné, ce qui est diffusé, ce que chaque commerce a dépensé et ce que chaque accroche a produit.",
 
   closeTitle: 'Commençons par <i>un</i> commerce.',
   closeLine:
-    "Choisissez celui qui perd le plus d'appels, nous l'installons en dix jours. Les trois autres suivent une fois que vous avez entendu le premier.",
+    "Choisissez celui dont la saison arrive en premier, nous le tournons dans les trois semaines. Les trois autres suivent une fois que vous avez vu les premiers résultats.",
 };
 
 /** Les cinq documents produits, dans l'ordre de génération. */

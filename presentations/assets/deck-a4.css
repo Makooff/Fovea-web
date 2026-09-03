@@ -153,7 +153,7 @@ h2 {
   border-top: 0;
 }
 
-/* --- L'appel : l'annotation passe SOUS la réplique qu'elle commente ---- */
+/* --- L'appel et la campagne jouée : l'annotation passe SOUS l'étape ---- */
 
 .call__grid {
   grid-template-columns: 1fr;
@@ -177,6 +177,21 @@ h2 {
 
 .line__note .note__tag {
   margin-bottom: 2px;
+}
+
+/* En portrait, le repère de date passe au-dessus de son étape : 74 px de
+   colonne sur 698 px de largeur utile mangeraient le texte. */
+.step {
+  grid-template-columns: 1fr;
+  gap: 4px;
+}
+
+.step__mark {
+  padding-top: 0;
+}
+
+.step .line__note {
+  grid-column: 1;
 }
 
 /* --- Quadrant : deux colonnes deviennent une pile ---------------------- */

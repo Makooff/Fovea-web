@@ -46,8 +46,8 @@ dix PDF se réécrivent.
 | Vous voulez changer | Ouvrez |
 |---|---|
 | Un argument, une phrase, un titre | `content.mjs` |
-| Un chiffre du calcul du manque à gagner | `content.mjs`, bloc `cost` du commerce |
-| Le nombre de semaines d'activité retenu | `content.mjs`, `HYPOTHESES.weeksPerYear` |
+| Un chiffre du calcul de la dépense de visibilité | `content.mjs`, bloc `cost` du commerce |
+| Les saisons de la frise du groupe | `content.mjs`, `GROUP.contrast.lanes` |
 | Les coordonnées, la signature | `content.mjs`, bloc `BRAND` |
 | Les limites annoncées | `content.mjs`, `COMMON.limits` |
 | La mise en page 16:9 | `assets/deck.css` |
@@ -61,22 +61,25 @@ cherchez un texte, c'est qu'il est dans `content.mjs`.
 
 ## Ce qu'il y a dans un document
 
+Ces documents vendent **l'offre Fovea** : production vidéo publicitaire et
+gestion de campagnes Ads. Rien d'autre.
+
 Douze planches par commerce, treize pour le groupe, toujours dans le même
-ordre : couverture, le problème en quatre moments datés, le calcul du manque à
-gagner, ce que nous installons, un appel joué de bout en bout, ce qu'elle fait
-pendant l'appel, ce qui la rend crédible au téléphone, ce que ça change pour ce
-métier, ce que vous récupérez après, la mise en route, ce que nous ne
-promettons pas, la prochaine étape.
+ordre : couverture, le problème en quatre moments datés du métier, ce que la
+visibilité coûte déjà, ce que fait Fovea, une campagne jouée de bout en bout,
+ce qui ne se fait pas seul, ce qui nous distingue, ce que ça change pour ce
+métier, ce qui vous reste, la mise en route, ce que nous ne promettons pas, la
+prochaine étape.
 
-Le document de groupe insère deux planches en plus et remplace le calcul par
-l'addition des quatre : **pourquoi les quatre téléphones ne sonnent pas aux
-mêmes heures** (une frise à quatre voies) et **les quatre manques à gagner
-additionnés**.
+Le document de groupe insère deux planches et remplace le calcul par
+l'addition des quatre : **pourquoi les quatre commerces ne jouent pas leur
+année aux mêmes mois** (une frise saisonnière à quatre voies) et **les quatre
+budgets de visibilité additionnés**.
 
-Cinq planches sur douze portent un contenu commun (le produit, la crédibilité,
-ce qui reste, la mise en route, les limites). Les sept autres sont écrites
-commerce par commerce : c'est là que se joue la différence entre une plaquette
-et une proposition.
+Cinq planches sur douze portent un contenu commun (ce que fait Fovea, ce qui
+nous distingue, ce qui vous reste, la mise en route, les limites). Les sept
+autres sont écrites commerce par commerce : c'est là que se joue la différence
+entre une plaquette et une proposition.
 
 ---
 
@@ -84,11 +87,11 @@ et une proposition.
 
 1. Copiez l'objet du **bar** dans `SECTORS` (`content.mjs`), c'est le plus court.
 2. Changez `slug`, `label`, `trade`, `coverLabel`, puis réécrivez `cover`,
-   `pain`, `cost`, `call`, `during`, `gains`, `recordLead`, `closeTitle` et
-   `closeLine`.
+   `pain`, `cost`, `campaign`, `during`, `gains`, `recordLead`, `closeTitle`
+   et `closeLine`.
 3. Ajoutez sa voie dans `GROUP.contrast.lanes` (`name`, `trade`, `peakFrom`,
-   `peakTo`, `peakLabel`), sinon la frise du document de groupe ne le montrera
-   pas.
+   `peakTo`, `peakLabel`, en numéros de mois de 1 à 13), sinon la frise du
+   document de groupe ne le montrera pas.
 4. `npm run decks`. Le nouveau document sort, et l'addition du groupe se
    recalcule toute seule.
 
@@ -105,16 +108,24 @@ mise en page, et de relire les arguments d'affilée sans les chercher au milieu
 du HTML.
 
 **Les montants se calculent, ils ne se recopient pas.** `computeCost()` dérive
-les occasions perdues et le total depuis trois hypothèses affichées sur la
-planche. L'addition du document de groupe additionne les quatre résultats. Un
-total écrit à la main finirait par contredire les lignes au-dessus le jour où
-l'un des chiffres bouge.
+la dépense annuelle, le coût par créatif testé et le nombre de clients à
+ramener, depuis trois hypothèses affichées sur la planche. L'addition du
+document de groupe additionne les quatre résultats. Un total écrit à la main
+finirait par contredire les lignes au-dessus le jour où l'un des chiffres
+bouge.
 
-**Aucune statistique de marché.** Le calcul est présenté comme une illustration
-à remplir avec les chiffres du client, jamais comme une étude. Une source
-inventée se retourne contre vous au premier rendez-vous. Les hypothèses sont
-volontairement basses (48 semaines d'activité, pas 52) : une hypothèse basse se
-défend, une hypothèse haute se conteste.
+**L'argument n'est jamais « dépensez plus ».** Le calcul part de ce que le
+commerçant dépense DÉJÀ pour être vu (posts boostés, flyers, presse locale) et
+du nombre de créatifs qu'il a réellement testés. La conclusion n'est pas qu'il
+manque un budget, c'est que celui qui sort n'est pas mesuré.
+
+**Aucune statistique de marché, et aucun chiffre de performance.** Le calcul
+est une illustration à remplir avec les chiffres du client, jamais une étude.
+Les chiffres de performance affichés sur le site (ROAS, nombre de clients) se
+contredisent d'un fichier à l'autre : `Stats.tsx` annonce 4×, `StatsBand.tsx`
+4,2×, les maquettes de packs 4,5, et le nombre de clients passe de 85 à 30
+selon la source. Aucun n'est imprimable dans une proposition signée, donc
+aucun n'y figure.
 
 **Les jetons de la charte sont recopiés, pas importés.** `app/globals.css` est
 écrit pour Tailwind et pour un build ; un PDF doit se rendre sans outil. Si une
