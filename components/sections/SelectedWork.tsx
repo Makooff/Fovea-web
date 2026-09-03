@@ -39,21 +39,21 @@ function WorkItem({ src, vertical, index }: { src: string; vertical: boolean; in
         {/* Hover overlay */}
         <div
           className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          style={{ background: "oklch(0.04 0 0 / 0.35)" }}
+          style={{ background: "rgba(20, 21, 25, 0.35)" }}
         />
         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <motion.div
             className="w-16 h-16 rounded-full flex items-center justify-center"
             style={{
-              background: "oklch(0.96 0 0 / 0.12)",
-              border: "1px solid oklch(0.96 0 0 / 0.45)",
+              background: "rgba(244, 244, 246, 0.12)",
+              border: "1px solid rgba(244, 244, 246, 0.45)",
               backdropFilter: "blur(8px)",
             }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
             <svg width="14" height="16" viewBox="0 0 14 16" className="translate-x-0.5">
-              <path d="M0 0L14 8L0 16V0Z" fill="oklch(0.96 0 0)" />
+              <path d="M0 0L14 8L0 16V0Z" fill="var(--cream)" />
             </svg>
           </motion.div>
         </div>
@@ -63,7 +63,7 @@ function WorkItem({ src, vertical, index }: { src: string; vertical: boolean; in
         {selected && (
           <motion.div
             className="fixed inset-0 z-[100] flex items-center justify-center p-5"
-            style={{ background: "oklch(0.04 0 0 / 0.97)" }}
+            style={{ background: "rgba(20, 21, 25, 0.97)" }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -81,9 +81,9 @@ function WorkItem({ src, vertical, index }: { src: string; vertical: boolean; in
               <button
                 onClick={() => setSelected(false)}
                 className="absolute -top-10 right-0 font-sora text-sm transition-colors"
-                style={{ color: "oklch(0.45 0 0)" }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "oklch(0.96 0 0)")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "oklch(0.45 0 0)")}
+                style={{ color: "var(--cream-dim)" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--cream)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "var(--cream-dim)")}
               >
                 Fermer
               </button>
@@ -105,13 +105,13 @@ function WorkItem({ src, vertical, index }: { src: string; vertical: boolean; in
 
 export default function SelectedWork() {
   return (
-    <section style={{ background: "oklch(0.06 0 0)" }}>
+    <section style={{ background: "var(--ink)" }}>
       <div className="flex flex-col gap-[3px]">
         {works.map((w, i) => (
           <div
             key={i}
             className={`w-full flex ${w.vertical ? "justify-center" : ""}`}
-            style={{ background: "oklch(0.04 0 0)" }}
+            style={{ background: "var(--ink)" }}
           >
             <WorkItem src={w.src} vertical={w.vertical} index={i} />
           </div>

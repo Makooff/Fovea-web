@@ -10,8 +10,8 @@ function Surface({ children }: { children: React.ReactNode }) {
     <div
       className="w-full h-full rounded-2xl p-5 overflow-hidden relative"
       style={{
-        background: "linear-gradient(160deg, rgba(245,240,236,0.04), rgba(245,240,236,0.015))",
-        border: "1px solid rgba(245,240,236,0.08)",
+        background: "linear-gradient(160deg, rgba(244, 244, 246,0.04), rgba(244, 244, 246,0.015))",
+        border: "1px solid rgba(244, 244, 246,0.08)",
       }}
     >
       {children}
@@ -26,7 +26,7 @@ function StrategyMock({ inView }: { inView: boolean }) {
       <div className="flex flex-col gap-3 h-full">
         <motion.div
           className="h-7 w-1/2 rounded-md"
-          style={{ background: "rgba(245,240,236,0.10)" }}
+          style={{ background: "rgba(244, 244, 246,0.10)" }}
           initial={{ opacity: 0, x: -16 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6, ease }}
@@ -35,7 +35,7 @@ function StrategyMock({ inView }: { inView: boolean }) {
           <motion.div
             key={i}
             className="h-3 rounded"
-            style={{ background: "rgba(245,240,236,0.06)", width: `${90 - i * 12}%` }}
+            style={{ background: "rgba(244, 244, 246,0.06)", width: `${90 - i * 12}%` }}
             initial={{ opacity: 0, x: -16 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.1 + i * 0.08, duration: 0.5, ease }}
@@ -49,9 +49,9 @@ function StrategyMock({ inView }: { inView: boolean }) {
               style={{
                 background:
                   i === 1
-                    ? "linear-gradient(135deg, rgba(255,138,61,0.22), rgba(255,61,119,0.22))"
-                    : "rgba(245,240,236,0.05)",
-                border: "1px solid rgba(245,240,236,0.06)",
+                    ? "linear-gradient(135deg, rgba(240, 121, 111,0.22), rgba(229, 82, 74,0.22))"
+                    : "rgba(244, 244, 246,0.05)",
+                border: "1px solid rgba(244, 244, 246,0.06)",
               }}
               initial={{ opacity: 0, y: 18 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -72,7 +72,7 @@ function ProductionMock({ inView }: { inView: boolean }) {
       <div className="flex flex-col h-full gap-4">
         <motion.div
           className="h-3 w-1/3 rounded"
-          style={{ background: "rgba(245,240,236,0.10)" }}
+          style={{ background: "rgba(244, 244, 246,0.10)" }}
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5 }}
@@ -88,7 +88,7 @@ function ProductionMock({ inView }: { inView: boolean }) {
                 style={{
                   background: hot
                     ? "linear-gradient(to top, var(--sun-1), var(--sun-2))"
-                    : "rgba(245,240,236,0.18)",
+                    : "rgba(244, 244, 246,0.18)",
                 }}
                 initial={{ height: 4, opacity: 0 }}
                 animate={inView ? { height: `${h}%`, opacity: 1 } : {}}
@@ -102,7 +102,7 @@ function ProductionMock({ inView }: { inView: boolean }) {
             <motion.div
               key={i}
               className="h-8 rounded-lg flex-1"
-              style={{ background: "rgba(245,240,236,0.05)", border: "1px solid rgba(245,240,236,0.06)" }}
+              style={{ background: "rgba(244, 244, 246,0.05)", border: "1px solid rgba(244, 244, 246,0.06)" }}
               initial={{ opacity: 0, y: 12 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.4 + i * 0.08, duration: 0.5, ease }}
@@ -133,7 +133,7 @@ function DataMock({ inView }: { inView: boolean }) {
             <motion.div
               key={i}
               className="rounded-xl p-2.5"
-              style={{ background: "rgba(245,240,236,0.05)", border: "1px solid rgba(245,240,236,0.07)" }}
+              style={{ background: "rgba(244, 244, 246,0.05)", border: "1px solid rgba(244, 244, 246,0.07)" }}
               initial={{ opacity: 0, y: 14 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.1 + i * 0.08, duration: 0.5, ease }}
@@ -150,7 +150,7 @@ function DataMock({ inView }: { inView: boolean }) {
         </div>
         <div
           className="flex-1 rounded-xl p-3 flex items-end gap-[5px]"
-          style={{ background: "rgba(245,240,236,0.03)", border: "1px solid rgba(245,240,236,0.06)" }}
+          style={{ background: "rgba(244, 244, 246,0.03)", border: "1px solid rgba(244, 244, 246,0.06)" }}
         >
           {bars.map((h, i) => (
             <motion.div
@@ -160,7 +160,7 @@ function DataMock({ inView }: { inView: boolean }) {
                 background:
                   i === bars.length - 1
                     ? "linear-gradient(to top, var(--sun-1), var(--sun-2))"
-                    : "rgba(245,240,236,0.12)",
+                    : "rgba(244, 244, 246,0.12)",
               }}
               initial={{ height: 0 }}
               animate={inView ? { height: `${h}%` } : {}}

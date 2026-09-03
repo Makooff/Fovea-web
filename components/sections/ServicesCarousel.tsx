@@ -323,7 +323,7 @@ export default function ServicesCarousel() {
                       style={{ opacity: isActive ? 1 : 0 }}
                     >
                       <span className="w-2 h-2 rounded-full" style={{ background: "var(--sun-1)", boxShadow: "0 0 10px var(--sun-1)" }} />
-                      <span className="text-[10px] font-mono uppercase tracking-[0.3em]" style={{ color: "rgba(245,240,236,0.8)" }}>
+                      <span className="text-[10px] font-mono uppercase tracking-[0.3em]" style={{ color: "rgba(244, 244, 246,0.8)" }}>
                         Showreel
                       </span>
                     </div>

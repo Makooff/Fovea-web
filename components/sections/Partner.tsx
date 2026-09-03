@@ -18,7 +18,7 @@ export default function Partner() {
   const inView = useInView(ref, { once: true, margin: "-15%" });
 
   return (
-    <section ref={ref} id="partenaire" className="py-20 px-5" style={{ background: "oklch(0.10 0 0)" }}>
+    <section ref={ref} id="partenaire" className="py-20 px-5" style={{ background: "var(--ink-2)" }}>
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
           <motion.div
@@ -26,14 +26,14 @@ export default function Partner() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
           >
-            <p className="font-mono text-[10px] uppercase tracking-wider mb-6" style={{ color: "oklch(0.38 0 0)" }}>
+            <p className="font-mono text-[10px] uppercase tracking-wider mb-6" style={{ color: "var(--cream-faint)" }}>
               Partenaire Exclusif
             </p>
             <div className="flex items-center gap-3 mb-6">
               <QwillioLogo size={44} />
               <QwillioName size="44px" />
             </div>
-            <p className="font-sora font-light text-sm leading-relaxed mb-8 max-w-md" style={{ color: "oklch(0.45 0 0)" }}>
+            <p className="font-sora font-light text-sm leading-relaxed mb-8 max-w-md" style={{ color: "var(--cream-dim)" }}>
               Qwillio propose au grand public une réceptionniste IA, un agent Email AI et un agent Payments AI.
               En plus, Qwillio conçoit des sites web sur mesure — uniquement pour les clients Fovea.
               Un avantage exclusif inclus dans le partenariat.
@@ -43,9 +43,9 @@ export default function Partner() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center font-sora font-light text-sm transition-colors"
-              style={{ color: "oklch(0.75 0 0)" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "oklch(0.96 0 0)")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "oklch(0.75 0 0)")}
+              style={{ color: "var(--cream-dim)" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--cream)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--cream-dim)")}
             >
               Visiter Qwillio.com
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="ml-1.5 shrink-0">
@@ -54,20 +54,20 @@ export default function Partner() {
             </Link>
           </motion.div>
 
-          <div className="flex flex-col" style={{ borderTop: "1px solid oklch(0.16 0 0)" }}>
+          <div className="flex flex-col" style={{ borderTop: "1px solid var(--ink-3)" }}>
             {features.map((f, i) => (
               <motion.div
                 key={i}
                 className="py-5"
-                style={{ borderBottom: "1px solid oklch(0.16 0 0)" }}
+                style={{ borderBottom: "1px solid var(--ink-3)" }}
                 initial={{ opacity: 0, x: 20 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: i * 0.08, duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
               >
-                <p className="font-sora font-medium text-sm leading-snug mb-0.5" style={{ color: "oklch(0.96 0 0)" }}>
+                <p className="font-sora font-medium text-sm leading-snug mb-0.5" style={{ color: "var(--cream)" }}>
                   {f.title}
                 </p>
-                <p className="font-sora font-light text-xs leading-relaxed" style={{ color: "oklch(0.45 0 0)" }}>
+                <p className="font-sora font-light text-xs leading-relaxed" style={{ color: "var(--cream-dim)" }}>
                   {f.desc}
                 </p>
               </motion.div>

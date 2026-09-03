@@ -61,7 +61,7 @@ function Step({
       <div className="flex flex-col items-center">
         <motion.div
           className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 relative"
-          style={{ border: "1px solid oklch(0.22 0 0)" }}
+          style={{ border: "1px solid var(--ink-4)" }}
           initial={{ scale: 0.6, opacity: 0 }}
           animate={inView ? { scale: 1, opacity: 1 } : {}}
           transition={{ delay: 0.15, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
@@ -69,14 +69,14 @@ function Step({
           {/* Inner dot pulse when in view */}
           <motion.div
             className="absolute inset-0 rounded-full"
-            style={{ border: "1px solid oklch(0.35 0 0)" }}
+            style={{ border: "1px solid var(--cream-faint)" }}
             initial={{ scale: 1.4, opacity: 0 }}
             animate={inView ? { scale: 1, opacity: 0.5 } : {}}
             transition={{ delay: 0.3, duration: 0.6 }}
           />
           <span
             className="font-mono text-[11px]"
-            style={{ color: "oklch(0.65 0 0)" }}
+            style={{ color: "var(--cream-dim)" }}
           >
             {step.num}
           </span>
@@ -88,7 +88,7 @@ function Step({
             className="flex-1 w-px mt-3"
             style={{
               background:
-                "linear-gradient(to bottom, oklch(0.25 0 0), oklch(0.14 0 0))",
+                "linear-gradient(to bottom, var(--ink-4), var(--ink-3))",
               minHeight: "40px",
               originY: 0,
             }}
@@ -103,7 +103,7 @@ function Step({
       <div className="pb-2">
         <motion.p
           className="font-mono text-[9px] uppercase tracking-wider mb-2"
-          style={{ color: "oklch(0.38 0 0)" }}
+          style={{ color: "var(--cream-faint)" }}
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.2, duration: 0.5 }}
@@ -112,7 +112,7 @@ function Step({
         </motion.p>
         <motion.h3
           className="font-sora font-light text-[26px] mb-2 leading-snug"
-          style={{ color: "oklch(0.96 0 0)", letterSpacing: "-0.02em" }}
+          style={{ color: "var(--cream)", letterSpacing: "-0.02em" }}
           initial={{ opacity: 0, y: 12 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.22, duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
@@ -121,7 +121,7 @@ function Step({
         </motion.h3>
         <motion.p
           className="font-sora font-light text-sm leading-relaxed"
-          style={{ color: "oklch(0.38 0 0)" }}
+          style={{ color: "var(--cream-faint)" }}
           initial={{ opacity: 0, y: 8 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.3, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
@@ -150,7 +150,7 @@ export default function Process() {
       ref={sectionRef}
       id="process"
       className="py-24 px-5 overflow-hidden"
-      style={{ background: "oklch(0.06 0 0)" }}
+      style={{ background: "var(--ink)" }}
     >
       <div className="max-w-3xl mx-auto">
         <motion.div
@@ -162,7 +162,7 @@ export default function Process() {
         >
           <p
             className="font-mono text-[10px] uppercase tracking-wider mb-3"
-            style={{ color: "oklch(0.38 0 0)" }}
+            style={{ color: "var(--cream-faint)" }}
           >
             Comment on travaille
           </p>
@@ -171,7 +171,7 @@ export default function Process() {
             style={{
               fontSize: "clamp(32px, 5vw, 54px)",
               letterSpacing: "-0.04em",
-              color: "oklch(0.96 0 0)",
+              color: "var(--cream)",
             }}
           >
             Notre process

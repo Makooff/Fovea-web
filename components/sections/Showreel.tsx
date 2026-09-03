@@ -30,7 +30,7 @@ export default function Showreel() {
     <section
       ref={sectionRef}
       className="py-16 px-5 overflow-hidden"
-      style={{ background: "oklch(0.06 0 0)" }}
+      style={{ background: "var(--ink)" }}
     >
       <motion.div
         className="max-w-[1080px] mx-auto"
@@ -43,7 +43,7 @@ export default function Showreel() {
           style={{
             aspectRatio: "16/9",
             background: "black",
-            border: "1px solid oklch(0.22 0 0)",
+            border: "1px solid var(--ink-4)",
           }}
           onClick={() => setOpen(true)}
           role="button"
@@ -81,7 +81,7 @@ export default function Showreel() {
             className="absolute inset-0 pointer-events-none"
             style={{
               background:
-                "linear-gradient(to bottom, oklch(0.04 0 0 / 0.2) 0%, oklch(0.04 0 0 / 0.5) 100%)",
+                "linear-gradient(to bottom, rgba(20, 21, 25, 0.2) 0%, rgba(20, 21, 25, 0.5) 100%)",
             }}
           />
 
@@ -90,8 +90,8 @@ export default function Showreel() {
             <motion.div
               className="relative w-20 h-20 rounded-full flex items-center justify-center"
               style={{
-                background: "oklch(0.96 0 0 / 0.1)",
-                border: "1px solid oklch(0.96 0 0 / 0.35)",
+                background: "rgba(244, 244, 246, 0.1)",
+                border: "1px solid rgba(244, 244, 246, 0.35)",
                 backdropFilter: "blur(8px)",
               }}
               whileHover={{ scale: 1.12 }}
@@ -104,20 +104,20 @@ export default function Showreel() {
                 viewBox="0 0 20 22"
                 className="translate-x-0.5"
               >
-                <path d="M0 0L20 11L0 22V0Z" fill="oklch(0.96 0 0)" />
+                <path d="M0 0L20 11L0 22V0Z" fill="var(--cream)" />
               </svg>
             </motion.div>
 
             <div className="flex flex-col items-center gap-1">
               <p
                 className="font-sora font-thin text-lg tracking-tighter"
-                style={{ color: "oklch(0.92 0 0)", letterSpacing: "-0.03em" }}
+                style={{ color: "var(--cream)", letterSpacing: "-0.03em" }}
               >
                 Showreel 2025
               </p>
               <p
                 className="font-mono text-[9px] uppercase tracking-wider"
-                style={{ color: "oklch(0.45 0 0)" }}
+                style={{ color: "var(--cream-dim)" }}
               >
                 Fovea Production
               </p>
@@ -130,7 +130,7 @@ export default function Showreel() {
       {open && (
         <motion.div
           className="fixed inset-0 z-[100] flex items-center justify-center p-5"
-          style={{ background: "oklch(0.04 0 0 / 0.96)" }}
+          style={{ background: "rgba(20, 21, 25, 0.96)" }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -147,9 +147,9 @@ export default function Showreel() {
             <button
               onClick={() => setOpen(false)}
               className="absolute -top-10 right-0 font-sora text-sm transition-colors"
-              style={{ color: "oklch(0.45 0 0)" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "oklch(0.96 0 0)")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "oklch(0.45 0 0)")}
+              style={{ color: "var(--cream-dim)" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--cream)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--cream-dim)")}
             >
               Fermer
             </button>

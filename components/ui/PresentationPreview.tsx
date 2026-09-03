@@ -17,9 +17,9 @@ export default function PresentationPreview() {
       <div ref={ref} className="w-full" style={{ aspectRatio: "16/9" }}>
         <motion.div
           className="w-full h-full rounded-2xl overflow-hidden relative cursor-pointer group"
-          style={{ background: "oklch(0.06 0 0)", border: "1px solid oklch(0.16 0 0)" }}
+          style={{ background: "var(--ink)", border: "1px solid var(--ink-3)" }}
           onClick={() => setOpen(true)}
-          whileHover={{ borderColor: "oklch(0.30 0 0)" }}
+          whileHover={{ borderColor: "#262832" }}
           transition={{ duration: 0.2 }}
           role="button"
           aria-label="Voir la présentation Fovea en plein écran"
@@ -41,22 +41,22 @@ export default function PresentationPreview() {
           {/* Hover overlay */}
           <div
             className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
-            style={{ background: "oklch(0.04 0 0 / 0.50)" }}
+            style={{ background: "rgba(20, 21, 25, 0.50)" }}
           >
             <motion.div
               className="w-16 h-16 rounded-full flex items-center justify-center"
-              style={{ background: "oklch(0.96 0 0 / 0.12)", border: "1px solid oklch(0.96 0 0 / 0.40)", backdropFilter: "blur(8px)" }}
+              style={{ background: "rgba(244, 244, 246, 0.12)", border: "1px solid rgba(244, 244, 246, 0.40)", backdropFilter: "blur(8px)" }}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
               <svg width="16" height="18" viewBox="0 0 16 18" className="translate-x-0.5">
-                <path d="M0 0L16 9L0 18V0Z" fill="oklch(0.96 0 0)" />
+                <path d="M0 0L16 9L0 18V0Z" fill="var(--cream)" />
               </svg>
             </motion.div>
           </div>
 
           <div className="absolute bottom-5 left-6 pointer-events-none">
-            <p className="font-mono text-[9px] uppercase tracking-wider" style={{ color: "oklch(0.45 0 0)" }}>
+            <p className="font-mono text-[9px] uppercase tracking-wider" style={{ color: "var(--cream-dim)" }}>
               Fovea Production — Bruxelles · Cliquer pour le son
             </p>
           </div>
@@ -68,7 +68,7 @@ export default function PresentationPreview() {
         {open && (
           <motion.div
             className="fixed inset-0 z-[200] flex items-center justify-center"
-            style={{ background: "oklch(0.02 0 0 / 0.97)" }}
+            style={{ background: "rgba(20, 21, 25, 0.97)" }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -86,9 +86,9 @@ export default function PresentationPreview() {
               <button
                 onClick={() => setOpen(false)}
                 className="absolute top-4 right-4 z-10 font-sora text-sm transition-colors"
-                style={{ color: "oklch(0.40 0 0)" }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "oklch(0.96 0 0)")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "oklch(0.40 0 0)")}
+                style={{ color: "var(--cream-dim)" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--cream)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "var(--cream-dim)")}
               >
                 Fermer ✕
               </button>

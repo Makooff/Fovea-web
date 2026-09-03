@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Logo from "@/components/ui/ds/Logo";
 
 const links = [
   { label: "Accueil", href: "/" },
@@ -19,22 +20,8 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-5 py-16">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-10 mb-12">
           <div>
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <span
-                style={{
-                  fontFamily: "var(--font-poppins)",
-                  fontWeight: 800,
-                  fontSize: "26px",
-                  letterSpacing: "-0.02em",
-                  color: "var(--cream)",
-                }}
-              >
-                FOVEA
-              </span>
-              <span
-                className="inline-block w-[8px] h-[8px] rounded-full"
-                style={{ background: "linear-gradient(120deg, var(--sun-1), var(--sun-2))" }}
-              />
+            <Link href="/" className="inline-flex mb-4">
+              <Logo size={26} />
             </Link>
             <p className="font-poppins font-normal text-sm max-w-[260px] leading-relaxed" style={{ color: "var(--cream-faint)" }}>
               Agence de production vidéo publicitaire en Belgique et en France.

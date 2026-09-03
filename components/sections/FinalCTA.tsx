@@ -50,7 +50,7 @@ function MagneticButton({
               y: springY,
               background: "linear-gradient(120deg, var(--sun-1), var(--sun-2))",
               color: "#fff",
-              boxShadow: "0 14px 44px rgba(255,61,119,0.4)",
+              boxShadow: "0 14px 44px rgba(229, 82, 74,0.4)",
             }
           : { x: springX, y: springY, border: "1px solid var(--rule)", color: "var(--cream-dim)" }
       }
@@ -82,7 +82,7 @@ export default function FinalCTA() {
           y: glowY,
           width: "100vw",
           height: "80vh",
-          background: "radial-gradient(ellipse 45% 50% at 50% 50%, rgba(255,61,119,0.18), rgba(255,138,61,0.10) 40%, transparent 70%)",
+          background: "radial-gradient(ellipse 45% 50% at 50% 50%, rgba(229, 82, 74,0.18), rgba(240, 121, 111,0.10) 40%, transparent 70%)",
           filter: "blur(20px)",
         }}
         aria-hidden
