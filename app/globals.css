@@ -3,33 +3,67 @@
 @tailwind utilities;
 
 :root {
-  /* Fovea — "Sunset Film" palette */
-  --ink:          #0E0B10;  /* page background (warm near-black) */
-  --ink-2:        #161019;  /* section / card background */
-  --ink-3:        #1E1622;  /* elevated surface */
-  --cream:        #F5F0EC;  /* primary text (warm off-white) */
-  --cream-dim:    #B7ACB0;  /* secondary text */
-  --cream-faint:  #7A6E74;  /* faint labels */
-  --rule:         rgba(245, 240, 236, 0.10);
-  --rule-2:       rgba(245, 240, 236, 0.06);
-  --sun-1:        #FF8A3D;  /* orange */
-  --sun-2:        #FF3D77;  /* rose */
+  /* ============================================================
+     FOVEA — Direction artistique
+     Source de vérité : docs/DESIGN-SYSTEM.md
+     Ne jamais écrire une couleur en dur : utiliser ces variables.
+     ============================================================ */
 
-  /* Compat aliases (older sections still reference these) */
-  --bg:          var(--ink);
-  --bg-2:        var(--ink-2);
-  --bg-3:        var(--ink-3);
-  --surface:     var(--ink-2);
-  --cream-subtle:var(--cream-dim);
-  --rule-subtle: var(--rule-2);
-  --black:   var(--ink);
-  --dark:    var(--ink-2);
-  --mid:     var(--cream-faint);
-  --light:   var(--cream-faint);
-  --border:  var(--rule);
-  --ghost:   var(--ink-2);
-  --offwhite:var(--cream);
-  --white:   #ffffff;
+  /* --- Encres (fonds) ---------------------------------------- */
+  --ink:          #141519;  /* fond de page */
+  --ink-2:        #191A1F;  /* fond de section alterné */
+  --ink-3:        #1F2027;  /* carte / surface posée */
+  --ink-4:        #262832;  /* surface survolée / élevée */
+
+  /* --- Textes ------------------------------------------------- */
+  --cream:        #F4F4F6;  /* texte principal */
+  --cream-dim:    #A6A7B0;  /* texte secondaire */
+  --cream-faint:  #6C6E79;  /* labels, légendes discrètes */
+
+  /* --- Filets & bordures -------------------------------------- */
+  --rule:         rgba(244, 244, 246, 0.10);
+  --rule-2:       rgba(244, 244, 246, 0.06);
+  --rule-strong:  rgba(244, 244, 246, 0.18);
+
+  /* --- Rouge Fovea (accent unique) ---------------------------- */
+  --red:          #E5524A;  /* accent de marque */
+  --red-soft:     #F0796F;  /* survol, dégradé clair */
+  --red-deep:     #8E2F2A;  /* dégradé sombre */
+  --red-ink:      #2A1A1B;  /* teinte rouge très sombre (fond) */
+  --red-wash:     rgba(229, 82, 74, 0.12);
+  --red-glow:     rgba(229, 82, 74, 0.30);
+
+  /* --- Dégradés récurrents ------------------------------------ */
+  --grad-accent:  linear-gradient(120deg, var(--red) 0%, var(--red-soft) 100%);
+  --grad-banner:  linear-gradient(100deg, #1B1A1E 0%, #5E2A27 52%, #221C1E 100%);
+  --grad-card:    linear-gradient(150deg, var(--ink-3) 0%, #2A1F21 100%);
+
+  /* --- Rayons ------------------------------------------------- */
+  --r-chip:   999px;
+  --r-card:   16px;
+  --r-panel:  22px;
+
+  /* --- Ombres ------------------------------------------------- */
+  --shadow-card: 0 1px 0 rgba(244,244,246,0.04) inset, 0 18px 40px -24px rgba(0,0,0,0.9);
+  --shadow-glow: 0 0 60px -12px var(--red-glow);
+
+  /* --- Alias de compatibilité (anciennes sections) ------------- */
+  --sun-1:        var(--red);
+  --sun-2:        var(--red-soft);
+  --bg:           var(--ink);
+  --bg-2:         var(--ink-2);
+  --bg-3:         var(--ink-3);
+  --surface:      var(--ink-2);
+  --cream-subtle: var(--cream-dim);
+  --rule-subtle:  var(--rule-2);
+  --black:        var(--ink);
+  --dark:         var(--ink-2);
+  --mid:          var(--cream-faint);
+  --light:        var(--cream-faint);
+  --border:       var(--rule);
+  --ghost:        var(--ink-2);
+  --offwhite:     var(--cream);
+  --white:        #ffffff;
 }
 
 * {
@@ -52,18 +86,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Warm gradient text (accent words, big numbers) */
+/* Accent gradient text (mots accentués, grands chiffres) */
 .text-gradient {
-  background: linear-gradient(120deg, var(--sun-1) 0%, var(--sun-2) 100%);
+  background: var(--grad-accent);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
 }
 
-/* Shimmering accent text */
+/* Texte accent scintillant */
 .text-shimmer {
-  background: linear-gradient(120deg, #FF8A3D 0%, #FF3D77 35%, #FFB36B 50%, #FF3D77 65%, #FF8A3D 100%);
+  background: linear-gradient(120deg, var(--red) 0%, var(--red-soft) 35%, #FFA79F 50%, var(--red-soft) 65%, var(--red) 100%);
   background-size: 250% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -84,12 +118,12 @@ body {
 }
 .float-y { animation: floatY 6s ease-in-out infinite; }
 
-/* Warm gradient border helper (use as wrapper bg with inner inset) */
+/* Bordure dégradée rouge (wrapper avec fond interne) */
 .grad-border {
   position: relative;
   background:
     linear-gradient(var(--ink-2), var(--ink-2)) padding-box,
-    linear-gradient(120deg, rgba(255,138,61,0.55), rgba(255,61,119,0.55)) border-box;
+    linear-gradient(120deg, rgba(229,82,74,0.55), rgba(240,121,111,0.35)) border-box;
   border: 1px solid transparent;
 }
 
@@ -137,7 +171,7 @@ body::before {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(ellipse at center, transparent 40%, oklch(0.04 0 0 / 0.7) 100%);
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(20, 21, 25, 0.75) 100%);
 }
 
 /* 3D card perspective wrapper */
@@ -146,11 +180,110 @@ body::before {
 
 /* Play button pulse */
 @keyframes playPulse {
-  0%, 100% { box-shadow: 0 0 0 0 oklch(0.96 0 0 / 0.3); }
-  50%       { box-shadow: 0 0 0 18px oklch(0.96 0 0 / 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(244, 244, 246, 0.3); }
+  50%       { box-shadow: 0 0 0 18px rgba(244, 244, 246, 0); }
 }
 .play-pulse { animation: playPulse 2.4s ease-out infinite; }
 
 @layer utilities {
   .text-balance { text-wrap: balance; }
+}
+
+/* ============================================================
+   FOVEA DS — primitives visuelles réutilisables
+   Voir docs/DESIGN-SYSTEM.md. Ces classes sont la manière
+   canonique de construire une section : ne pas les redéfinir
+   localement, les composer.
+   ============================================================ */
+
+/* --- Chip / pilule de label -------------------------------- */
+.fv-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: var(--r-chip);
+  border: 1px solid var(--rule-strong);
+  background: var(--ink-3);
+  color: var(--cream);
+  padding: 8px 18px;
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.fv-chip--accent {
+  border-color: rgba(229, 82, 74, 0.45);
+  background: var(--red-wash);
+  color: var(--red-soft);
+}
+.fv-chip--ghost {
+  background: transparent;
+  border-color: var(--rule);
+  color: var(--cream-dim);
+}
+
+/* --- Surface / carte --------------------------------------- */
+.fv-card {
+  border-radius: var(--r-card);
+  border: 1px solid var(--rule);
+  background: var(--ink-3);
+  box-shadow: var(--shadow-card);
+  transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+}
+.fv-card:hover { border-color: var(--rule-strong); }
+.fv-card--accent {
+  background: var(--grad-card);
+  border-color: rgba(229, 82, 74, 0.28);
+}
+.fv-panel {
+  border-radius: var(--r-panel);
+  border: 1px solid var(--rule);
+  background: var(--ink-2);
+  box-shadow: var(--shadow-card);
+}
+
+/* --- Bandeau de section (titre pleine largeur) -------------- */
+.fv-banner {
+  border-radius: var(--r-chip);
+  background: var(--grad-banner);
+  border: 1px solid var(--rule-2);
+}
+
+/* --- Halos rouges d'arrière-plan ---------------------------- */
+.fv-glow {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 9999px;
+  background: radial-gradient(circle, var(--red-glow) 0%, transparent 70%);
+  filter: blur(60px);
+}
+
+/* --- Légende italique (sous un chiffre / un titre) ---------- */
+.fv-caption {
+  font-family: var(--font-poppins), sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--cream-dim);
+}
+
+/* --- Liste à tirets ---------------------------------------- */
+.fv-list { list-style: none; padding: 0; margin: 0; }
+.fv-list > li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--cream-dim);
+}
+.fv-list > li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 7px;
+  height: 1px;
+  background: var(--red);
 }

@@ -16,7 +16,7 @@ function Pill({ label }: { label: string }) {
   return (
     <span
       className="inline-flex items-center rounded-full px-3 py-1 font-mono text-[10px] uppercase tracking-wider"
-      style={{ border: "1px solid oklch(0.22 0 0)", color: "oklch(0.45 0 0)" }}
+      style={{ border: "1px solid var(--ink-4)", color: "var(--cream-dim)" }}
     >
       {label}
     </span>
@@ -25,13 +25,13 @@ function Pill({ label }: { label: string }) {
 
 export default function ServicesPage() {
   return (
-    <main className="pt-[52px]" style={{ background: "oklch(0.06 0 0)" }}>
+    <main className="pt-[52px]" style={{ background: "var(--ink)" }}>
       <section className="py-20 px-5">
         <div className="max-w-6xl mx-auto">
           <RevealWrapper className="mb-16">
             <p
               className="font-mono text-[10px] uppercase tracking-wider mb-4"
-              style={{ color: "oklch(0.38 0 0)" }}
+              style={{ color: "var(--cream-faint)" }}
             >
               Ce que nous faisons
             </p>
@@ -40,7 +40,7 @@ export default function ServicesPage() {
               style={{
                 fontSize: "clamp(40px, 6vw, 72px)",
                 letterSpacing: "-0.04em",
-                color: "oklch(0.96 0 0)",
+                color: "var(--cream)",
               }}
             >
               Nos services
@@ -51,13 +51,13 @@ export default function ServicesPage() {
           <RevealWrapper
             id="video"
             className="mb-16 pb-16"
-            style={{ borderBottom: "1px solid oklch(0.22 0 0)" }}
+            style={{ borderBottom: "1px solid var(--ink-4)" }}
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
               <div>
                 <p
                   className="font-mono text-[10px] uppercase tracking-wider mb-4"
-                  style={{ color: "oklch(0.38 0 0)" }}
+                  style={{ color: "var(--cream-faint)" }}
                 >
                   Service 01
                 </p>
@@ -66,14 +66,14 @@ export default function ServicesPage() {
                   style={{
                     fontSize: "clamp(28px, 4vw, 48px)",
                     letterSpacing: "-0.04em",
-                    color: "oklch(0.96 0 0)",
+                    color: "var(--cream)",
                   }}
                 >
                   Production Vidéo Publicitaire
                 </h2>
                 <p
                   className="font-sora font-light text-sm leading-relaxed mb-6"
-                  style={{ color: "oklch(0.45 0 0)" }}
+                  style={{ color: "var(--cream-dim)" }}
                 >
                   Chaque vidéo est conçue avec un objectif publicitaire précis. De la
                   stratégie créative au montage final, nous produisons des contenus vidéo
@@ -81,7 +81,7 @@ export default function ServicesPage() {
                 </p>
                 <p
                   className="font-sora font-light text-sm leading-relaxed mb-8"
-                  style={{ color: "oklch(0.45 0 0)" }}
+                  style={{ color: "var(--cream-dim)" }}
                 >
                   Nos équipes opèrent en Belgique et en France, avec un studio de
                   référence et la capacité de tourner sur le terrain de vos clients.
@@ -97,8 +97,8 @@ export default function ServicesPage() {
                   href="/contact"
                   className="inline-flex items-center justify-center rounded-full font-sora font-medium text-sm px-6 py-3 transition-colors"
                   style={{
-                    background: "oklch(0.96 0 0)",
-                    color: "oklch(0.06 0 0)",
+                    background: "var(--cream)",
+                    color: "var(--ink)",
                   }}
                 >
                   Nous contacter
@@ -108,7 +108,7 @@ export default function ServicesPage() {
                 className="w-full rounded-2xl overflow-hidden relative"
                 style={{
                   aspectRatio: "4/3",
-                  border: "1px solid oklch(0.22 0 0)",
+                  border: "1px solid var(--ink-4)",
                 }}
               >
                 <Image
@@ -119,7 +119,7 @@ export default function ServicesPage() {
                 />
                 <div
                   className="absolute inset-0"
-                  style={{ background: "linear-gradient(to top, oklch(0.06 0 0 / 0.45) 0%, transparent 60%)" }}
+                  style={{ background: "linear-gradient(to top, rgba(20, 21, 25, 0.45) 0%, transparent 60%)" }}
                 />
               </div>
             </div>
@@ -129,14 +129,14 @@ export default function ServicesPage() {
           <RevealWrapper
             id="ads"
             className="mb-16 pb-16"
-            style={{ borderBottom: "1px solid oklch(0.22 0 0)" }}
+            style={{ borderBottom: "1px solid var(--ink-4)" }}
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
               <div
                 className="w-full rounded-2xl overflow-hidden relative order-2 md:order-1"
                 style={{
                   aspectRatio: "4/3",
-                  border: "1px solid oklch(0.22 0 0)",
+                  border: "1px solid var(--ink-4)",
                 }}
               >
                 <Image
@@ -147,13 +147,13 @@ export default function ServicesPage() {
                 />
                 <div
                   className="absolute inset-0"
-                  style={{ background: "linear-gradient(to top, oklch(0.06 0 0 / 0.45) 0%, transparent 60%)" }}
+                  style={{ background: "linear-gradient(to top, rgba(20, 21, 25, 0.45) 0%, transparent 60%)" }}
                 />
               </div>
               <div className="order-1 md:order-2">
                 <p
                   className="font-mono text-[10px] uppercase tracking-wider mb-4"
-                  style={{ color: "oklch(0.38 0 0)" }}
+                  style={{ color: "var(--cream-faint)" }}
                 >
                   Service 02
                 </p>
@@ -162,14 +162,14 @@ export default function ServicesPage() {
                   style={{
                     fontSize: "clamp(28px, 4vw, 48px)",
                     letterSpacing: "-0.04em",
-                    color: "oklch(0.96 0 0)",
+                    color: "var(--cream)",
                   }}
                 >
                   Campagnes Publicitaires Ads
                 </h2>
                 <p
                   className="font-sora font-light text-sm leading-relaxed mb-6"
-                  style={{ color: "oklch(0.45 0 0)" }}
+                  style={{ color: "var(--cream-dim)" }}
                 >
                   Nous lançons et gérons vos campagnes publicitaires sur toutes les
                   plateformes majeures. Les créatifs vidéo sont inclus dans notre offre,
@@ -178,7 +178,7 @@ export default function ServicesPage() {
                 </p>
                 <p
                   className="font-sora font-light text-sm leading-relaxed mb-8"
-                  style={{ color: "oklch(0.45 0 0)" }}
+                  style={{ color: "var(--cream-dim)" }}
                 >
                   Notre objectif est simple : maximiser votre ROAS. Nous analysons, testons
                   et optimisons en continu pour que chaque euro investi travaille davantage.
@@ -192,8 +192,8 @@ export default function ServicesPage() {
                   href="/contact"
                   className="inline-flex items-center justify-center rounded-full font-sora font-medium text-sm px-6 py-3 transition-colors"
                   style={{
-                    background: "oklch(0.96 0 0)",
-                    color: "oklch(0.06 0 0)",
+                    background: "var(--cream)",
+                    color: "var(--ink)",
                   }}
                 >
                   Lancer une campagne
@@ -211,7 +211,7 @@ export default function ServicesPage() {
                   <QwillioName size="13px" />
                   <span
                     className="font-sora font-light text-xs"
-                    style={{ color: "oklch(0.38 0 0)" }}
+                    style={{ color: "var(--cream-faint)" }}
                   >
                     — Exclusif clients Fovea
                   </span>
@@ -221,14 +221,14 @@ export default function ServicesPage() {
                   style={{
                     fontSize: "clamp(28px, 4vw, 48px)",
                     letterSpacing: "-0.04em",
-                    color: "oklch(0.96 0 0)",
+                    color: "var(--cream)",
                   }}
                 >
                   Agents IA de Gestion
                 </h2>
                 <p
                   className="font-sora font-light text-sm leading-relaxed mb-6"
-                  style={{ color: "oklch(0.45 0 0)" }}
+                  style={{ color: "var(--cream-dim)" }}
                 >
                   En partenariat exclusif avec Qwillio, les clients Fovea bénéficient
                   de la suite complète d&apos;agents IA : réceptionniste vocale et textuelle,
@@ -237,7 +237,7 @@ export default function ServicesPage() {
                 </p>
                 <p
                   className="font-sora font-light text-sm leading-relaxed mb-8"
-                  style={{ color: "oklch(0.45 0 0)" }}
+                  style={{ color: "var(--cream-dim)" }}
                 >
                   En plus de ça, Qwillio crée des sites web sur mesure exclusivement
                   pour les clients Fovea — une prestation non disponible sur Qwillio.com.
@@ -251,8 +251,8 @@ export default function ServicesPage() {
                   href="/partenaire"
                   className="inline-flex items-center justify-center rounded-full font-sora font-medium text-sm px-6 py-3 transition-colors"
                   style={{
-                    border: "1px solid oklch(0.22 0 0)",
-                    color: "oklch(0.65 0 0)",
+                    border: "1px solid var(--ink-4)",
+                    color: "var(--cream-dim)",
                   }}
                 >
                   En savoir plus sur Qwillio
@@ -262,7 +262,7 @@ export default function ServicesPage() {
                 className="w-full rounded-2xl overflow-hidden relative"
                 style={{
                   aspectRatio: "4/3",
-                  border: "1px solid oklch(0.22 0 0)",
+                  border: "1px solid var(--ink-4)",
                 }}
               >
                 <Image
@@ -273,7 +273,7 @@ export default function ServicesPage() {
                 />
                 <div
                   className="absolute inset-0"
-                  style={{ background: "linear-gradient(to top, oklch(0.06 0 0 / 0.45) 0%, transparent 60%)" }}
+                  style={{ background: "linear-gradient(to top, rgba(20, 21, 25, 0.45) 0%, transparent 60%)" }}
                 />
               </div>
             </div>

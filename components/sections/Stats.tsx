@@ -47,12 +47,12 @@ export default function Stats() {
     <section
       ref={sectionRef}
       className="relative overflow-hidden"
-      style={{ background: "oklch(0.06 0 0)" }}
+      style={{ background: "var(--ink)" }}
     >
       {/* Subtle horizontal rule top */}
       <motion.div
         className="absolute top-0 left-0 right-0 h-px"
-        style={{ background: "oklch(0.14 0 0)", y: bgY }}
+        style={{ background: "var(--ink-3)", y: bgY }}
       />
 
       <div className="max-w-6xl mx-auto">
@@ -71,7 +71,7 @@ export default function Stats() {
               style={{
                 borderRight:
                   i < stats.length - 1
-                    ? "1px solid oklch(0.14 0 0)"
+                    ? "1px solid var(--ink-3)"
                     : undefined,
               }}
             >
@@ -81,7 +81,7 @@ export default function Stats() {
                 style={{
                   fontSize: "clamp(44px, 6vw, 64px)",
                   letterSpacing: "-0.04em",
-                  color: "oklch(0.96 0 0)",
+                  color: "var(--cream)",
                 }}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={inView ? { opacity: 1, scale: 1 } : {}}
@@ -97,7 +97,7 @@ export default function Stats() {
               {/* Label */}
               <p
                 className="font-mono text-[11px] text-center uppercase tracking-wider"
-                style={{ color: "oklch(0.38 0 0)" }}
+                style={{ color: "var(--cream-faint)" }}
               >
                 {stat.label}
               </p>
@@ -107,7 +107,7 @@ export default function Stats() {
       </div>
 
       {/* Subtle horizontal rule bottom */}
-      <div className="h-px" style={{ background: "oklch(0.14 0 0)" }} />
+      <div className="h-px" style={{ background: "var(--ink-3)" }} />
     </section>
   );
 }

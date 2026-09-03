@@ -82,7 +82,7 @@ export default function Hero() {
       >
         <motion.div
           className="h-full w-full"
-          style={{ background: "radial-gradient(ellipse 50% 50% at 50% 40%, rgba(255,61,119,0.30) 0%, rgba(255,138,61,0.20) 35%, transparent 70%)" }}
+          style={{ background: "radial-gradient(ellipse 50% 50% at 50% 40%, rgba(229, 82, 74,0.30) 0%, rgba(240, 121, 111,0.20) 35%, transparent 70%)" }}
           animate={{ scale: [1, 1.07, 1] }}
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
         />
@@ -136,7 +136,7 @@ export default function Hero() {
             style={{
               background: "linear-gradient(120deg, var(--sun-1), var(--sun-2))",
               color: "#fff",
-              boxShadow: "0 12px 40px rgba(255,61,119,0.35)",
+              boxShadow: "0 12px 40px rgba(229, 82, 74,0.35)",
             }}
           >
             Discuter avec un expert

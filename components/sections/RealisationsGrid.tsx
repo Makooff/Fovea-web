@@ -89,9 +89,9 @@ function VideoItem({ p, index, onSelect }: { p: VideoEntry; index: number; onSel
           rotateX,
           rotateY,
           transformStyle: "preserve-3d",
-          border: "1px solid oklch(0.18 0 0)",
-          background: "oklch(0.08 0 0)",
-          boxShadow: "0 24px 56px oklch(0 0 0 / 0.55)",
+          border: "1px solid var(--ink-4)",
+          background: "var(--ink-2)",
+          boxShadow: "0 24px 56px rgba(20, 21, 25, 0.55)",
         }}
         onClick={onSelect}
         whileTap={{ scale: 0.97 }}
@@ -100,17 +100,17 @@ function VideoItem({ p, index, onSelect }: { p: VideoEntry; index: number; onSel
 
         <div
           className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300"
-          style={{ backdropFilter: "blur(5px)", WebkitBackdropFilter: "blur(5px)", background: "oklch(0.04 0 0 / 0.40)" }}
+          style={{ backdropFilter: "blur(5px)", WebkitBackdropFilter: "blur(5px)", background: "rgba(20, 21, 25, 0.40)" }}
         />
         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <motion.div
             className="w-14 h-14 rounded-full flex items-center justify-center"
-            style={{ background: "oklch(0.96 0 0 / 0.12)", border: "1px solid oklch(0.96 0 0 / 0.40)", backdropFilter: "blur(8px)" }}
+            style={{ background: "rgba(244, 244, 246, 0.12)", border: "1px solid rgba(244, 244, 246, 0.40)", backdropFilter: "blur(8px)" }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
             <svg width="14" height="16" viewBox="0 0 14 16" className="translate-x-0.5">
-              <path d="M0 0L14 8L0 16V0Z" fill="oklch(0.96 0 0)" />
+              <path d="M0 0L14 8L0 16V0Z" fill="var(--cream)" />
             </svg>
           </motion.div>
         </div>
@@ -134,7 +134,7 @@ export default function RealisationsGrid() {
         {selected && (
           <motion.div
             className="fixed inset-0 z-[100] flex items-center justify-center p-5"
-            style={{ background: "oklch(0.04 0 0 / 0.96)" }}
+            style={{ background: "rgba(20, 21, 25, 0.96)" }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -152,9 +152,9 @@ export default function RealisationsGrid() {
               <button
                 onClick={() => setSelected(null)}
                 className="absolute -top-10 right-0 font-sora text-sm transition-colors"
-                style={{ color: "oklch(0.45 0 0)" }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "oklch(0.96 0 0)")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "oklch(0.45 0 0)")}
+                style={{ color: "var(--cream-dim)" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--cream)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "var(--cream-dim)")}
               >
                 Fermer
               </button>

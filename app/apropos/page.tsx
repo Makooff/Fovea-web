@@ -54,7 +54,7 @@ const values = [
 
 export default function AProposPage() {
   return (
-    <main className="pt-[52px]" style={{ background: "oklch(0.06 0 0)" }}>
+    <main className="pt-[52px]" style={{ background: "var(--ink)" }}>
 
       {/* Hero */}
       <section className="py-20 px-5">
@@ -62,7 +62,7 @@ export default function AProposPage() {
           <RevealWrapper className="mb-16">
             <p
               className="font-mono text-[10px] uppercase tracking-wider mb-4"
-              style={{ color: "oklch(0.38 0 0)" }}
+              style={{ color: "var(--cream-faint)" }}
             >
               Notre histoire
             </p>
@@ -71,14 +71,14 @@ export default function AProposPage() {
               style={{
                 fontSize: "clamp(40px, 6vw, 72px)",
                 letterSpacing: "-0.04em",
-                color: "oklch(0.96 0 0)",
+                color: "var(--cream)",
               }}
             >
               Une agence construite pour les annonceurs ambitieux
             </h1>
             <p
               className="font-sora font-light text-base leading-relaxed max-w-2xl"
-              style={{ color: "oklch(0.45 0 0)" }}
+              style={{ color: "var(--cream-dim)" }}
             >
               Fovea est née d&apos;un constat simple : la plupart des agences produisent de belles vidéos,
               mais peu s&apos;assurent qu&apos;elles performent. Depuis notre fondation en Belgique, nous avons
@@ -94,13 +94,13 @@ export default function AProposPage() {
       </section>
 
       {/* Story */}
-      <section className="py-16 px-5" style={{ background: "oklch(0.04 0 0)" }}>
+      <section className="py-16 px-5" style={{ background: "var(--ink)" }}>
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
             <RevealWrapper>
               <p
                 className="font-mono text-[10px] uppercase tracking-wider mb-4"
-                style={{ color: "oklch(0.38 0 0)" }}
+                style={{ color: "var(--cream-faint)" }}
               >
                 Depuis 2019
               </p>
@@ -109,14 +109,14 @@ export default function AProposPage() {
                 style={{
                   fontSize: "clamp(28px, 4vw, 48px)",
                   letterSpacing: "-0.04em",
-                  color: "oklch(0.96 0 0)",
+                  color: "var(--cream)",
                 }}
               >
                 Belgique & France, <br />un seul standard
               </h2>
               <p
                 className="font-sora font-light text-sm leading-relaxed mb-5"
-                style={{ color: "oklch(0.45 0 0)" }}
+                style={{ color: "var(--cream-dim)" }}
               >
                 Nous opérons depuis Bruxelles avec une capacité de production en France.
                 Notre studio de référence nous permet de livrer un rendu cinématographique,
@@ -124,7 +124,7 @@ export default function AProposPage() {
               </p>
               <p
                 className="font-sora font-light text-sm leading-relaxed mb-8"
-                style={{ color: "oklch(0.45 0 0)" }}
+                style={{ color: "var(--cream-dim)" }}
               >
                 En cinq ans, nous avons accompagné plus de 80 marques — du lancement de produit
                 au scale publicitaire sur Meta, Google et TikTok. Chaque projet enrichit notre
@@ -139,13 +139,13 @@ export default function AProposPage() {
                   <div key={s.label}>
                     <p
                       className="font-sora font-light text-2xl mb-1"
-                      style={{ color: "oklch(0.96 0 0)" }}
+                      style={{ color: "var(--cream)" }}
                     >
                       {s.value}
                     </p>
                     <p
                       className="font-mono text-[10px] uppercase tracking-wider"
-                      style={{ color: "oklch(0.38 0 0)" }}
+                      style={{ color: "var(--cream-faint)" }}
                     >
                       {s.label}
                     </p>
@@ -157,7 +157,7 @@ export default function AProposPage() {
             <RevealWrapper delay={150}>
               <div
                 className="w-full rounded-2xl overflow-hidden relative"
-                style={{ aspectRatio: "4/3", border: "1px solid oklch(0.16 0 0)" }}
+                style={{ aspectRatio: "4/3", border: "1px solid var(--ink-3)" }}
               >
                 <Image
                   src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&auto=format&fit=crop"
@@ -177,7 +177,7 @@ export default function AProposPage() {
           <RevealWrapper className="mb-14">
             <p
               className="font-mono text-[10px] uppercase tracking-wider mb-4"
-              style={{ color: "oklch(0.38 0 0)" }}
+              style={{ color: "var(--cream-faint)" }}
             >
               Ce qui nous guide
             </p>
@@ -186,7 +186,7 @@ export default function AProposPage() {
               style={{
                 fontSize: "clamp(28px, 4vw, 48px)",
                 letterSpacing: "-0.04em",
-                color: "oklch(0.96 0 0)",
+                color: "var(--cream)",
               }}
             >
               Nos valeurs
@@ -198,23 +198,23 @@ export default function AProposPage() {
               <RevealWrapper key={i} delay={i * 100}>
                 <div
                   className="p-7 rounded-2xl h-full"
-                  style={{ background: "oklch(0.10 0 0)", border: "1px solid oklch(0.22 0 0)" }}
+                  style={{ background: "var(--ink-2)", border: "1px solid var(--ink-4)" }}
                 >
                   <p
                     className="font-mono text-[10px] uppercase tracking-wider mb-5"
-                    style={{ color: "oklch(0.38 0 0)" }}
+                    style={{ color: "var(--cream-faint)" }}
                   >
                     {v.num}
                   </p>
                   <h3
                     className="font-sora font-light text-xl mb-3 leading-snug"
-                    style={{ color: "oklch(0.96 0 0)" }}
+                    style={{ color: "var(--cream)" }}
                   >
                     {v.title}
                   </h3>
                   <p
                     className="font-sora font-light text-sm leading-relaxed"
-                    style={{ color: "oklch(0.45 0 0)" }}
+                    style={{ color: "var(--cream-dim)" }}
                   >
                     {v.desc}
                   </p>
@@ -226,12 +226,12 @@ export default function AProposPage() {
       </section>
 
       {/* Team */}
-      <section className="py-16 px-5" style={{ background: "oklch(0.04 0 0)" }}>
+      <section className="py-16 px-5" style={{ background: "var(--ink)" }}>
         <div className="max-w-6xl mx-auto">
           <RevealWrapper className="mb-14">
             <p
               className="font-mono text-[10px] uppercase tracking-wider mb-4"
-              style={{ color: "oklch(0.38 0 0)" }}
+              style={{ color: "var(--cream-faint)" }}
             >
               L&apos;équipe
             </p>
@@ -240,7 +240,7 @@ export default function AProposPage() {
               style={{
                 fontSize: "clamp(28px, 4vw, 48px)",
                 letterSpacing: "-0.04em",
-                color: "oklch(0.96 0 0)",
+                color: "var(--cream)",
               }}
             >
               Les personnes derrière Fovea
@@ -253,7 +253,7 @@ export default function AProposPage() {
                 <div className="group">
                   <div
                     className="w-full rounded-xl overflow-hidden relative mb-4"
-                    style={{ aspectRatio: "3/4", border: "1px solid oklch(0.16 0 0)" }}
+                    style={{ aspectRatio: "3/4", border: "1px solid var(--ink-3)" }}
                   >
                     <Image
                       src={member.photo}
@@ -263,18 +263,18 @@ export default function AProposPage() {
                     />
                     <div
                       className="absolute inset-0"
-                      style={{ background: "linear-gradient(to top, oklch(0.04 0 0 / 0.6) 0%, transparent 50%)" }}
+                      style={{ background: "linear-gradient(to top, rgba(20, 21, 25, 0.6) 0%, transparent 50%)" }}
                     />
                   </div>
                   <p
                     className="font-sora font-light text-sm mb-0.5"
-                    style={{ color: "oklch(0.96 0 0)" }}
+                    style={{ color: "var(--cream)" }}
                   >
                     {member.name}
                   </p>
                   <p
                     className="font-mono text-[10px] uppercase tracking-wider"
-                    style={{ color: "oklch(0.38 0 0)" }}
+                    style={{ color: "var(--cream-faint)" }}
                   >
                     {member.role}
                   </p>
@@ -287,7 +287,7 @@ export default function AProposPage() {
             <Link
               href="/contact"
               className="inline-flex items-center font-sora font-light text-sm transition-colors hover:text-white"
-              style={{ color: "oklch(0.45 0 0)" }}
+              style={{ color: "var(--cream-dim)" }}
             >
               Rejoindre l&apos;équipe
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="inline-block ml-1.5 shrink-0">

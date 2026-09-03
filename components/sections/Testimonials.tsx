@@ -10,7 +10,7 @@ const testimonials = [
     name: "Sophie Marchand",
     when: "Il y a 2 mois",
     initials: "SM",
-    color: "#FF8A3D",
+    color: "#F0796F",
     quote:
       "Fovea a transformé notre communication visuelle. Le ROAS de nos campagnes a plus que quadruplé en trois mois. Une équipe réactive et vraiment créative.",
   },
@@ -18,7 +18,7 @@ const testimonials = [
     name: "Antoine Leroy",
     when: "Il y a 2 mois",
     initials: "AL",
-    color: "#FF3D77",
+    color: "#E5524A",
     quote:
       "La vidéo produite pour notre lancement a généré 2,3 millions de vues organiques. Le retour sur investissement est exceptionnel — je recommande sans hésiter.",
   },
@@ -34,7 +34,7 @@ const testimonials = [
     name: "Karim Benali",
     when: "Il y a 1 mois",
     initials: "KB",
-    color: "#FF8A3D",
+    color: "#F0796F",
     quote:
       "Attirer du monde vers ma boutique n'était pas évident. Grâce à Fovea, ma présence sur les réseaux a explosé et les ventes ont suivi.",
   },
@@ -42,7 +42,7 @@ const testimonials = [
     name: "Élodie Renard",
     when: "Il y a 3 mois",
     initials: "ER",
-    color: "#FF3D77",
+    color: "#E5524A",
     quote:
       "Très bonne expérience. L'équipe prend le temps pendant le tournage, surtout avec les personnes pas à l'aise devant la caméra. On se sent en confiance.",
   },

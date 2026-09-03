@@ -30,7 +30,7 @@ export default function Navbar() {
       {/* Scroll progress bar */}
       <motion.div
         className="fixed top-0 left-0 z-[60] h-[2px] origin-left"
-        style={{ scaleX: scrollYProgress, background: "oklch(0.96 0 0)" }}
+        style={{ scaleX: scrollYProgress, background: "var(--cream)" }}
       />
 
       <motion.header
@@ -39,10 +39,10 @@ export default function Navbar() {
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         style={{
-          background: scrolled ? "oklch(0.06 0 0 / 0.92)" : "transparent",
+          background: scrolled ? "rgba(20, 21, 25, 0.92)" : "transparent",
           backdropFilter: scrolled ? "blur(24px) saturate(180%)" : "none",
           WebkitBackdropFilter: scrolled ? "blur(24px) saturate(180%)" : "none",
-          borderBottom: scrolled ? "1px solid oklch(0.16 0 0)" : "1px solid transparent",
+          borderBottom: scrolled ? "1px solid var(--ink-3)" : "1px solid transparent",
           transition: "background 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease",
         }}
       >
@@ -64,9 +64,9 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className="font-sora font-light text-sm transition-colors duration-200"
-                style={{ color: "oklch(0.45 0 0)" }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "oklch(0.96 0 0)")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "oklch(0.45 0 0)")}
+                style={{ color: "var(--cream-dim)" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--cream)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "var(--cream-dim)")}
               >
                 {link.label}
               </Link>
@@ -77,9 +77,9 @@ export default function Navbar() {
             <Link
               href="/contact"
               className="hidden md:inline-flex items-center justify-center rounded-full font-sora font-medium text-[12px] px-4 py-[7px] transition-all duration-200 active:scale-[0.97]"
-              style={{ background: "oklch(0.96 0 0)", color: "oklch(0.06 0 0)" }}
-              onMouseEnter={(e) => (e.currentTarget.style.background = "oklch(0.82 0 0)")}
-              onMouseLeave={(e) => (e.currentTarget.style.background = "oklch(0.96 0 0)")}
+              style={{ background: "var(--cream)", color: "var(--ink)" }}
+              onMouseEnter={(e) => (e.currentTarget.style.background = "var(--cream-dim)")}
+              onMouseLeave={(e) => (e.currentTarget.style.background = "var(--cream)")}
             >
               Contact
             </Link>
@@ -92,18 +92,18 @@ export default function Navbar() {
               <span
                 className="block w-5 h-px transition-all duration-300"
                 style={{
-                  background: "oklch(0.96 0 0)",
+                  background: "var(--cream)",
                   transform: menuOpen ? "rotate(45deg) translate(0, 4px)" : "none",
                 }}
               />
               <span
                 className="block w-5 h-px transition-all duration-300"
-                style={{ background: "oklch(0.96 0 0)", opacity: menuOpen ? 0 : 1 }}
+                style={{ background: "var(--cream)", opacity: menuOpen ? 0 : 1 }}
               />
               <span
                 className="block w-5 h-px transition-all duration-300"
                 style={{
-                  background: "oklch(0.96 0 0)",
+                  background: "var(--cream)",
                   transform: menuOpen ? "rotate(-45deg) translate(0, -4px)" : "none",
                 }}
               />

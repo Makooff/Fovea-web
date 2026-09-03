@@ -71,22 +71,22 @@ const values = [
 
 export default function EquipePage() {
   return (
-    <main className="pt-[56px]" style={{ background: "oklch(0.06 0 0)" }}>
+    <main className="pt-[56px]" style={{ background: "var(--ink)" }}>
 
       {/* Hero */}
       <section className="py-24 px-5">
         <div className="max-w-6xl mx-auto">
           <RevealWrapper className="mb-16">
-            <p className="font-mono text-[10px] uppercase tracking-wider mb-4" style={{ color: "oklch(0.38 0 0)" }}>
+            <p className="font-mono text-[10px] uppercase tracking-wider mb-4" style={{ color: "var(--cream-faint)" }}>
               L&apos;équipe
             </p>
             <h1
               className="font-sora font-thin tracking-tighter mb-6"
-              style={{ fontSize: "clamp(40px, 6vw, 72px)", letterSpacing: "-0.04em", color: "oklch(0.96 0 0)" }}
+              style={{ fontSize: "clamp(40px, 6vw, 72px)", letterSpacing: "-0.04em", color: "var(--cream)" }}
             >
               Les visages derrière<br />vos campagnes
             </h1>
-            <p className="font-sora font-light text-base leading-relaxed max-w-xl" style={{ color: "oklch(0.45 0 0)" }}>
+            <p className="font-sora font-light text-base leading-relaxed max-w-xl" style={{ color: "var(--cream-dim)" }}>
               6 experts, une seule obsession : produire des vidéos qui convertissent.
               Réalisateurs, directeurs photo, stratèges Ads et motion designers — tous bilingues FR/BE.
             </p>
@@ -98,10 +98,10 @@ export default function EquipePage() {
               <RevealWrapper key={i} delay={i * 80}>
                 <div
                   className="rounded-2xl overflow-hidden"
-                  style={{ border: "1px solid oklch(0.16 0 0)" }}
+                  style={{ border: "1px solid var(--ink-3)" }}
                 >
                   {/* Photo */}
-                  <div className="relative w-full" style={{ aspectRatio: "4/3", background: "oklch(0.10 0 0)" }}>
+                  <div className="relative w-full" style={{ aspectRatio: "4/3", background: "var(--ink-2)" }}>
                     <Image
                       src={member.photo}
                       alt={member.name}
@@ -110,22 +110,22 @@ export default function EquipePage() {
                     />
                     <div
                       className="absolute inset-0"
-                      style={{ background: "linear-gradient(to top, oklch(0.06 0 0) 0%, transparent 50%)" }}
+                      style={{ background: "linear-gradient(to top, var(--ink) 0%, transparent 50%)" }}
                     />
                   </div>
 
                   {/* Info */}
-                  <div className="p-6" style={{ background: "oklch(0.08 0 0)" }}>
-                    <p className="font-mono text-[9px] uppercase tracking-wider mb-1" style={{ color: "oklch(0.38 0 0)" }}>
+                  <div className="p-6" style={{ background: "var(--ink-2)" }}>
+                    <p className="font-mono text-[9px] uppercase tracking-wider mb-1" style={{ color: "var(--cream-faint)" }}>
                       {member.role}
                     </p>
                     <h2
                       className="font-sora font-light text-xl mb-3 leading-snug"
-                      style={{ color: "oklch(0.96 0 0)", letterSpacing: "-0.02em" }}
+                      style={{ color: "var(--cream)", letterSpacing: "-0.02em" }}
                     >
                       {member.name}
                     </h2>
-                    <p className="font-sora font-light text-sm leading-relaxed mb-4" style={{ color: "oklch(0.45 0 0)" }}>
+                    <p className="font-sora font-light text-sm leading-relaxed mb-4" style={{ color: "var(--cream-dim)" }}>
                       {member.bio}
                     </p>
                     <div className="flex flex-wrap gap-1.5">
@@ -133,7 +133,7 @@ export default function EquipePage() {
                         <span
                           key={s}
                           className="font-mono text-[9px] uppercase tracking-wider px-2.5 py-1 rounded-full"
-                          style={{ border: "1px solid oklch(0.18 0 0)", color: "oklch(0.38 0 0)" }}
+                          style={{ border: "1px solid var(--ink-4)", color: "var(--cream-faint)" }}
                         >
                           {s}
                         </span>
@@ -148,15 +148,15 @@ export default function EquipePage() {
       </section>
 
       {/* Values */}
-      <section className="py-20 px-5" style={{ background: "oklch(0.04 0 0)" }}>
+      <section className="py-20 px-5" style={{ background: "var(--ink)" }}>
         <div className="max-w-6xl mx-auto">
           <RevealWrapper className="mb-14">
-            <p className="font-mono text-[10px] uppercase tracking-wider mb-3" style={{ color: "oklch(0.38 0 0)" }}>
+            <p className="font-mono text-[10px] uppercase tracking-wider mb-3" style={{ color: "var(--cream-faint)" }}>
               Nos engagements
             </p>
             <h2
               className="font-sora font-thin tracking-tighter"
-              style={{ fontSize: "clamp(28px, 4vw, 48px)", letterSpacing: "-0.04em", color: "oklch(0.96 0 0)" }}
+              style={{ fontSize: "clamp(28px, 4vw, 48px)", letterSpacing: "-0.04em", color: "var(--cream)" }}
             >
               Ce qui nous différencie
             </h2>
@@ -164,25 +164,25 @@ export default function EquipePage() {
 
           <div
             className="grid grid-cols-1 md:grid-cols-3"
-            style={{ border: "1px solid oklch(0.14 0 0)", borderRadius: "18px", overflow: "hidden" }}
+            style={{ border: "1px solid var(--ink-3)", borderRadius: "18px", overflow: "hidden" }}
           >
             {values.map((v, i) => (
               <RevealWrapper
                 key={i}
                 className="p-8"
                 style={{
-                  background: "oklch(0.06 0 0)",
-                  borderRight: i < values.length - 1 ? "1px solid oklch(0.14 0 0)" : undefined,
+                  background: "var(--ink)",
+                  borderRight: i < values.length - 1 ? "1px solid var(--ink-3)" : undefined,
                 }}
                 delay={i * 100}
               >
                 <h3
                   className="font-sora font-light text-lg mb-3 leading-snug"
-                  style={{ color: "oklch(0.96 0 0)", letterSpacing: "-0.02em" }}
+                  style={{ color: "var(--cream)", letterSpacing: "-0.02em" }}
                 >
                   {v.title}
                 </h3>
-                <p className="font-sora font-light text-sm leading-relaxed" style={{ color: "oklch(0.42 0 0)" }}>
+                <p className="font-sora font-light text-sm leading-relaxed" style={{ color: "var(--cream-dim)" }}>
                   {v.desc}
                 </p>
               </RevealWrapper>
@@ -192,12 +192,12 @@ export default function EquipePage() {
       </section>
 
       {/* Big team photo */}
-      <section className="px-5 pb-0" style={{ background: "oklch(0.04 0 0)" }}>
+      <section className="px-5 pb-0" style={{ background: "var(--ink)" }}>
         <div className="max-w-6xl mx-auto">
           <RevealWrapper>
             <div
               className="relative w-full rounded-t-[20px] overflow-hidden"
-              style={{ aspectRatio: "21/9", background: "oklch(0.10 0 0)" }}
+              style={{ aspectRatio: "21/9", background: "var(--ink-2)" }}
             >
               <Image
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1400&auto=format&fit=crop"
@@ -207,10 +207,10 @@ export default function EquipePage() {
               />
               <div
                 className="absolute inset-0"
-                style={{ background: "linear-gradient(to top, oklch(0.04 0 0 / 0.6) 0%, transparent 50%)" }}
+                style={{ background: "linear-gradient(to top, rgba(20, 21, 25, 0.6) 0%, transparent 50%)" }}
               />
               <div className="absolute bottom-6 left-8">
-                <p className="font-mono text-[9px] uppercase tracking-wider" style={{ color: "oklch(0.38 0 0)" }}>
+                <p className="font-mono text-[9px] uppercase tracking-wider" style={{ color: "var(--cream-faint)" }}>
                   Fovea Production — Bruxelles, 2026
                 </p>
               </div>

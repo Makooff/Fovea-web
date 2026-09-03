@@ -27,7 +27,7 @@ export default function Portfolio() {
   const [selected, setSelected] = useState<VideoEntry | null>(null);
 
   return (
-    <section ref={ref} id="realisations" className="py-20 px-5" style={{ background: "oklch(0.06 0 0)" }}>
+    <section ref={ref} id="realisations" className="py-20 px-5" style={{ background: "var(--ink)" }}>
       <div className="max-w-6xl mx-auto">
         <motion.div
           className="mb-12"
@@ -35,8 +35,8 @@ export default function Portfolio() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
-          <p className="font-mono text-[10px] uppercase tracking-wider mb-3" style={{ color: "oklch(0.38 0 0)" }}>Notre travail</p>
-          <h2 className="font-sora font-thin tracking-tighter" style={{ fontSize: "clamp(32px, 5vw, 54px)", letterSpacing: "-0.04em", color: "oklch(0.96 0 0)" }}>Réalisations</h2>
+          <p className="font-mono text-[10px] uppercase tracking-wider mb-3" style={{ color: "var(--cream-faint)" }}>Notre travail</p>
+          <h2 className="font-sora font-thin tracking-tighter" style={{ fontSize: "clamp(32px, 5vw, 54px)", letterSpacing: "-0.04em", color: "var(--cream)" }}>Réalisations</h2>
         </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-12 gap-3 items-start">
@@ -44,7 +44,7 @@ export default function Portfolio() {
             <div
               key={i}
               className={`${p.cols} rounded-[14px] overflow-hidden relative cursor-pointer group`}
-              style={{ aspectRatio: p.vertical ? "9/16" : "16/9", border: "1px solid oklch(0.18 0 0)", background: "oklch(0.08 0 0)" }}
+              style={{ aspectRatio: p.vertical ? "9/16" : "16/9", border: "1px solid var(--ink-4)", background: "var(--ink-2)" }}
               onClick={() => setSelected(p)}
             >
               {inView && (
@@ -65,10 +65,10 @@ export default function Portfolio() {
                   />
                 )
               )}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300" style={{ backdropFilter: "blur(5px)", WebkitBackdropFilter: "blur(5px)", background: "oklch(0.04 0 0 / 0.40)" }} />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300" style={{ backdropFilter: "blur(5px)", WebkitBackdropFilter: "blur(5px)", background: "rgba(20, 21, 25, 0.40)" }} />
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <motion.div className="w-14 h-14 rounded-full flex items-center justify-center" style={{ background: "oklch(0.96 0 0 / 0.12)", border: "1px solid oklch(0.96 0 0 / 0.40)", backdropFilter: "blur(8px)" }} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-                  <svg width="14" height="16" viewBox="0 0 14 16" className="translate-x-0.5"><path d="M0 0L14 8L0 16V0Z" fill="oklch(0.96 0 0)" /></svg>
+                <motion.div className="w-14 h-14 rounded-full flex items-center justify-center" style={{ background: "rgba(244, 244, 246, 0.12)", border: "1px solid rgba(244, 244, 246, 0.40)", backdropFilter: "blur(8px)" }} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+                  <svg width="14" height="16" viewBox="0 0 14 16" className="translate-x-0.5"><path d="M0 0L14 8L0 16V0Z" fill="var(--cream)" /></svg>
                 </motion.div>
               </div>
             </div>
@@ -78,9 +78,9 @@ export default function Portfolio() {
 
       <AnimatePresence>
         {selected && (
-          <motion.div className="fixed inset-0 z-[100] flex items-center justify-center p-5" style={{ background: "oklch(0.04 0 0 / 0.96)" }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setSelected(null)}>
+          <motion.div className="fixed inset-0 z-[100] flex items-center justify-center p-5" style={{ background: "rgba(20, 21, 25, 0.96)" }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setSelected(null)}>
             <motion.div className="relative w-full max-w-5xl" style={{ aspectRatio: selected.vertical ? "9/16" : "16/9" }} initial={{ scale: 0.92, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.92, opacity: 0 }} transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }} onClick={(e) => e.stopPropagation()}>
-              <button onClick={() => setSelected(null)} className="absolute -top-10 right-0 font-sora text-sm transition-colors" style={{ color: "oklch(0.45 0 0)" }} onMouseEnter={(e) => (e.currentTarget.style.color = "oklch(0.96 0 0)")} onMouseLeave={(e) => (e.currentTarget.style.color = "oklch(0.45 0 0)")}>Fermer</button>
+              <button onClick={() => setSelected(null)} className="absolute -top-10 right-0 font-sora text-sm transition-colors" style={{ color: "var(--cream-dim)" }} onMouseEnter={(e) => (e.currentTarget.style.color = "var(--cream)")} onMouseLeave={(e) => (e.currentTarget.style.color = "var(--cream-dim)")}>Fermer</button>
               {selected.type === "youtube" ? (
                 <iframe src={`https://www.youtube.com/embed/${selected.src}?autoplay=1&rel=0&modestbranding=1`} className="absolute inset-0 w-full h-full rounded-2xl" frameBorder="0" allow="autoplay; encrypted-media; fullscreen" allowFullScreen />
               ) : (

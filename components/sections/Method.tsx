@@ -86,7 +86,7 @@ function MethodCard({ card, index, total }: { card: (typeof cards)[0]; index: nu
             <div className="flex items-baseline gap-3 mb-3">
               <span
                 className="font-poppins font-extrabold leading-none"
-                style={{ fontSize: "clamp(40px, 5vw, 60px)", color: "rgba(245,240,236,0.10)", letterSpacing: "-0.04em" }}
+                style={{ fontSize: "clamp(40px, 5vw, 60px)", color: "rgba(244, 244, 246,0.10)", letterSpacing: "-0.04em" }}
               >
                 {card.num}
               </span>
@@ -109,7 +109,7 @@ function MethodCard({ card, index, total }: { card: (typeof cards)[0]; index: nu
               style={{
                 background: "linear-gradient(120deg, var(--sun-1), var(--sun-2))",
                 color: "#fff",
-                boxShadow: "0 10px 30px rgba(255,61,119,0.30)",
+                boxShadow: "0 10px 30px rgba(229, 82, 74,0.30)",
               }}
             >
               <svg width="15" height="15" viewBox="0 0 16 16" fill="none">

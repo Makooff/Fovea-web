@@ -54,7 +54,7 @@ function Pill({ label }: { label: string }) {
   return (
     <span
       className="inline-flex items-center rounded-full px-3 py-1 font-mono text-[10px] uppercase tracking-wider"
-      style={{ border: "1px solid oklch(0.22 0 0)", color: "oklch(0.45 0 0)" }}
+      style={{ border: "1px solid var(--ink-4)", color: "var(--cream-dim)" }}
     >
       {label}
     </span>
@@ -63,23 +63,23 @@ function Pill({ label }: { label: string }) {
 
 export default function CampagneAdsPage() {
   return (
-    <main className="pt-[56px]" style={{ background: "oklch(0.06 0 0)" }}>
+    <main className="pt-[56px]" style={{ background: "var(--ink)" }}>
 
       {/* Hero */}
       <section className="py-16 sm:py-24 px-5">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
             <RevealWrapper>
-              <p className="font-mono text-[10px] uppercase tracking-wider mb-4" style={{ color: "oklch(0.38 0 0)" }}>
+              <p className="font-mono text-[10px] uppercase tracking-wider mb-4" style={{ color: "var(--cream-faint)" }}>
                 Campagnes publicitaires
               </p>
               <h1
                 className="font-sora font-thin tracking-tighter mb-6"
-                style={{ fontSize: "clamp(36px, 5.5vw, 68px)", letterSpacing: "-0.04em", color: "oklch(0.96 0 0)" }}
+                style={{ fontSize: "clamp(36px, 5.5vw, 68px)", letterSpacing: "-0.04em", color: "var(--cream)" }}
               >
                 Chaque euro investi doit rapporter davantage.
               </h1>
-              <p className="font-sora font-light text-base leading-relaxed mb-8" style={{ color: "oklch(0.45 0 0)" }}>
+              <p className="font-sora font-light text-base leading-relaxed mb-8" style={{ color: "var(--cream-dim)" }}>
                 Nous lançons et gérons vos campagnes Google, Meta, TikTok et LinkedIn.
                 Les créatifs vidéo sont inclus — ce qui garantit une cohérence totale
                 entre le message et son exécution publicitaire.
@@ -92,7 +92,7 @@ export default function CampagneAdsPage() {
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-full font-sora font-medium text-sm px-6 py-3 transition-colors"
-                style={{ background: "oklch(0.96 0 0)", color: "oklch(0.06 0 0)" }}
+                style={{ background: "var(--cream)", color: "var(--ink)" }}
               >
                 Lancer une campagne
               </Link>
@@ -101,7 +101,7 @@ export default function CampagneAdsPage() {
             <RevealWrapper delay={100}>
               <div
                 className="relative w-full rounded-2xl overflow-hidden"
-                style={{ aspectRatio: "4/3", background: "oklch(0.10 0 0)", border: "1px solid oklch(0.16 0 0)" }}
+                style={{ aspectRatio: "4/3", background: "var(--ink-2)", border: "1px solid var(--ink-3)" }}
               >
                 <Image
                   src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&auto=format&fit=crop"
@@ -112,12 +112,12 @@ export default function CampagneAdsPage() {
                 {/* Stat overlay */}
                 <div
                   className="absolute bottom-5 left-5 right-5 p-5 rounded-xl"
-                  style={{ background: "oklch(0.06 0 0 / 0.85)", border: "1px solid oklch(0.18 0 0)", backdropFilter: "blur(12px)" }}
+                  style={{ background: "rgba(20, 21, 25, 0.85)", border: "1px solid var(--ink-4)", backdropFilter: "blur(12px)" }}
                 >
-                  <p className="font-mono text-[9px] uppercase tracking-wider mb-1" style={{ color: "oklch(0.38 0 0)" }}>
+                  <p className="font-mono text-[9px] uppercase tracking-wider mb-1" style={{ color: "var(--cream-faint)" }}>
                     Performance moyenne clients Fovea
                   </p>
-                  <p className="font-sora font-thin text-3xl" style={{ color: "oklch(0.96 0 0)", letterSpacing: "-0.04em" }}>
+                  <p className="font-sora font-thin text-3xl" style={{ color: "var(--cream)", letterSpacing: "-0.04em" }}>
                     ROAS 4.2×
                   </p>
                 </div>
@@ -128,15 +128,15 @@ export default function CampagneAdsPage() {
       </section>
 
       {/* Platforms */}
-      <section className="py-20 px-5" style={{ background: "oklch(0.04 0 0)" }}>
+      <section className="py-20 px-5" style={{ background: "var(--ink)" }}>
         <div className="max-w-6xl mx-auto">
           <RevealWrapper className="mb-14">
-            <p className="font-mono text-[10px] uppercase tracking-wider mb-3" style={{ color: "oklch(0.38 0 0)" }}>
+            <p className="font-mono text-[10px] uppercase tracking-wider mb-3" style={{ color: "var(--cream-faint)" }}>
               Plateformes
             </p>
             <h2
               className="font-sora font-thin tracking-tighter"
-              style={{ fontSize: "clamp(28px, 4vw, 48px)", letterSpacing: "-0.04em", color: "oklch(0.96 0 0)" }}
+              style={{ fontSize: "clamp(28px, 4vw, 48px)", letterSpacing: "-0.04em", color: "var(--cream)" }}
             >
               Toutes les plateformes, un seul interlocuteur
             </h2>
@@ -147,9 +147,9 @@ export default function CampagneAdsPage() {
               <RevealWrapper key={i} delay={i * 80}>
                 <div
                   className="rounded-2xl overflow-hidden"
-                  style={{ border: "1px solid oklch(0.16 0 0)" }}
+                  style={{ border: "1px solid var(--ink-3)" }}
                 >
-                  <div className="relative w-full" style={{ aspectRatio: "16/7", background: "oklch(0.10 0 0)" }}>
+                  <div className="relative w-full" style={{ aspectRatio: "16/7", background: "var(--ink-2)" }}>
                     <Image
                       src={p.photo}
                       alt={p.name}
@@ -157,22 +157,22 @@ export default function CampagneAdsPage() {
                       className="object-cover opacity-50"
                     />
                     <div className="absolute inset-0 flex items-end p-5">
-                      <h3 className="font-sora font-thin text-2xl" style={{ color: "oklch(0.96 0 0)", letterSpacing: "-0.03em" }}>
+                      <h3 className="font-sora font-thin text-2xl" style={{ color: "var(--cream)", letterSpacing: "-0.03em" }}>
                         {p.name}
                       </h3>
                     </div>
                   </div>
-                  <div className="p-6" style={{ background: "oklch(0.06 0 0)" }}>
-                    <p className="font-sora font-light text-sm leading-relaxed mb-5" style={{ color: "oklch(0.45 0 0)" }}>
+                  <div className="p-6" style={{ background: "var(--ink)" }}>
+                    <p className="font-sora font-light text-sm leading-relaxed mb-5" style={{ color: "var(--cream-dim)" }}>
                       {p.desc}
                     </p>
                     <div className="flex gap-6">
                       {p.metrics.map((m) => (
                         <div key={m.label}>
-                          <p className="font-sora font-thin text-2xl" style={{ color: "oklch(0.96 0 0)", letterSpacing: "-0.03em" }}>
+                          <p className="font-sora font-thin text-2xl" style={{ color: "var(--cream)", letterSpacing: "-0.03em" }}>
                             {m.value}
                           </p>
-                          <p className="font-mono text-[9px] uppercase tracking-wider" style={{ color: "oklch(0.38 0 0)" }}>
+                          <p className="font-mono text-[9px] uppercase tracking-wider" style={{ color: "var(--cream-faint)" }}>
                             {m.label}
                           </p>
                         </div>
@@ -187,39 +187,39 @@ export default function CampagneAdsPage() {
       </section>
 
       {/* Process */}
-      <section className="py-20 px-5" style={{ background: "oklch(0.06 0 0)" }}>
+      <section className="py-20 px-5" style={{ background: "var(--ink)" }}>
         <div className="max-w-3xl mx-auto">
           <RevealWrapper className="mb-14">
-            <p className="font-mono text-[10px] uppercase tracking-wider mb-3" style={{ color: "oklch(0.38 0 0)" }}>
+            <p className="font-mono text-[10px] uppercase tracking-wider mb-3" style={{ color: "var(--cream-faint)" }}>
               Notre méthode
             </p>
             <h2
               className="font-sora font-thin tracking-tighter"
-              style={{ fontSize: "clamp(28px, 4vw, 48px)", letterSpacing: "-0.04em", color: "oklch(0.96 0 0)" }}
+              style={{ fontSize: "clamp(28px, 4vw, 48px)", letterSpacing: "-0.04em", color: "var(--cream)" }}
             >
               Du brief au ROAS
             </h2>
           </RevealWrapper>
 
-          <div style={{ borderTop: "1px solid oklch(0.16 0 0)" }}>
+          <div style={{ borderTop: "1px solid var(--ink-3)" }}>
             {process.map((step, i) => (
               <RevealWrapper
                 key={i}
                 className="grid gap-6 py-8"
-                style={{ gridTemplateColumns: "56px 1fr", borderBottom: "1px solid oklch(0.16 0 0)" }}
+                style={{ gridTemplateColumns: "56px 1fr", borderBottom: "1px solid var(--ink-3)" }}
                 delay={i * 80}
               >
-                <span className="font-mono text-[11px]" style={{ color: "oklch(0.35 0 0)", paddingTop: "3px" }}>
+                <span className="font-mono text-[11px]" style={{ color: "var(--cream-faint)", paddingTop: "3px" }}>
                   {step.num}
                 </span>
                 <div>
                   <h3
                     className="font-sora font-light text-lg mb-2"
-                    style={{ color: "oklch(0.96 0 0)", letterSpacing: "-0.02em" }}
+                    style={{ color: "var(--cream)", letterSpacing: "-0.02em" }}
                   >
                     {step.title}
                   </h3>
-                  <p className="font-sora font-light text-sm leading-relaxed" style={{ color: "oklch(0.42 0 0)" }}>
+                  <p className="font-sora font-light text-sm leading-relaxed" style={{ color: "var(--cream-dim)" }}>
                     {step.desc}
                   </p>
                 </div>
@@ -230,15 +230,15 @@ export default function CampagneAdsPage() {
       </section>
 
       {/* Results */}
-      <section className="py-20 px-5" style={{ background: "oklch(0.04 0 0)" }}>
+      <section className="py-20 px-5" style={{ background: "var(--ink)" }}>
         <div className="max-w-6xl mx-auto">
           <RevealWrapper className="mb-14">
-            <p className="font-mono text-[10px] uppercase tracking-wider mb-3" style={{ color: "oklch(0.38 0 0)" }}>
+            <p className="font-mono text-[10px] uppercase tracking-wider mb-3" style={{ color: "var(--cream-faint)" }}>
               Résultats clients
             </p>
             <h2
               className="font-sora font-thin tracking-tighter"
-              style={{ fontSize: "clamp(28px, 4vw, 48px)", letterSpacing: "-0.04em", color: "oklch(0.96 0 0)" }}
+              style={{ fontSize: "clamp(28px, 4vw, 48px)", letterSpacing: "-0.04em", color: "var(--cream)" }}
             >
               Des chiffres qui parlent
             </h2>
@@ -249,9 +249,9 @@ export default function CampagneAdsPage() {
               <RevealWrapper key={i} delay={i * 80}>
                 <div
                   className="rounded-2xl overflow-hidden"
-                  style={{ border: "1px solid oklch(0.16 0 0)" }}
+                  style={{ border: "1px solid var(--ink-3)" }}
                 >
-                  <div className="relative w-full" style={{ aspectRatio: "16/9", background: "oklch(0.10 0 0)" }}>
+                  <div className="relative w-full" style={{ aspectRatio: "16/9", background: "var(--ink-2)" }}>
                     <Image
                       src={r.photo}
                       alt={r.client}
@@ -259,17 +259,17 @@ export default function CampagneAdsPage() {
                       className="object-cover opacity-50"
                     />
                   </div>
-                  <div className="p-6" style={{ background: "oklch(0.06 0 0)" }}>
-                    <p className="font-mono text-[9px] uppercase tracking-wider mb-1" style={{ color: "oklch(0.38 0 0)" }}>
+                  <div className="p-6" style={{ background: "var(--ink)" }}>
+                    <p className="font-mono text-[9px] uppercase tracking-wider mb-1" style={{ color: "var(--cream-faint)" }}>
                       {r.client} · {r.sector}
                     </p>
                     <p
                       className="font-sora font-thin mb-1"
-                      style={{ fontSize: "38px", letterSpacing: "-0.04em", color: "oklch(0.96 0 0)" }}
+                      style={{ fontSize: "38px", letterSpacing: "-0.04em", color: "var(--cream)" }}
                     >
                       {r.stat}
                     </p>
-                    <p className="font-sora font-light text-sm" style={{ color: "oklch(0.45 0 0)" }}>
+                    <p className="font-sora font-light text-sm" style={{ color: "var(--cream-dim)" }}>
                       {r.label}
                     </p>
                   </div>

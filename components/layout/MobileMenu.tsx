@@ -29,7 +29,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
       {isOpen && (
         <motion.div
           className="fixed inset-0 z-40 flex flex-col items-center justify-center"
-          style={{ background: "oklch(0.06 0 0 / 0.98)" }}
+          style={{ background: "rgba(20, 21, 25, 0.98)" }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -49,9 +49,9 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   href={link.href}
                   onClick={onClose}
                   className="font-sora font-light text-3xl transition-colors duration-200"
-                  style={{ color: "oklch(0.65 0 0)" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "oklch(0.96 0 0)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "oklch(0.65 0 0)")}
+                  style={{ color: "var(--cream-dim)" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--cream)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "var(--cream-dim)")}
                 >
                   {link.label}
                 </Link>
@@ -70,7 +70,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               href="/contact"
               onClick={onClose}
               className="inline-flex items-center justify-center rounded-full font-sora font-medium text-sm px-6 py-3 transition-all duration-200 active:scale-[0.97]"
-              style={{ background: "oklch(0.96 0 0)", color: "oklch(0.06 0 0)" }}
+              style={{ background: "var(--cream)", color: "var(--ink)" }}
             >
               Contact
             </Link>

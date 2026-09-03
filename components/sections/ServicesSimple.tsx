@@ -14,7 +14,7 @@ export default function ServicesSimple() {
   const inView = useInView(ref, { once: true, margin: "-12%" });
 
   return (
-    <section ref={ref} className="py-28 px-5" style={{ background: "oklch(0.06 0 0)" }}>
+    <section ref={ref} className="py-28 px-5" style={{ background: "var(--ink)" }}>
       <div className="max-w-4xl mx-auto">
         <div className="flex flex-col">
           {services.map((s, i) => (
@@ -27,7 +27,7 @@ export default function ServicesSimple() {
               >
                 <span
                   className="font-mono text-[11px] shrink-0 mt-1"
-                  style={{ color: "oklch(0.38 0 0)" }}
+                  style={{ color: "var(--cream-faint)" }}
                 >
                   {s.num}
                 </span>
@@ -36,7 +36,7 @@ export default function ServicesSimple() {
                   style={{
                     fontSize: "clamp(32px, 5vw, 60px)",
                     letterSpacing: "-0.04em",
-                    color: "oklch(0.96 0 0)",
+                    color: "var(--cream)",
                   }}
                 >
                   {s.label}
@@ -45,7 +45,7 @@ export default function ServicesSimple() {
               {i < services.length - 1 && (
                 <motion.div
                   className="h-px origin-left"
-                  style={{ background: "oklch(0.16 0 0)" }}
+                  style={{ background: "var(--ink-3)" }}
                   initial={{ scaleX: 0 }}
                   animate={inView ? { scaleX: 1 } : {}}
                   transition={{ delay: i * 0.13 + 0.1, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
@@ -57,7 +57,7 @@ export default function ServicesSimple() {
 
         <motion.p
           className="font-sora font-light mt-10 text-sm leading-relaxed"
-          style={{ color: "oklch(0.40 0 0)" }}
+          style={{ color: "var(--cream-dim)" }}
           initial={{ opacity: 0, y: 12 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.45, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}

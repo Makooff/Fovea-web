@@ -173,7 +173,7 @@ export default function ContactPage() {
                 type="submit"
                 disabled={status === "sending"}
                 className="mt-1 inline-flex items-center justify-center rounded-full font-poppins font-semibold text-sm px-6 py-3.5 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                style={{ background: "linear-gradient(120deg, var(--sun-1), var(--sun-2))", color: "#fff", boxShadow: "0 12px 36px rgba(255,61,119,0.32)" }}
+                style={{ background: "linear-gradient(120deg, var(--sun-1), var(--sun-2))", color: "#fff", boxShadow: "0 12px 36px rgba(229, 82, 74,0.32)" }}
                 whileTap={{ scale: 0.97 }}
               >
                 {status === "sending" ? "Envoi en cours..." : "Envoyer le message"}

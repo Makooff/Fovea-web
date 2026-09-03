@@ -32,9 +32,12 @@ const fredoka = Fredoka({
   display: "swap",
 });
 
+// Poppins porte l'identité Fovea : logo (800) et texte courant (400/500).
+// L'italique est chargé pour les légendes de la DA (voir docs/DESIGN-SYSTEM.md).
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
+  style: ["normal", "italic"],
   variable: "--font-poppins",
   display: "swap",
 });

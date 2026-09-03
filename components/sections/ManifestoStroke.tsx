@@ -25,8 +25,8 @@ function SvgPath({ pathLength }: { pathLength: MotionValue<number> }) {
     >
       <defs>
         <linearGradient id="nova-stroke-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor="#FF8A3D" />
-          <stop offset="100%" stopColor="#FF3D77" />
+          <stop offset="0%" stopColor="#F0796F" />
+          <stop offset="100%" stopColor="#E5524A" />
         </linearGradient>
       </defs>
       <motion.path

@@ -134,8 +134,8 @@ export default function ZoomParallaxWork() {
                 href="/realisations"
                 className="inline-flex items-center gap-2 rounded-full font-poppins font-semibold text-[15px] px-7 py-3.5 transition-all duration-200 active:scale-[0.97]"
                 style={{
-                  background: "rgba(245,240,236,0.10)",
-                  border: "1px solid rgba(245,240,236,0.20)",
+                  background: "rgba(244, 244, 246,0.10)",
+                  border: "1px solid rgba(244, 244, 246,0.20)",
                   color: "var(--cream)",
                   backdropFilter: "blur(12px)",
                 }}

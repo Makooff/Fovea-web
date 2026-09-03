@@ -39,13 +39,13 @@ function MagneticButton({
       href={href}
       style={
         primary
-          ? { x: springX, y: springY, background: "oklch(0.96 0 0)", color: "oklch(0.06 0 0)" }
-          : { x: springX, y: springY, border: "1px solid oklch(0.30 0 0)", color: "oklch(0.65 0 0)" }
+          ? { x: springX, y: springY, background: "var(--cream)", color: "var(--ink)" }
+          : { x: springX, y: springY, border: "1px solid var(--cream-faint)", color: "var(--cream-dim)" }
       }
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className="inline-flex items-center justify-center rounded-full font-sora font-medium text-sm px-7 py-3.5 transition-colors duration-200 cursor-pointer select-none"
-      whileHover={primary ? { background: "oklch(0.88 0 0)" } as never : { borderColor: "oklch(0.50 0 0)", color: "oklch(0.90 0 0)" } as never}
+      whileHover={primary ? { background: "#D9D9DE" } as never : { borderColor: "#6C6E79", color: "#F4F4F6" } as never}
       whileTap={{ scale: 0.96 }}
     >
       {children}
@@ -73,7 +73,7 @@ export default function CTA() {
     <section
       ref={sectionRef}
       className="relative py-32 px-5 overflow-hidden"
-      style={{ background: "oklch(0.04 0 0)" }}
+      style={{ background: "var(--ink)" }}
     >
       {/* Parallax background image */}
       <motion.div
@@ -94,14 +94,14 @@ export default function CTA() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 70% 70% at 50% 50%, transparent 20%, oklch(0.04 0 0 / 0.95) 100%)",
+            "radial-gradient(ellipse 70% 70% at 50% 50%, transparent 20%, rgba(20, 21, 25, 0.95) 100%)",
         }}
       />
 
       {/* Rule top — draws down */}
       <motion.div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-px"
-        style={{ background: "oklch(0.22 0 0)", height: "80px", originY: 0 }}
+        style={{ background: "var(--ink-4)", height: "80px", originY: 0 }}
         initial={{ scaleY: 0 }}
         animate={inView ? { scaleY: 1 } : {}}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -110,7 +110,7 @@ export default function CTA() {
       <div className="max-w-4xl mx-auto text-center relative">
         <motion.p
           className="font-mono text-[10px] uppercase tracking-[3px] mb-8"
-          style={{ color: "oklch(0.38 0 0)" }}
+          style={{ color: "var(--cream-faint)" }}
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.2, duration: 0.6 }}
@@ -125,7 +125,7 @@ export default function CTA() {
             fontSize: "clamp(42px, 8vw, 96px)",
             letterSpacing: "-0.04em",
             lineHeight: 1.06,
-            color: "oklch(0.96 0 0)",
+            color: "var(--cream)",
             scale: headingScale,
             willChange: "transform",
           }}
@@ -136,9 +136,9 @@ export default function CTA() {
           Votre prochaine
           <br />
           <motion.span
-            style={{ color: "oklch(0.32 0 0)" }}
-            initial={{ color: "oklch(0.20 0 0)" }}
-            animate={inView ? { color: "oklch(0.32 0 0)" } : {}}
+            style={{ color: "var(--cream-faint)" }}
+            initial={{ color: "#1F2027" }}
+            animate={inView ? { color: "#3A3C46" } : {}}
             transition={{ delay: 0.5, duration: 1.2 }}
           >
             vidéo commence ici.
