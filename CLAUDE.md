@@ -26,8 +26,6 @@ En résumé, non négociable :
 - **Section type** : `relative overflow-hidden py-20 px-5`, contenu en
   `max-w-6xl mx-auto`, fonds alternés `--ink` / `--ink-2`.
 
-Modèle de référence : `components/sections/Packs.tsx` et `app/packs/page.tsx`.
-
 Si une demande impose de sortir de la DA, le signaler plutôt que de dériver en
 silence.
 

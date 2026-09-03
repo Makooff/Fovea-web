@@ -5,11 +5,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Logo from "@/components/ui/ds/Logo";
 
-const navLinks = [
-  { label: "Réalisations", href: "/realisations" },
-  { label: "Packs", href: "/packs" },
-];
-
 export default function MinimalHeader() {
   const [scrolled, setScrolled] = useState(false);
 
@@ -39,18 +34,15 @@ export default function MinimalHeader() {
         </Link>
 
         <div className="flex items-center gap-2.5">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="hidden sm:inline-flex items-center font-poppins font-medium text-[13px] transition-colors duration-200"
-              style={{ color: "var(--cream-dim)" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--cream)")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--cream-dim)")}
-            >
-              {link.label}
-            </Link>
-          ))}
+          <Link
+            href="/realisations"
+            className="hidden sm:inline-flex items-center font-poppins font-medium text-[13px] transition-colors duration-200"
+            style={{ color: "var(--cream-dim)" }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "var(--cream)")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--cream-dim)")}
+          >
+            Réalisations
+          </Link>
           <Link
             href="/contact"
             className="inline-flex items-center justify-center rounded-full font-poppins font-semibold text-[12px] uppercase tracking-wide px-4 py-[9px] transition-all duration-200 active:scale-[0.97]"

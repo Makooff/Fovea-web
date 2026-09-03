@@ -10,8 +10,8 @@ Applique la direction artistique Fovea à tout travail visuel sur ce dépôt.
 ## Marche à suivre
 
 1. Lire `docs/DESIGN-SYSTEM.md` — c'est la spec complète et elle fait foi.
-2. Regarder `components/sections/Packs.tsx` : c'est l'application de référence
-   de la DA, du bandeau aux cartes d'offre.
+2. Pour un support de présentation (deck client, one-pager), suivre la
+   section « Anatomie d'une planche » du même document.
 3. Construire avec les primitives de `@/components/ui/ds` avant d'écrire du
    markup neuf. Si une primitive manque, l'ajouter dans `components/ui/ds/` et
    l'exporter depuis `index.ts` — ne pas dupliquer une carte dans une section.

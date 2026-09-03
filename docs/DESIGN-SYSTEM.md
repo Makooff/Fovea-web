@@ -150,12 +150,52 @@ Les sections alternent `--ink` et `--ink-2` d'un bloc à l'autre.
 `GlowBackdrop` exige un parent `relative overflow-hidden`, et le contenu qui
 suit doit être `relative` pour passer au-dessus.
 
-Référence vivante : `components/sections/Packs.tsx` et `app/packs/page.tsx`
-appliquent la DA de bout en bout.
+Les sections existantes du site (`components/sections/`) suivent cette recette.
 
 ---
 
-## 7. À ne pas faire
+## 7. Anatomie d'une planche (présentation client)
+
+La DA sert aussi hors du site : deck commercial, one-pager, plaquette. Les
+planches de packs qui ont servi de référence à cette DA suivent toujours la
+même construction — c'est le gabarit à reprendre pour toute nouvelle planche.
+
+**Ossature d'une planche**
+
+1. **En-tête** — le logo `FOVEA` + point rouge en haut à gauche, les
+   coordonnées en pilules en haut à droite (`ContactPills`).
+2. **Annonce** — soit un `Chip` en capitales calé à gauche (`NOTRE MISSION`,
+   `NOS LEVIERS`, `QUELQUES CHIFFRES`, `NOS TYPES DE CRÉATIONS`,
+   `NOTRE APPROCHE ET NOS OUTILS`), soit un `SectionBanner` pleine largeur
+   pour les titres forts (`CE QUE NOUS AVONS ACCOMPLI`,
+   `NOS PACKS D'ACCOMPAGNEMENTS`), avec sa mention en petites capitales à
+   droite si besoin.
+3. **Corps** — une grille de cartes, jamais du texte au fil de l'eau :
+   - chiffres-clés en ligne de 4 (`StatCard`) : valeur en gras, précision en
+     italique dessous ;
+   - outils ou plateformes en grille de 2 colonnes (`ToolCard`) ;
+   - démarche en étapes numérotées reliées par un filet vertical (`StepList`),
+     posée à gauche, la grille d'outils à droite ;
+   - offres en 3 colonnes (`PackCard`) : nom dans une pilule, prix en italique,
+     inclusions en liste à tirets rouges.
+4. **Ambiance** — un halo rouge très flou dans un angle (`GlowBackdrop`), jamais
+   plus de deux par planche. C'est la seule couleur d'arrière-plan admise.
+
+**Rythme** — une idée par planche. Les fonds alternent `--ink` et `--ink-2`
+d'une planche à l'autre pour marquer les respirations.
+
+**Formats de packs** — la trame commerciale documentée par les maquettes :
+trois paliers (Starter / Growth / Scale), un prix mensuel, et la même liste
+d'inclusions d'un palier à l'autre (budget ads, tournages, scripts, vidéos,
+gestion ads, réunion mensuelle) pour que la comparaison se lise en diagonale.
+Le palier mis en avant prend la carte accentuée (`featured`).
+
+Les primitives de `components/ui/ds/` produisent exactement ces blocs : une
+planche se compose avec elles, pas avec du markup neuf.
+
+---
+
+## 8. À ne pas faire
 
 - Écrire `#fff`, `#000`, `oklch(...)` ou un rouge en dur.
 - Introduire une police, un rayon ou une courbe d'animation supplémentaires.
