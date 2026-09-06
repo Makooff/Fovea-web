@@ -1029,3 +1029,151 @@ strong {
 .line__note {
   display: none;
 }
+
+/* ==========================================================================
+   Présentation de pré-tournage
+   ========================================================================== */
+
+/* --- Vignettes de direction créative --------------------------------------
+   Le dépôt n'a aucune règle d'image, et emprunter la vignette d'une vidéo
+   tierce poserait une question de droits. Chaque direction est donc rendue en
+   CSS pur.
+
+   Les trois vignettes varient par la LUMIÈRE et la MATIÈRE, jamais par la
+   teinte : la charte n'admet qu'un seul accent, donc introduire un cyan ou un
+   magenta pour figurer un look vidéo la casserait à l'écran. Contraste, grain
+   et vignettage suffisent à distinguer trois partis pris. */
+
+.dir__swatch {
+  display: block;
+  width: 100%;
+  height: 104px;
+  border-radius: var(--r-card);
+  border: 1px solid var(--rule);
+  position: relative;
+  overflow: hidden;
+}
+
+.dir__swatch--tall {
+  height: 208px;
+}
+
+/* Grain commun, en data: pour ne dépendre d'aucun fichier. */
+.dir__swatch::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 140px 140px;
+}
+
+/* Contrasté : lumière dure, noirs profonds, éclats francs. */
+.dir__swatch--hard {
+  background:
+    radial-gradient(60% 90% at 22% 18%, rgba(229, 82, 74, 0.85) 0%, transparent 55%),
+    radial-gradient(50% 70% at 82% 78%, rgba(240, 121, 111, 0.5) 0%, transparent 60%),
+    #0d0e11;
+}
+
+.dir__swatch--hard::after {
+  opacity: 0.1;
+  mix-blend-mode: overlay;
+}
+
+/* Chaleureux : lumière douce, dégradé long, grain visible. */
+.dir__swatch--warm {
+  background:
+    radial-gradient(120% 100% at 30% 110%, rgba(229, 82, 74, 0.55) 0%, transparent 62%),
+    linear-gradient(160deg, #2a1f21 0%, var(--ink-3) 100%);
+}
+
+.dir__swatch--warm::after {
+  opacity: 0.26;
+}
+
+/* Brut : peu de couleur, grain lourd, vignettage marqué. */
+.dir__swatch--raw {
+  background:
+    radial-gradient(70% 90% at 50% 40%, rgba(244, 244, 246, 0.16) 0%, transparent 58%),
+    var(--ink-2);
+  box-shadow: inset 0 0 60px 18px rgba(0, 0, 0, 0.75);
+}
+
+.dir__swatch--raw::after {
+  opacity: 0.42;
+}
+
+/* --- Les trois directions côte à côte ------------------------------------ */
+
+.dirs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.dir__num {
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--red);
+  margin: 12px 0 4px;
+}
+
+.dirs h3 {
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  color: var(--cream);
+  margin-bottom: 5px;
+}
+
+.dir__line {
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--cream-dim);
+}
+
+/* --- Une direction développée -------------------------------------------- */
+
+.dir__grid {
+  display: grid;
+  grid-template-columns: 250px 1fr 270px;
+  gap: 26px;
+  align-items: start;
+}
+
+.dir__grid .dialogue {
+  gap: 9px;
+}
+
+.dir__grid .panel {
+  padding: 20px 22px;
+}
+
+.dir__grid h3 {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--cream);
+}
+
+/* --- Colonne de droite des listes chiffrées ------------------------------ */
+
+/* Une absence se signale, elle ne se chiffre pas. */
+.sum__amount--gap {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Un statut de droits ou une échéance : du texte, pas un montant. */
+.sum__amount--tag {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cream-dim);
+  border: 1px solid var(--rule);
+  border-radius: var(--r-chip);
+  padding: 6px 14px;
+}

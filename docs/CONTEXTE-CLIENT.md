@@ -96,7 +96,14 @@ Ce que Redouane a demandé, dans ses termes :
    veut : propositions de concept et références visuelles.
 3. **Des propositions de sons**, choisis pour ce qui fonctionne au moment de la
    publication.
-4. **La refonte du logo** du J'adore, plus une **vidéo d'animation** de ce logo.
+4. **Une retouche technique du logo** du J'adore, plus une **animation** de ce
+   logo.
+
+> **Correction.** Une version antérieure de ce document parlait de « refonte du
+> logo ». C'est faux : Salim ne veut pas qu'on y touche. Le travail est un
+> nettoyage du tracé, une version monochrome et des déclinaisons pour qu'il
+> tienne en petit et sur fond sombre, plus l'animation. Le dessin, lui, ne
+> bouge pas.
 
 L'objectif tient en une phrase : **gagner en visibilité et en statistiques**.
 Les plateformes visées sont **Instagram, Facebook et TikTok**.
@@ -132,6 +139,31 @@ Il faut aussi vérifier les droits : un son populaire n'est pas forcément
 utilisable sur un compte professionnel. Les bibliothèques commerciales des
 plateformes et les licences de type Epidemic Sound ou Artlist sont les voies
 sûres, et elles se vérifient au cas par cas.
+
+### Ce qui existe déjà en ligne
+
+Relevé publiquement le 6 septembre 2026, arrondi, et à revérifier avant tout
+rendez-vous : ces chiffres bougent.
+
+| Plateforme | État |
+|---|---|
+| Instagram [@jadorebarlounge](https://www.instagram.com/jadorebarlounge/) | environ 2 057 abonnés, 655 publications |
+| Facebook [J'Adore lounge bar](https://www.facebook.com/Jadore.sgs/) | environ 2 844 mentions, **des Reels déjà publiés** |
+| TikTok | **aucun compte trouvé**, alors que c'est une des trois plateformes visées |
+
+L'établissement est place Van Zeeland, ouvert de 11 h à 23 h, avec brunchs,
+cocktails, chicha et terrasse. Il organise déjà des soirées à thème.
+
+**Conséquence de fond : ce n'est pas une boîte de nuit.** Un after movie de
+club, stroboscopes et fosse, serait hors sujet. Le registre est celui d'un
+lounge qui sert aussi des brunchs.
+
+### Le fichier du logo manque
+
+Il n'existe nulle part dans le dépôt : aucun SVG, aucune image du J'adore.
+Sans le fichier d'origine de Salim, la retouche technique ne peut pas
+commencer et l'animation reste au stade du concept. **C'est la première chose
+à lui demander.**
 
 ### Ce qui reste à établir avec Salim
 
@@ -188,6 +220,21 @@ le bar est nommé.
 
 `CLAUDE.md` et `.claude/skills/fovea-da/` font que cette DA s'applique
 automatiquement à toute demande visuelle, sans avoir à la rappeler.
+
+### Les trois types de documents
+
+`presentations/` produit maintenant trois types, distingués par le champ `kind`
+de l'objet de contenu :
+
+| `kind` | Documents | Fichier de contenu |
+|---|---|---|
+| `sector` | les quatre commerces | `content.mjs` |
+| `group` | le document de groupe | `content.mjs` |
+| `shoot` | la présentation de pré-tournage du J'adore | `content-jadore.mjs` |
+
+L'ordre des planches est une table de correspondance dans `render.mjs`. Un
+`kind` inconnu échoue en le disant, plutôt que de retomber silencieusement dans
+la mise en page d'un autre type.
 
 ### La chaîne de documents de vente
 

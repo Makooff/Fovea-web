@@ -1,7 +1,18 @@
-# Documents de vente
+# Documents client
 
-Un PDF par commerce, plus un document de groupe, dans la direction artistique
-Fovea (`docs/DESIGN-SYSTEM.md`) et dans deux formats.
+Trois types de documents, dans la direction artistique Fovea
+(`docs/DESIGN-SYSTEM.md`) et dans deux formats.
+
+| Type (`kind`) | Documents | Contenu |
+|---|---|---|
+| `sector` | un par commerce | `content.mjs` |
+| `group` | le document de groupe | `content.mjs` |
+| `shoot` | la présentation de pré-tournage du J'adore | `content-jadore.mjs` |
+
+Les deux premiers **vendent l'offre Fovea**. Le troisième ne vend rien : c'est
+un document de pré-production qui sert à découvrir ce que le client aime avant
+de tourner. Il propose des choix au lieu d'affirmer des résultats, donc il ne
+partage presque aucune planche avec les autres.
 
 | Format | Fichier | Pour quoi |
 |---|---|---|
@@ -97,6 +108,45 @@ entre une plaquette et une proposition.
 
 `<i>` autour d'un mot d'un titre le passe en italique rouge de marque. Un seul
 par titre : le build refuse d'aller plus loin.
+
+---
+
+## Ajouter un document d'un type nouveau
+
+L'ordre des planches est une **table de correspondance** dans `renderDeck`
+(`render.mjs`), pas un ternaire : un `kind` inconnu lève une erreur qui le
+nomme, au lieu de retomber dans la mise en page d'un autre type et de planter
+plus loin.
+
+Pour ajouter un type :
+
+1. Un fichier de contenu par document, avec un `kind` neuf.
+2. Les fonctions de planche dans `render.mjs`, avant `renderDeck`. Convention
+   du fichier : une planche qui lit `COMMON` ne prend pas d'argument, une
+   planche propre à un document prend `doc`.
+3. Une entrée dans `ORDERS`, et le document ajouté à `ALL` dans `build.mjs`.
+
+Les formats et les trois garde-fous sont agnostiques du type : rien d'autre à
+toucher.
+
+### Les blocs réutilisables
+
+`lanes()` rend une frise à voies dont l'axe vient du contenu : elle sert les
+mois de l'année pour le document de groupe et les heures d'une soirée pour la
+présentation de pré-tournage. `limits()` et `close()` acceptent un bloc pour
+que chaque document dise ses propres limites.
+
+### Les vignettes de direction créative
+
+Le dépôt n'a **aucune règle CSS d'image**, et emprunter la vignette d'une vidéo
+tierce poserait une question de droits. Les trois directions de la présentation
+de pré-tournage sont donc rendues en CSS pur (`.dir__swatch--hard`, `--warm`,
+`--raw`).
+
+Elles varient par la **lumière et la matière**, jamais par la teinte : la
+charte n'admet qu'un seul accent, donc figurer un look vidéo avec un cyan ou un
+magenta la casserait à l'écran. Contraste, grain et vignettage suffisent à
+distinguer trois partis pris.
 
 ---
 

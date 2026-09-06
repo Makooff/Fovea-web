@@ -360,17 +360,17 @@ function setup() {
 }
 
 /** 11. Ce que nous ne promettons pas. La planche qui fait gagner la confiance. */
-function limits() {
-  const items = COMMON.limits.items
+function limits(block = COMMON.limits) {
+  const items = block.items
     .map((l) => `<div class="limit"><h3>${fr(l.title)}</h3><p>${fr(l.text)}</p></div>`)
     .join('');
 
   return slide(
     'limits',
     `
-    <span class="eyebrow eyebrow--accent">${fr(COMMON.limits.eyebrow)}</span>
-    <h2 style="margin:16px 0 8px">${fr(COMMON.limits.title)}</h2>
-    <p class="lead" style="margin-bottom:22px">${fr(COMMON.limits.lead)}</p>
+    <span class="eyebrow eyebrow--accent">${fr(block.eyebrow)}</span>
+    <h2 style="margin:16px 0 8px">${fr(block.title)}</h2>
+    <p class="lead" style="margin-bottom:22px">${fr(block.lead)}</p>
     <div class="limits">${items}</div>`,
     { alt: true }
   );
@@ -381,11 +381,11 @@ function close(doc) {
   return slide(
     'close',
     `
-    <span class="eyebrow">${fr(COMMON.close.eyebrow)}</span>
+    <span class="eyebrow">${fr(doc.close?.eyebrow ?? COMMON.close.eyebrow)}</span>
     <h1>${fr(doc.closeTitle)}</h1>
     <p class="lead" style="margin-bottom:26px">${fr(doc.closeLine)}</p>
     <div class="contacts">
-      <span class="pill pill--solid">${fr(COMMON.close.cta)}</span>
+      <span class="pill pill--solid">${fr(doc.close?.cta ?? COMMON.close.cta)}</span>
       <span class="pill">${BRAND.phone}</span>
       <span class="pill">${BRAND.email}</span>
     </div>`,
@@ -400,12 +400,17 @@ function close(doc) {
  * marque la fenêtre où le téléphone sonne le plus. C'est l'argument central du
  * document de groupe rendu visible plutôt qu'écrit.
  */
-function contrast(doc) {
-  const { from, to } = HYPOTHESES.monthAxis;
+/**
+ * Rend une frise à voies. L'axe vient du contenu et non des hypothèses : la
+ * même mécanique sert les mois de l'année pour le document de groupe et les
+ * heures d'une soirée pour la présentation de pré-tournage.
+ */
+function lanes({ eyebrow, title, lead, note, lanes: rows, axis, ticks }) {
+  const { from, to } = axis;
   const span = to - from;
-  const pct = (m) => ((m - from) / span) * 100;
+  const pct = (v) => ((v - from) / span) * 100;
 
-  const lanes = doc.contrast.lanes
+  const bars = rows
     .map(
       (l) => `
       <div class="lane">
@@ -422,19 +427,28 @@ function contrast(doc) {
     )
     .join('');
 
-  const ticks = HYPOTHESES.monthTicks.map((t) => `<span>${fr(t)}</span>`).join('');
+  const scale = ticks.map((t) => `<span>${fr(t)}</span>`).join('');
 
   return slide(
     'contrast',
     `
-    <span class="eyebrow">${fr(doc.contrast.eyebrow)}</span>
-    <h2 style="margin:16px 0 8px">${fr(doc.contrast.title)}</h2>
-    <p class="lead" style="margin-bottom:12px">${fr(doc.contrast.lead)}</p>
-    <div class="lanes">${lanes}</div>
-    <div class="lanes__scale"><span></span><div class="lanes__ticks">${ticks}</div></div>
-    <p class="hypothesis">${fr(doc.contrast.note)}</p>`,
+    <span class="eyebrow">${fr(eyebrow)}</span>
+    <h2 style="margin:16px 0 8px">${fr(title)}</h2>
+    <p class="lead" style="margin-bottom:12px">${fr(lead)}</p>
+    <div class="lanes">${bars}</div>
+    <div class="lanes__scale"><span></span><div class="lanes__ticks">${scale}</div></div>
+    ${note ? `<p class="hypothesis">${fr(note)}</p>` : ''}`,
     { alt: true }
   );
+}
+
+/** La frise saisonnière du document de groupe, sur l'axe des mois. */
+function contrast(doc) {
+  return lanes({
+    ...doc.contrast,
+    axis: HYPOTHESES.monthAxis,
+    ticks: HYPOTHESES.monthTicks,
+  });
 }
 
 /** L'addition des quatre. Chaque ligne vient du calcul de son propre document. */
@@ -471,6 +485,279 @@ function groupCost(doc, sectors) {
   );
 }
 
+/* --- Planches propres à la présentation de pré-tournage ------------------ */
+
+/** État des lieux : ce qui existe déjà en ligne, sourcé et daté. */
+function audit(doc) {
+  const rows = doc.audit.rows
+    .map(
+      (r) => `
+      <li class="sum__row">
+        <div>
+          <h3>${fr(r.name)}</h3>
+          <p>${fr(r.detail)}</p>
+        </div>
+        <span class="sum__amount${r.gap ? ' sum__amount--gap' : ''}">${fr(r.figure)}</span>
+      </li>`
+    )
+    .join('');
+
+  return slide(
+    'audit',
+    `
+    <span class="eyebrow">${fr(doc.audit.eyebrow)}</span>
+    <h2 style="margin:16px 0 14px">${fr(doc.audit.title)}</h2>
+    <ul class="sum">${rows}</ul>
+    <p class="hypothesis">${fr(doc.audit.source)}</p>`,
+    { alt: true }
+  );
+}
+
+/** Ce que l'after movie doit produire ici. Planche de rupture, sans chiffre promis. */
+function intent(doc) {
+  const cols = doc.intent.columns
+    .map((c) => `<div class="product__col"><h3>${fr(c.title)}</h3><p>${fr(c.text)}</p></div>`)
+    .join('');
+
+  return slide(
+    'product',
+    `
+    <span class="eyebrow eyebrow--accent">${fr(doc.intent.eyebrow)}</span>
+    <h1>${fr(doc.intent.title)}</h1>
+    <p class="lead" style="margin-bottom:34px">${fr(doc.intent.lead)}</p>
+    <div class="product__cols">${cols}</div>`,
+    { dark: true, glow: null }
+  );
+}
+
+/**
+ * Les trois directions côte à côte. Chacune porte une vignette rendue en CSS :
+ * le dépôt n'a aucune règle d'image, et emprunter des vignettes de vidéos
+ * tierces poserait une question de droits. La vignette traduit le parti pris
+ * (dominante, contraste, grain) plutôt que de le décrire.
+ */
+function directions(doc) {
+  const cells = doc.directions
+    .map(
+      (d, i) => `
+      <div class="dir">
+        <span class="dir__swatch dir__swatch--${d.swatch}"></span>
+        <p class="dir__num">${String(i + 1).padStart(2, '0')}</p>
+        <h3>${fr(d.name)}</h3>
+        <p class="dir__line">${fr(d.line)}</p>
+      </div>`
+    )
+    .join('');
+
+  return slide(
+    'directions',
+    `
+    <span class="eyebrow">${fr(doc.directionsIntro.eyebrow)}</span>
+    <h2 style="margin:16px 0 10px">${fr(doc.directionsIntro.title)}</h2>
+    <p class="lead" style="margin-bottom:20px">${fr(doc.directionsIntro.lead)}</p>
+    <div class="dirs">${cells}</div>`
+  );
+}
+
+/** Une direction développée : signature, ce qu'on filme, ce qu'elle exige. */
+function direction(doc, index) {
+  const d = doc.directions[index];
+
+  const asks = d.asks.map((a) => `<li>${fr(a)}</li>`).join('');
+  const beats = d.beats
+    .map(
+      (b) => `
+      <div class="step">
+        <span class="step__mark">${fr(b.mark)}</span>
+        <span class="step__text">${fr(b.text)}</span>
+      </div>`
+    )
+    .join('');
+
+  return slide(
+    'direction',
+    `
+    <span class="eyebrow">${fr(`Direction ${index + 1} sur ${doc.directions.length}`)}</span>
+    <h2 style="margin:16px 0 6px">${fr(d.title)}</h2>
+    <p class="lead" style="margin-bottom:18px">${fr(d.lead)}</p>
+    <div class="dir__grid">
+      <div>
+        <span class="dir__swatch dir__swatch--${d.swatch} dir__swatch--tall"></span>
+        <p class="caption" style="margin-top:10px">${fr(d.mood)}</p>
+      </div>
+      <div class="dialogue">${beats}</div>
+      <div class="panel">
+        <p class="note__tag">${fr('Ce que la direction exige')}</p>
+        <ul class="dashes" style="margin-top:10px">${asks}</ul>
+      </div>
+    </div>`,
+    { alt: index % 2 === 1 }
+  );
+}
+
+/** Le son : d'abord le cadre des droits, ensuite une sélection de départ. */
+function sound(doc) {
+  const rules = doc.sound.rules
+    .map((r) => `<div class="limit"><h3>${fr(r.title)}</h3><p>${fr(r.text)}</p></div>`)
+    .join('');
+
+  return slide(
+    'sound',
+    `
+    <span class="eyebrow eyebrow--accent">${fr(doc.sound.eyebrow)}</span>
+    <h2 style="margin:16px 0 8px">${fr(doc.sound.title)}</h2>
+    <p class="lead" style="margin-bottom:20px">${fr(doc.sound.lead)}</p>
+    <div class="limits">${rules}</div>
+    <p class="hypothesis">${fr(doc.sound.source)}</p>`,
+    { alt: true }
+  );
+}
+
+/** Les pistes proposées, avec leur statut de droits et la date du relevé. */
+function tracks(doc) {
+  const rows = doc.tracks.rows
+    .map(
+      (t) => `
+      <li class="sum__row">
+        <div>
+          <h3>${fr(t.name)}</h3>
+          <p>${fr(t.detail)}</p>
+        </div>
+        <span class="sum__amount sum__amount--tag">${fr(t.status)}</span>
+      </li>`
+    )
+    .join('');
+
+  return slide(
+    'tracks',
+    `
+    <span class="eyebrow">${fr(doc.tracks.eyebrow)}</span>
+    <h2 style="margin:16px 0 12px">${fr(doc.tracks.title)}</h2>
+    <ul class="sum">${rows}</ul>
+    <p class="hypothesis">${fr(doc.tracks.note)}</p>`
+  );
+}
+
+/** Le logo : ce qu'on ne touche pas, ce qu'on remet d'aplomb. */
+function logo(doc) {
+  const keep = doc.logo.keep.map((k) => `<li>${fr(k)}</li>`).join('');
+  const fix = doc.logo.fix.map((f) => `<li>${fr(f)}</li>`).join('');
+
+  return slide(
+    'logo',
+    `
+    <span class="eyebrow">${fr(doc.logo.eyebrow)}</span>
+    <h2 style="margin:16px 0 8px">${fr(doc.logo.title)}</h2>
+    <p class="lead" style="margin-bottom:20px">${fr(doc.logo.lead)}</p>
+    <div class="record__grid">
+      <div class="panel">
+        <p class="note__tag">${fr("Ce à quoi nous ne touchons pas")}</p>
+        <ul class="dashes" style="margin-top:10px">${keep}</ul>
+      </div>
+      <div class="panel">
+        <p class="note__tag">${fr('Ce que nous remettons d\'aplomb')}</p>
+        <ul class="dashes" style="margin-top:10px">${fix}</ul>
+      </div>
+    </div>
+    <p class="hypothesis">${fr(doc.logo.blocker)}</p>`,
+    { alt: true }
+  );
+}
+
+/** Trois concepts d'animation du logo, en escalier. */
+function logoMotion(doc) {
+  const steps = doc.logoMotion.concepts
+    .map(
+      (c, i) => `
+      <div class="stairs__step">
+        <span class="stairs__num">${i + 1}</span>
+        <h3>${fr(c.title)}</h3>
+        <p>${fr(c.text)}</p>
+      </div>`
+    )
+    .join('');
+
+  return slide(
+    'logomotion',
+    `
+    <span class="eyebrow">${fr(doc.logoMotion.eyebrow)}</span>
+    <h2 style="margin:16px 0 10px">${fr(doc.logoMotion.title)}</h2>
+    <div class="stairs">${steps}</div>
+    <p class="delay">${fr(doc.logoMotion.note)}</p>`
+  );
+}
+
+/** Le plan de tournage du soir, sur l'axe des heures. */
+function shootPlan(doc) {
+  return lanes({ ...doc.shootPlan, axis: doc.shootPlan.axis, ticks: doc.shootPlan.ticks });
+}
+
+/** Ce qu'il faut de la part du client pour que la soirée soit tournable. */
+function needs(doc) {
+  const items = doc.needs.items.map((n) => `<li>${fr(n)}</li>`).join('');
+
+  return slide(
+    'needs',
+    `
+    <span class="eyebrow eyebrow--accent">${fr(doc.needs.eyebrow)}</span>
+    <h2 style="margin:16px 0 8px">${fr(doc.needs.title)}</h2>
+    <div class="record__grid">
+      <div>
+        <p class="lead" style="margin-bottom:14px">${fr(doc.needs.lead)}</p>
+        <p class="caption">${fr(doc.needs.caption)}</p>
+      </div>
+      <div class="panel"><ul class="dashes">${items}</ul></div>
+    </div>`
+  );
+}
+
+/** Les livrables et le calendrier, datés depuis la soirée. */
+function delivery(doc) {
+  const items = doc.delivery.items
+    .map(
+      (d) => `
+      <li class="sum__row">
+        <div>
+          <h3>${fr(d.name)}</h3>
+          <p>${fr(d.detail)}</p>
+        </div>
+        <span class="sum__amount sum__amount--tag">${fr(d.when)}</span>
+      </li>`
+    )
+    .join('');
+
+  return slide(
+    'delivery',
+    `
+    <span class="eyebrow">${fr(doc.delivery.eyebrow)}</span>
+    <h2 style="margin:16px 0 12px">${fr(doc.delivery.title)}</h2>
+    <ul class="sum">${items}</ul>
+    <p class="hypothesis">${fr(doc.delivery.note)}</p>`,
+    { alt: true }
+  );
+}
+
+/** Les questions ouvertes, celles auxquelles le rendez-vous doit répondre. */
+function questions(doc) {
+  const items = doc.questions.items
+    .map(
+      (q, i) => `
+      <li>
+        <span class="gains__num">${String(i + 1).padStart(2, '0')}</span>
+        <div><h3>${fr(q.title)}</h3><p>${fr(q.text)}</p></div>
+      </li>`
+    )
+    .join('');
+
+  return slide(
+    'questions',
+    `
+    <span class="eyebrow">${fr(doc.questions.eyebrow)}</span>
+    <h2 style="margin:16px 0 16px">${fr(doc.questions.title)}</h2>
+    <ul class="gains">${items}</ul>`
+  );
+}
+
 /* -------------------------------------------------------------------------
    Assemblage
    ------------------------------------------------------------------------- */
@@ -482,36 +769,74 @@ function groupCost(doc, sectors) {
 export function renderDeck(doc, { cssHref, sectors }) {
   plateNo = 0;
 
-  const plates = doc.kind === 'group'
-    ? [
-        cover(doc),
-        pain(doc),
-        contrast(doc),
-        groupCost(doc, sectors),
-        product(),
-        campaign(doc),
-        during(doc),
-        natural(),
-        gains(doc),
-        record(doc),
-        setup(),
-        limits(),
-        close(doc),
-      ]
-    : [
-        cover(doc),
-        pain(doc),
-        cost(doc),
-        product(),
-        campaign(doc),
-        during(doc),
-        natural(),
-        gains(doc),
-        record(doc),
-        setup(),
-        limits(),
-        close(doc),
-      ];
+  /**
+   * L'ordre des planches, par type de document. Une table plutôt qu'un
+   * ternaire : un `kind` inconnu doit échouer en le disant, pas retomber
+   * silencieusement dans la mise en page d'un autre type.
+   */
+  const ORDERS = {
+    sector: () => [
+      cover(doc),
+      pain(doc),
+      cost(doc),
+      product(),
+      campaign(doc),
+      during(doc),
+      natural(),
+      gains(doc),
+      record(doc),
+      setup(),
+      limits(),
+      close(doc),
+    ],
+
+    group: () => [
+      cover(doc),
+      pain(doc),
+      contrast(doc),
+      groupCost(doc, sectors),
+      product(),
+      campaign(doc),
+      during(doc),
+      natural(),
+      gains(doc),
+      record(doc),
+      setup(),
+      limits(),
+      close(doc),
+    ],
+
+    /* La présentation de pré-tournage : elle propose des choix au lieu
+       d'affirmer des résultats, donc elle ne partage presque aucune planche
+       avec les documents de vente. */
+    shoot: () => [
+      cover(doc),
+      audit(doc),
+      intent(doc),
+      directions(doc),
+      ...doc.directions.map((_, i) => direction(doc, i)),
+      sound(doc),
+      tracks(doc),
+      logo(doc),
+      logoMotion(doc),
+      shootPlan(doc),
+      needs(doc),
+      delivery(doc),
+      limits(doc.limits),
+      questions(doc),
+      close(doc),
+    ],
+  };
+
+  const order = ORDERS[doc.kind];
+  if (!order) {
+    throw new Error(
+      `Document « ${doc.slug} » : type « ${doc.kind} » inconnu. ` +
+        `Types disponibles : ${Object.keys(ORDERS).join(', ')}.`
+    );
+  }
+
+  const plates = order();
 
   return `<!doctype html>
 <html lang="fr">
