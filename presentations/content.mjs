@@ -39,12 +39,16 @@ export const BRAND = {
  */
 
 export const CLIENT = {
-  /** Le groupe, tel qu'il doit apparaître en pied de page. */
-  name: 'Groupe à nommer',
+  /**
+   * Le groupe, tel qu'il doit apparaître en pied de page.
+   * Le nom commercial du groupe n'est pas connu : le prénom du dirigeant sert
+   * en attendant. À remplacer dès qu'il y a une raison sociale.
+   */
+  name: 'Salim',
   /** La personne à qui le document est remis. */
-  contact: 'Nom du dirigeant',
+  contact: 'Salim',
   /** La ville, pour la couverture. */
-  city: 'Bruxelles',
+  city: 'Soignies',
 };
 
 /* -------------------------------------------------------------------------
@@ -416,9 +420,9 @@ export const SECTORS = [
   /* ---------------------------------------------------------------------- */
   {
     slug: 'bar',
-    label: 'Bar',
-    trade: 'Soirées et privatisations',
-    coverLabel: 'Bar',
+    label: "Le J'adore lounge bar",
+    trade: 'Soirées et privatisations, Soignies',
+    coverLabel: "Le J'adore lounge bar",
     kind: 'sector',
 
     cover: {
@@ -655,7 +659,7 @@ export const GROUP = {
       "Chaque barre marque la période où le commerce fait son chiffre. C'est elle qui commande la date de tournage, et elle ne se déplace pas.",
     lanes: [
       { name: 'Concession', trade: 'Rentrée et printemps', peakFrom: 3, peakTo: 6, peakLabel: 'Mars à mai' },
-      { name: 'Bar', trade: 'La terrasse, puis les fêtes', peakFrom: 6, peakTo: 9, peakLabel: 'Juin à août' },
+      { name: "Le J'adore", trade: 'La terrasse, puis les fêtes', peakFrom: 6, peakTo: 9, peakLabel: 'Juin à août' },
       { name: 'Pâtisserie', trade: 'Communions, puis fin d\'année', peakFrom: 5, peakTo: 7, peakLabel: 'Mai et juin' },
       { name: 'Parfumerie', trade: "Décembre pèse l'année", peakFrom: 11, peakTo: 13, peakLabel: 'Novembre et décembre' },
     ],
