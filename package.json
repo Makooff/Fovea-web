@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "decks": "node presentations/build.mjs",
+    "decks:png": "node presentations/build.mjs --png",
+    "decks:fonts": "node presentations/fetch-fonts.mjs"
   },
   "dependencies": {
     "@vimeo/player": "^2.30.4",
