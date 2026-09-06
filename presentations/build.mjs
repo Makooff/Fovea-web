@@ -18,7 +18,13 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 import { DOCS, SECTORS } from './content.mjs';
+import { JADORE } from './content-jadore.mjs';
 import { renderDeck } from './render.mjs';
+
+/* Les documents de vente, plus les présentations client. Le nouveau document
+   vit dans son propre fichier de contenu : ajouter un client ne touche pas
+   aux dix PDF existants. */
+const ALL = [...DOCS, JADORE];
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const BUILD = join(HERE, 'build');
@@ -60,9 +66,9 @@ const askedFormats = FORMATS.filter((f) => args.includes(`--${f.id}`));
 const formats = askedFormats.length ? askedFormats : FORMATS;
 const only = args.filter((a) => !a.startsWith('--'));
 
-const targets = only.length ? DOCS.filter((d) => only.includes(d.slug)) : DOCS;
+const targets = only.length ? ALL.filter((d) => only.includes(d.slug)) : ALL;
 if (!targets.length) {
-  console.error(`Document inconnu. Disponibles : ${DOCS.map((d) => d.slug).join(', ')}`);
+  console.error(`Document inconnu. Disponibles : ${ALL.map((d) => d.slug).join(', ')}`);
   process.exit(1);
 }
 

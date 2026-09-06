@@ -78,8 +78,13 @@ exécution sans compromis (la qualité ne dépend pas du budget), partenariat r�
 
 ## 2. Le client : Salim, et Le J'adore lounge bar
 
-**Salim** est le client. Il exploite **Le J'adore lounge bar**, à **Soignies**
-(Hainaut, Belgique).
+**Salim** est le client. Il est **propriétaire de quatre commerces** : une
+concession automobile, une pâtisserie en trompe-l'œil, une parfumerie, et
+**Le J'adore lounge bar**, à **Soignies** (Hainaut, Belgique).
+
+Le J'adore est donc le bar de ces quatre. Les dix documents de vente de
+`presentations/` ne sont pas de la prospection générique : ce sont ses
+commerces, et les documents portent son nom.
 
 ### Le projet en cours
 
@@ -91,17 +96,36 @@ Ce que Redouane a demandé, dans ses termes :
    veut : propositions de concept et références visuelles.
 3. **Des propositions de sons**, choisis pour ce qui fonctionne au moment de la
    publication.
-4. **La refonte du logo** du J'adore, plus une **vidéo d'animation** de ce logo.
+4. **Une retouche technique du logo** du J'adore, plus une **animation** de ce
+   logo.
+
+> **Correction.** Une version antérieure de ce document parlait de « refonte du
+> logo ». C'est faux : Salim ne veut pas qu'on y touche. Le travail est un
+> nettoyage du tracé, une version monochrome et des déclinaisons pour qu'il
+> tienne en petit et sur fond sombre, plus l'animation. Le dessin, lui, ne
+> bouge pas.
 
 L'objectif tient en une phrase : **gagner en visibilité et en statistiques**.
 Les plateformes visées sont **Instagram, Facebook et TikTok**.
 
-### Ce que cela implique sur le calendrier
+### La date, et ce qu'elle commande
 
-Un after movie se monte à partir d'images tournées **pendant** la soirée. La
-pré-production se prépare donc **avant** l'événement, et la soirée n'a pas
-encore eu lieu au moment où ce document est écrit. La date conditionne tout le
-reste : c'est la première chose à établir.
+**La soirée a lieu le 2 octobre 2026.**
+
+Un after movie se monte à partir d'images tournées **pendant** la soirée. Tout
+ce qui précède est donc daté depuis ce 2 octobre :
+
+| Échéance | Ce qui doit être fait |
+|---|---|
+| avant le 2 octobre | concept validé, plan de tournage écrit, autorisations réglées, équipe et matériel confirmés |
+| le 2 octobre | le tournage |
+| après le 2 octobre | montage, puis publication |
+
+La recherche de sons se fait **au plus près de la publication**, pas
+maintenant : une tendance qui vaut aujourd'hui aura tourné d'ici là.
+
+Ce qui reste à caler avec Salim : la date de publication visée, et donc le
+délai de montage dont il accepte de disposer.
 
 ### Les sons : à rechercher en direct, jamais de mémoire
 
@@ -115,6 +139,31 @@ Il faut aussi vérifier les droits : un son populaire n'est pas forcément
 utilisable sur un compte professionnel. Les bibliothèques commerciales des
 plateformes et les licences de type Epidemic Sound ou Artlist sont les voies
 sûres, et elles se vérifient au cas par cas.
+
+### Ce qui existe déjà en ligne
+
+Relevé publiquement le 6 septembre 2026, arrondi, et à revérifier avant tout
+rendez-vous : ces chiffres bougent.
+
+| Plateforme | État |
+|---|---|
+| Instagram [@jadorebarlounge](https://www.instagram.com/jadorebarlounge/) | environ 2 057 abonnés, 655 publications |
+| Facebook [J'Adore lounge bar](https://www.facebook.com/Jadore.sgs/) | environ 2 844 mentions, **des Reels déjà publiés** |
+| TikTok | **aucun compte trouvé**, alors que c'est une des trois plateformes visées |
+
+L'établissement est place Van Zeeland, ouvert de 11 h à 23 h, avec brunchs,
+cocktails, chicha et terrasse. Il organise déjà des soirées à thème.
+
+**Conséquence de fond : ce n'est pas une boîte de nuit.** Un after movie de
+club, stroboscopes et fosse, serait hors sujet. Le registre est celui d'un
+lounge qui sert aussi des brunchs.
+
+### Le fichier du logo manque
+
+Il n'existe nulle part dans le dépôt : aucun SVG, aucune image du J'adore.
+Sans le fichier d'origine de Salim, la retouche technique ne peut pas
+commencer et l'animation reste au stade du concept. **C'est la première chose
+à lui demander.**
 
 ### Ce qui reste à établir avec Salim
 
@@ -131,21 +180,24 @@ sûres, et elles se vérifient au cas par cas.
 7. **Ce qu'il appelle un succès** : des vues, des abonnés, du monde le samedi
    suivant. Ce ne sont pas les mêmes montages.
 
-### Un point à confirmer
+### Ce que la propriété des quatre change
 
-Une version antérieure de ce document décrivait un client possédant quatre
-commerces : une concession automobile, une pâtisserie en trompe-l'œil, un bar
-et une parfumerie. Les dix PDF de vente de `presentations/` sont écrits sur
-cette base.
+Les dix PDF de `presentations/` sont désormais **nominatifs** : le pied de page
+porte le nom du client, et le document du bar est celui du J'adore.
 
-**Il reste à confirmer si Salim est ce propriétaire et si Le J'adore est le bar
-de ces quatre.** C'est probable, ce n'est pas établi. Tant que ce n'est pas
-tranché :
+Ce qui reste supposé dans ces documents, et qui doit être confirmé avec lui :
 
-- les documents de `presentations/` restent des documents génériques par
-  métier, valables pour une prospection ;
-- toutes les hypothèses de saison, de budget et de valeur client qu'ils
-  portent sont des déductions, pas des données de Salim.
+- les saisons retenues pour chaque commerce ;
+- les dépenses de visibilité mensuelles supposées ;
+- la valeur d'un client supposée pour chaque enseigne.
+
+Ce sont les trois nombres de la planche chiffrée. Ils sont présentés comme des
+hypothèses à remplacer devant lui, donc ils ne sont pas faux, mais ils ne sont
+pas encore les siens.
+
+Ne sont pas non plus connus : le nom commercial du groupe, s'il en existe un,
+et les enseignes de la concession, de la pâtisserie et de la parfumerie. Seul
+le bar est nommé.
 
 ---
 
@@ -168,6 +220,21 @@ tranché :
 
 `CLAUDE.md` et `.claude/skills/fovea-da/` font que cette DA s'applique
 automatiquement à toute demande visuelle, sans avoir à la rappeler.
+
+### Les trois types de documents
+
+`presentations/` produit maintenant trois types, distingués par le champ `kind`
+de l'objet de contenu :
+
+| `kind` | Documents | Fichier de contenu |
+|---|---|---|
+| `sector` | les quatre commerces | `content.mjs` |
+| `group` | le document de groupe | `content.mjs` |
+| `shoot` | la présentation de pré-tournage du J'adore | `content-jadore.mjs` |
+
+L'ordre des planches est une table de correspondance dans `render.mjs`. Un
+`kind` inconnu échoue en le disant, plutôt que de retomber silencieusement dans
+la mise en page d'un autre type.
 
 ### La chaîne de documents de vente
 
@@ -271,7 +338,7 @@ concurrence locale.
 
 **Sur la soirée**
 
-1. La date, l'horaire, le thème, et qui joue.
+1. L'horaire, le thème, et qui joue. La date est fixée au 2 octobre 2026.
 2. L'affluence attendue, et à quelle heure la salle est pleine.
 3. Le lieu : plan, éclairage, zones filmables, zone fumeurs, terrasse.
 4. Qui tourne, avec quel matériel, et combien de personnes.
@@ -294,7 +361,8 @@ concurrence locale.
 
 **Sur la relation**
 
-12. Salim est-il le propriétaire des quatre commerces évoqués plus haut.
+12. Le groupe a-t-il une raison sociale, et quelles sont les enseignes des
+    trois autres commerces. Seul le bar est nommé à ce jour.
 13. A-t-il déjà travaillé avec un vidéaste, et pourquoi cela s'est arrêté.
 
 ---

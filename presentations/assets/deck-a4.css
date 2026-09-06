@@ -313,3 +313,29 @@ h2 {
 .limit p {
   max-width: none;
 }
+
+/* --- Pré-tournage : recomposition portrait ------------------------------- */
+
+/* Les trois directions s'empilent, la vignette s'aplatit en bandeau. */
+.dirs {
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.dir__swatch {
+  height: 74px;
+}
+
+.dir__swatch--tall {
+  height: 120px;
+}
+
+.dir__num {
+  margin-top: 10px;
+}
+
+/* Une direction développée : trois colonnes deviennent trois blocs. */
+.dir__grid {
+  grid-template-columns: 1fr;
+  gap: 18px;
+}

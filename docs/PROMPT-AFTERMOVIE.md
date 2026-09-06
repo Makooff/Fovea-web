@@ -7,7 +7,8 @@
 
 ```
 Je dois présenter à mon client Salim un projet d'after movie pour une soirée
-de son établissement, Le J'adore lounge bar, à Soignies. La présentation sert
+de son établissement, Le J'adore lounge bar, à Soignies. La soirée a lieu le
+2 octobre 2026 : tout le calendrier part de cette date. La présentation sert
 deux choses à la fois : lui montrer que le travail est préparé, et le faire
 parler pour savoir ce qu'il veut vraiment. Elle est signée Fovea.
 
@@ -25,7 +26,10 @@ AVANT D'ÉCRIRE QUOI QUE CE SOIT
      trouves pas, dis-le, ne suppose pas.
    - Le logo actuel du J'adore, s'il est visible quelque part en ligne.
    - Les sons du moment sur TikTok et sur les Reels. Ta mémoire est périmée
-     sur ce point par construction : une tendance dure quelques semaines.
+     sur ce point par construction : une tendance dure quelques semaines, et
+     la publication est postérieure au 2 octobre. Ce que tu proposes
+     aujourd'hui sera donc à revérifier avant publication : dis-le dans la
+     planche plutôt que de présenter une liste comme définitive.
      Cherche en direct, note la date de consultation à côté de chaque titre,
      et vérifie pour chacun s'il est utilisable par un compte professionnel
      (bibliothèque commerciale de la plateforme, ou licence à acquérir).
@@ -35,9 +39,9 @@ AVANT D'ÉCRIRE QUOI QUE CE SOIT
      seconde, le rythme de coupe, le traitement de la lumière.
 
 3. Ce que tu ne trouves pas, tu le poses en question, tu ne le combles pas.
-   La date de la soirée, le thème, l'affluence, le matériel de tournage et
-   les autorisations de droit à l'image me sont inconnus au moment où
-   j'écris : ils feront partie des questions de la présentation.
+   Le thème, l'affluence, le matériel de tournage, la date de publication
+   visée et les autorisations de droit à l'image me sont inconnus au moment
+   où j'écris : ils feront partie des questions de la présentation.
 
 CE QUE DOIT CONTENIR LA PRÉSENTATION
 
@@ -62,7 +66,8 @@ Déroulé à adapter :
    l'entrée, personnes à prévenir, créneau avant l'ouverture.
 8. Les livrables : un format long, et les déclinaisons verticales par
    plateforme. Dis lesquelles et pourquoi.
-9. Le calendrier : de la validation du concept à la publication.
+9. Le calendrier, daté depuis le 2 octobre : ce qui doit être validé avant,
+   le tournage le soir même, le montage, la publication.
 10. Ce que nous ne promettons pas : trois ou quatre limites vraies, écrites
     franchement. Ne la retire pas, c'est elle qui fait gagner la confiance.
 11. Les questions ouvertes, listées, pour qu'il y réponde en rendez-vous.
