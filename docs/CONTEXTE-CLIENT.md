@@ -76,45 +76,76 @@ exécution sans compromis (la qualité ne dépend pas du budget), partenariat r�
 
 ---
 
-## 2. À qui l'on vend : le groupe aux quatre commerces
+## 2. Le client : Salim, et Le J'adore lounge bar
 
-Un même propriétaire détient quatre commerces sans rapport les uns avec les
-autres :
+**Salim** est le client. Il exploite **Le J'adore lounge bar**, à **Soignies**
+(Hainaut, Belgique).
 
-1. **Une concession automobile** (vente, atelier, pièces)
-2. **Une pâtisserie en trompe-l'œil** (pièces sur mesure, création)
-3. **Un bar**
-4. **Une parfumerie**
+### Le projet en cours
 
-**C'est tout ce qui est connu de source sûre.** Ni le nom du groupe, ni celui
-du dirigeant, ni les enseignes, ni la ville, ni la taille, ni le chiffre
-d'affaires, ni ce qu'il fait aujourd'hui en communication.
+Un **after movie** pour une soirée du J'adore, et une refonte d'identité.
+Ce que Redouane a demandé, dans ses termes :
 
-### L'argument central retenu
+1. **La préparation de pré-production** de l'after movie.
+2. **Une présentation** à remettre à Salim, qui serve aussi à cerner ce qu'il
+   veut : propositions de concept et références visuelles.
+3. **Des propositions de sons**, choisis pour ce qui fonctionne au moment de la
+   publication.
+4. **La refonte du logo** du J'adore, plus une **vidéo d'animation** de ce logo.
 
-Aucun de ces quatre commerces ne justifie à lui seul de recruter un poste
-créatif ou marketing en interne. Chacun en aurait pourtant besoin. Et ils ne se
-ressemblent en rien : ni le public, ni le ton, ni la saison où ils font leur
-chiffre. Un contenu mutualisé ne marcherait pas ; une production suivie, oui.
+L'objectif tient en une phrase : **gagner en visibilité et en statistiques**.
+Les plateformes visées sont **Instagram, Facebook et TikTok**.
 
-C'est cet argument qui rend Fovea pertinent pour lui, et pas seulement
-compétent.
+### Ce que cela implique sur le calendrier
 
-### Ce qui a été supposé pour chaque commerce
+Un after movie se monte à partir d'images tournées **pendant** la soirée. La
+pré-production se prépare donc **avant** l'événement, et la soirée n'a pas
+encore eu lieu au moment où ce document est écrit. La date conditionne tout le
+reste : c'est la première chose à établir.
 
-Ces hypothèses ont servi à écrire les documents existants. **Elles sont à
-confirmer avec le client**, ce ne sont pas des faits.
+### Les sons : à rechercher en direct, jamais de mémoire
 
-| Commerce | Saison retenue | Dépense de visibilité supposée | Valeur d'un client supposée |
-|---|---|---|---|
-| Concession | mars à mai | 600 € par mois | 900 € de marge sur une vente |
-| Pâtisserie | mai et juin, puis fin d'année | 250 € par mois | 120 € de panier sur commande |
-| Bar | juin à août | 400 € par mois | 180 € d'addition de groupe |
-| Parfumerie | novembre et décembre | 350 € par mois | 85 € de panier moyen |
+Une tendance sonore sur TikTok ou Instagram dure quelques semaines. Aucun
+modèle de langage ne peut la connaître de mémoire : ses données d'entraînement
+sont toujours en retard. **Toute proposition de son doit venir d'une recherche
+faite le jour même**, avec la date de consultation notée à côté de chaque
+titre. Un son proposé sans vérification est un son périmé.
 
-Trois des quatre jouent gros en fin d'année, et ils ne peuvent pas être filmés
-la même semaine : c'est ce qui justifie un calendrier de tournage décidé en
-amont, commerce par commerce.
+Il faut aussi vérifier les droits : un son populaire n'est pas forcément
+utilisable sur un compte professionnel. Les bibliothèques commerciales des
+plateformes et les licences de type Epidemic Sound ou Artlist sont les voies
+sûres, et elles se vérifient au cas par cas.
+
+### Ce qui reste à établir avec Salim
+
+1. **La date de la soirée**, et le type d'événement (soirée à thème, DJ
+   invité, anniversaire du lieu, autre).
+2. **Ses comptes existants** : Instagram, Facebook, TikTok du J'adore.
+   Combien d'abonnés, quoi de publié, ce qui a déjà marché ou non.
+3. **Le logo actuel** et ce qui le dérange dedans.
+4. **Ce qu'il attend comme livrables** : un seul after movie, ou un format
+   long plus des extraits courts par plateforme.
+5. **Qui tourne, avec quel matériel**, et combien de personnes sur place.
+6. **Les autorisations** : droit à l'image des clients filmés dans un lieu de
+   nuit, affichage à l'entrée, consentement du personnel.
+7. **Ce qu'il appelle un succès** : des vues, des abonnés, du monde le samedi
+   suivant. Ce ne sont pas les mêmes montages.
+
+### Un point à confirmer
+
+Une version antérieure de ce document décrivait un client possédant quatre
+commerces : une concession automobile, une pâtisserie en trompe-l'œil, un bar
+et une parfumerie. Les dix PDF de vente de `presentations/` sont écrits sur
+cette base.
+
+**Il reste à confirmer si Salim est ce propriétaire et si Le J'adore est le bar
+de ces quatre.** C'est probable, ce n'est pas établi. Tant que ce n'est pas
+tranché :
+
+- les documents de `presentations/` restent des documents génériques par
+  métier, valables pour une prospection ;
+- toutes les hypothèses de saison, de budget et de valeur client qu'ils
+  portent sont des déductions, pas des données de Salim.
 
 ---
 
@@ -238,21 +269,52 @@ concurrence locale.
 
 ## 7. Les questions à poser avant d'écrire quoi que ce soit
 
-1. Le nom du groupe, celui du dirigeant, les enseignes, la ville.
-2. Que fait-il aujourd'hui en communication, et combien il y dépense
-   réellement, commerce par commerce.
-3. Ses comptes existants : pages, abonnés, contenus déjà publiés.
-4. Lequel de ses quatre commerces souffre le plus, et lequel il veut lancer en
-   premier.
-5. Quels chiffres de Fovea il est prêt à assumer publiquement, une fois les
-   contradictions de la section 4 tranchées.
-6. Y a-t-il déjà eu une agence avant, et pourquoi ça s'est arrêté.
+**Sur la soirée**
+
+1. La date, l'horaire, le thème, et qui joue.
+2. L'affluence attendue, et à quelle heure la salle est pleine.
+3. Le lieu : plan, éclairage, zones filmables, zone fumeurs, terrasse.
+4. Qui tourne, avec quel matériel, et combien de personnes.
+5. Les autorisations : droit à l'image, affichage à l'entrée, accord du
+   personnel.
+
+**Sur l'existant**
+
+6. Les comptes Instagram, Facebook et TikTok du J'adore : abonnés, contenus
+   publiés, ce qui a déjà bien ou mal marché.
+7. Le logo actuel, et ce qui déplaît dedans.
+8. Les images des soirées précédentes, s'il y en a.
+
+**Sur l'objectif**
+
+9. Ce que Salim appelle un succès : des vues, des abonnés, ou du monde le
+   samedi suivant. Le montage n'est pas le même.
+10. Le nombre de livrables attendus, et pour quelle plateforme en priorité.
+11. La date de publication visée, qui commande la recherche de sons.
+
+**Sur la relation**
+
+12. Salim est-il le propriétaire des quatre commerces évoqués plus haut.
+13. A-t-il déjà travaillé avec un vidéaste, et pourquoi cela s'est arrêté.
 
 ---
 
-## 8. Où en est le travail
+## 8. L'organisation du dépôt
 
-Branche `claude/design-system-pack-5zv9br`, pull request numéro 1 (brouillon).
+**Une branche par client, dans ce dépôt.** Pas de dépôt séparé : le travail
+client doit garder accès au contexte Fovea, à la direction artistique et à la
+chaîne de génération de documents. Un dépôt à part perdrait tout cela.
+
+| Branche | Contenu |
+|---|---|
+| `main` | le site Fovea et la direction artistique |
+| `claude/design-system-pack-5zv9br` | la chaîne de documents de vente et ce brief |
+| `client/jadore` | le travail pour Salim et Le J'adore lounge bar |
+
+Une branche client part de `main` (ou du dernier état intégré) et porte tout ce
+qui concerne ce client : brief, présentations, pré-production, identité.
+
+### Où en est le travail
 
 | Commit | Contenu |
 |---|---|
@@ -260,6 +322,10 @@ Branche `claude/design-system-pack-5zv9br`, pull request numéro 1 (brouillon).
 | `25aad26` | la page packs est retirée du site, la DA reste en documentation |
 | `6c76712` | la chaîne de documents de vente en PDF |
 | `afbf27e` | les documents vendent l'offre Fovea, et plus un produit tiers |
+| ce commit | le contexte réel du client, et le prompt de la présentation |
+
+La pull request numéro 1 est fusionnée. La numéro 2 porte la chaîne de
+documents et ce brief.
 
 Commandes utiles :
 
@@ -269,3 +335,8 @@ npm run build      # à faire passer avant tout commit
 npm run decks      # régénère les dix PDF de vente
 npm run decks:png  # une image par planche, pour relire
 ```
+
+### Le prompt de la présentation after movie
+
+Il est dans [`docs/PROMPT-AFTERMOVIE.md`](PROMPT-AFTERMOVIE.md). À coller tel
+quel dans une nouvelle session ouverte sur la branche `client/jadore`.
