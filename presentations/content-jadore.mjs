@@ -81,73 +81,88 @@ export const JADORE = {
     ],
   },
 
-  /* --- 4. Les trois directions ------------------------------------------ */
+  /* --- 4. Les trois styles ---------------------------------------------- *
+   * Ce ne sont pas trois directions artistiques entre lesquelles il faudrait
+   * choisir à l'aveugle. Ce sont trois façons de filmer, commandées par le
+   * nombre de personnes présentes et par le ton du moment. Elles s'enchaînent
+   * dans la même soirée, et la planche du plan de tournage les situe dans le
+   * temps.
+   */
   directionsIntro: {
-    eyebrow: 'Trois directions',
-    title: 'Trois partis pris, pas trois <i>variantes</i>.',
+    eyebrow: 'Trois styles, pas trois choix',
+    title: 'Le style suit la <i>salle</i>, pas l\'inverse.',
     lead:
-      "Elles ne se ressemblent pas volontairement : c'est en voyant ce que vous écartez que nous saurons ce que vous voulez. Dites-nous celle qui vous parle, ou ce qui vous gêne dans chacune.",
+      "On ne filme pas quinze personnes comme on en filme cent. Ces trois styles s'enchaînent dans la même soirée, au fur et à mesure que la salle se remplit. Dites-nous celui que vous voulez dominant au montage.",
   },
 
   directions: [
     {
-      swatch: 'hard',
-      name: 'Le rythme',
-      line: "Coupes courtes, lumière franche, énergie constante. On raconte l'intensité.",
-      title: 'Le rythme : la soirée à sa <i>vitesse</i> réelle.',
-      lead:
-        "Un montage serré qui enchaîne les moments forts. C'est la direction la plus lisible en fin de fil d'actualité, et la plus exigeante au tournage.",
-      mood: 'Contraste dur, noirs profonds, éclats de lumière francs.',
-      beats: [
-        { mark: '0 s', text: "Une image qui arrête le pouce : un verre qui se pose, la salle derrière." },
-        { mark: '3 s', text: 'Le rythme démarre. Coupes sur le temps fort, jamais plus de deux secondes par plan.' },
-        { mark: '12 s', text: 'Un ralenti unique, celui qui fait respirer avant la fin.' },
-        { mark: '18 s', text: 'La signature du J\'adore, puis la date de la prochaine soirée.' },
-      ],
-      asks: [
-        'Un éclairage de salle stable, sans stroboscope permanent',
-        'Deux points de vue fixes en plus de la caméra mobile',
-        'Un moment identifié à l\'avance comme le pic de la soirée',
-      ],
-    },
-    {
       swatch: 'warm',
-      name: 'La chaleur',
-      line: 'Lumière douce, plans tenus, visages. On raconte le lieu où on se sent bien.',
-      title: 'La chaleur : ce qui vous <i>distingue</i> d\'une boîte.',
+      when: 'Début de soirée',
+      crowd: 'Salle aux trois quarts vide',
+      tone: 'Posé, soigné, appétant',
+      name: 'La matière',
+      line: "Le lieu, les gestes, les produits. On montre ce qu'on ne peut pas montrer quand c'est plein.",
+      title: 'Peu de monde : on filme ce que la foule <i>cache</i>.',
       lead:
-        "Vous fermez à 23 h et vous servez des brunchs. Cette direction assume le lounge plutôt que le club, et parle aux gens qui ne sortent pas pour danser.",
-      mood: 'Dominante chaude, contraste doux, grain visible.',
+        "Une salle vide n'est pas un problème de tournage, c'est une fenêtre. C'est le seul moment où la lumière est maîtrisable et où un plan peut être tenu.",
+      mood: 'Lumière douce, contraste doux, grain visible.',
       beats: [
-        { mark: '0 s', text: 'Un plan tenu : la lumière de la terrasse, les gens qui parlent.' },
-        { mark: '4 s', text: 'Des visages, pas des silhouettes. Le montage laisse le temps de reconnaître quelqu\'un.' },
-        { mark: '14 s', text: 'La chicha, le comptoir, les mains. Les détails qui disent le lieu.' },
-        { mark: '20 s', text: 'La signature, posée, sans effet.' },
+        { mark: 'Cadre', text: 'Serré. Le verre, les mains, la vapeur de la chicha, la texture du comptoir.' },
+        { mark: 'Mouvement', text: 'Lent et court. Un travelling de deux secondes vaut mieux qu\'un panoramique.' },
+        { mark: 'Champ large', text: 'Rare, et toujours cadré pour que le vide ne se voie pas : de biais, jamais de face.' },
+        { mark: 'Au montage', text: 'Ces plans deviennent les respirations, et la matière des annonces suivantes.' },
       ],
       asks: [
-        'Des clients qui acceptent d\'être filmés de près, prévenus à l\'avance',
-        'Une heure de tournage avant l\'affluence, pendant que la lumière est belle',
-        'L\'accord du personnel, qui apparaîtra',
+        "L'accès une heure avant l'ouverture, quand la lumière est encore réglable",
+        'Deux ou trois cocktails préparés pour être filmés',
+        'Un comptoir rangé, ce qui ne va plus de soi une fois le service lancé',
       ],
     },
     {
       swatch: 'raw',
-      name: 'Le brut',
-      line: 'Flash, grain, cadrage libre. On raconte la soirée comme elle a été vécue.',
-      title: 'Le brut : l\'esthétique de ceux qui y <i>étaient</i>.',
+      when: 'La montée',
+      crowd: 'La salle se remplit',
+      tone: 'Vivant, spontané, chaleureux',
+      name: 'Les visages',
+      line: 'Les gens arrivent, se retrouvent, s\'installent. On filme la reconnaissance, pas la foule.',
+      title: 'La salle se remplit : on filme des <i>gens</i>, pas une masse.',
       lead:
-        "Le registre des photos de soirée prises au téléphone, assumé et maîtrisé. C'est la direction qui se partage le plus, et la moins flatteuse pour le lieu.",
-      mood: 'Peu de couleur, grain lourd, vignettage marqué.',
+        "C'est le moment le plus utile et le plus court. Assez de monde pour que ce soit vivant, assez peu pour qu'on distingue encore les visages.",
+      mood: 'Peu de couleur, grain lourd, cadrage libre.',
       beats: [
-        { mark: '0 s', text: 'Un flash, une réaction. Rien de composé.' },
-        { mark: '5 s', text: 'Cadrage libre, caméra à hauteur d\'épaule, on suit au lieu de cadrer.' },
-        { mark: '15 s', text: 'Un plan raté gardé exprès. C\'est ce qui rend le reste crédible.' },
-        { mark: '19 s', text: 'La signature, en surimpression, comme un tampon.' },
+        { mark: 'Cadre', text: 'Plan moyen. Deux ou trois personnes, jamais une seule, jamais dix.' },
+        { mark: 'Mouvement', text: 'On suit au lieu de cadrer. La caméra est à hauteur d\'épaule, elle se déplace.' },
+        { mark: 'Champ large', text: 'La terrasse et l\'entrée, là où le monde est le plus dense en premier.' },
+        { mark: 'Au montage', text: 'Ces plans portent la preuve sociale : on reconnaît quelqu\'un, donc on y va.' },
       ],
       asks: [
-        'Une liberté de circulation totale dans la salle',
-        'L\'acceptation d\'un rendu volontairement imparfait',
-        'Un affichage clair à l\'entrée sur le droit à l\'image',
+        'Des habitués prévenus à l\'avance, qui acceptent d\'être filmés de près',
+        'Une liberté de circulation dans la salle et sur la terrasse',
+        "L'accord du personnel, qui sera à l'image",
+      ],
+    },
+    {
+      swatch: 'hard',
+      when: 'Le pic',
+      crowd: 'Salle pleine',
+      tone: 'Dense, rythmé, énergique',
+      name: "L'énergie",
+      line: 'Le moment où la salle bascule. Coupes courtes, lumière franche, densité assumée.',
+      title: 'Salle pleine : on filme la <i>densité</i>.',
+      lead:
+        "C'est ce qui se partage, et c'est aussi le plus fragile : ces plans n'existent que si la salle est vraiment pleine. C'est pourquoi les deux styles précédents ne sont pas optionnels.",
+      mood: 'Contraste dur, noirs profonds, éclats de lumière francs.',
+      beats: [
+        { mark: 'Cadre', text: 'Large, puis très serré. L\'alternance fait l\'énergie, pas la vitesse seule.' },
+        { mark: 'Mouvement', text: 'Rapide et assumé. Un plan flou gardé exprès rend le reste crédible.' },
+        { mark: 'Champ large', text: 'Enfin possible de face : c\'est le seul moment où le plan d\'ensemble sert.' },
+        { mark: 'Au montage', text: 'Coupes sur le temps fort, jamais plus de deux secondes par plan.' },
+      ],
+      asks: [
+        'Un éclairage de salle stable, sans stroboscope permanent',
+        "Un moment identifié à l'avance comme le pic de la soirée",
+        'Un affichage à l\'entrée sur le droit à l\'image, que nous fournissons',
       ],
     },
   ],
@@ -261,43 +276,36 @@ export const JADORE = {
   /* --- 12. Le plan de tournage ------------------------------------------ */
   shootPlan: {
     eyebrow: 'Le 2 octobre, heure par heure',
-    title: 'Ce que nous filmons, et <i>quand</i>.',
+    title: 'Les trois styles, posés sur la <i>soirée</i>.',
     lead:
-      "Une soirée ne se filme pas d'un bout à l'autre. Chaque moment donne une matière différente, et l'ordre compte.",
+      "Chaque style a sa fenêtre, et elle ne se rattrape pas. Les plans de salle pleine n'existent qu'au pic, ceux de la matière qu'avant l'ouverture.",
     axis: { from: 17, to: 24 },
     ticks: ['17 h', '19 h', '21 h', '23 h'],
     lanes: [
       {
-        name: 'Le lieu vide',
-        trade: 'Avant le service',
+        name: 'La matière',
+        trade: 'Salle aux trois quarts vide',
         peakFrom: 17,
-        peakTo: 18.5,
-        peakLabel: 'Décor et lumière',
-      },
-      {
-        name: 'La mise en place',
-        trade: 'Comptoir et cuisine',
-        peakFrom: 18,
         peakTo: 19.5,
-        peakLabel: 'Gestes et détails',
+        peakLabel: 'Lieu, gestes, produits',
       },
       {
-        name: 'La montée',
-        trade: 'Les premiers arrivés',
+        name: 'Les visages',
+        trade: 'La salle se remplit',
         peakFrom: 19.5,
         peakTo: 21.5,
-        peakLabel: 'Visages et terrasse',
+        peakLabel: 'Arrivées et terrasse',
       },
       {
-        name: 'Le pic',
+        name: "L'énergie",
         trade: 'Salle pleine',
         peakFrom: 21,
         peakTo: 23,
-        peakLabel: 'Ambiance et énergie',
+        peakLabel: 'Densité et rythme',
       },
     ],
     note:
-      "Ces plages sont une proposition fondée sur vos horaires d'ouverture. Vous seul savez à quelle heure votre salle bascule vraiment : c'est la première chose à corriger ensemble.",
+      "Ces plages sont une proposition fondée sur vos horaires d'ouverture. Vous seul savez à quelle heure votre salle bascule vraiment, et combien de monde chaque moment rassemble : c'est la première chose à corriger ensemble.",
   },
 
   /* --- 13. Ce qu'il nous faut de vous ----------------------------------- */
@@ -383,8 +391,8 @@ export const JADORE = {
     title: 'Six questions, et nous pouvons <i>écrire</i>.',
     items: [
       { title: 'Le thème du 2 octobre', text: 'Ce qui est prévu, qui joue, et ce qui rend cette soirée différente des autres.' },
-      { title: 'L\'heure de bascule', text: 'Le moment où votre salle est vraiment pleine. Nos plages horaires en dépendent.' },
-      { title: 'La direction qui vous parle', text: 'Celle que vous gardez, ou ce qui vous gêne dans chacune des trois.' },
+      { title: 'L\'heure de bascule', text: 'Quand la salle est vraiment pleine, et combien de personnes cela représente chez vous.' },
+      { title: 'Le style dominant', text: 'Lequel des trois doit peser le plus au montage, et ce qui vous gêne dans les autres.' },
       { title: 'Ce que vous appelez réussi', text: 'Des vues, des abonnés, ou du monde le samedi suivant. Le montage n\'est pas le même.' },
       { title: 'Le compte TikTok', text: 'Vous voulez l\'ouvrir, ou nous restons sur Instagram et Facebook.' },
       { title: 'Votre fichier de logo', text: 'Sous quelle forme vous l\'avez, et qui l\'a dessiné.' },

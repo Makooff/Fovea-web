@@ -542,8 +542,9 @@ function directions(doc) {
       (d, i) => `
       <div class="dir">
         <span class="dir__swatch dir__swatch--${d.swatch}"></span>
-        <p class="dir__num">${String(i + 1).padStart(2, '0')}</p>
+        <p class="dir__num">${fr(d.crowd)}</p>
         <h3>${fr(d.name)}</h3>
+        <p class="dir__tone">${fr(d.tone)}</p>
         <p class="dir__line">${fr(d.line)}</p>
       </div>`
     )
@@ -577,7 +578,7 @@ function direction(doc, index) {
   return slide(
     'direction',
     `
-    <span class="eyebrow">${fr(`Direction ${index + 1} sur ${doc.directions.length}`)}</span>
+    <span class="eyebrow">${fr(`${d.when} ${NBSP}·${NBSP} ${d.crowd}`)}</span>
     <h2 style="margin:16px 0 6px">${fr(d.title)}</h2>
     <p class="lead" style="margin-bottom:18px">${fr(d.lead)}</p>
     <div class="dir__grid">
@@ -587,7 +588,7 @@ function direction(doc, index) {
       </div>
       <div class="dialogue">${beats}</div>
       <div class="panel">
-        <p class="note__tag">${fr('Ce que la direction exige')}</p>
+        <p class="note__tag">${fr('Ce que ce style exige')}</p>
         <ul class="dashes" style="margin-top:10px">${asks}</ul>
       </div>
     </div>`,

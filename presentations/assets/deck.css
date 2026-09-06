@@ -1177,3 +1177,17 @@ strong {
   border-radius: var(--r-chip);
   padding: 6px 14px;
 }
+
+/* Le ton du style, sous son nom : c'est ce qui le distingue des deux autres. */
+.dir__tone {
+  font-style: italic;
+  font-size: 12px;
+  color: var(--red-soft);
+  margin-bottom: 6px;
+}
+
+/* Le repère de remplissage remplace le numéro : c'est lui qui commande. */
+.dirs .dir__num {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
